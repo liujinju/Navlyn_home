@@ -28,11 +28,11 @@ export interface FooterNavGroup {
 export const siteNavItems: SiteNavItem[] = [
   { key: 'home', label: '首页', path: '/', icon: <HomeOutlined /> },
   { key: 'products', label: '产品体系', path: '/products', icon: <DeploymentUnitOutlined /> },
-  { key: 'arc', label: 'ARC OS', path: '/arc-os', icon: <ClusterOutlined /> },
+  { key: 'arc', label: 'ARC ENGINE', path: '/arc-os', icon: <ClusterOutlined /> },
   { key: 'industries', label: '行业应用', path: '/industries', icon: <CompassOutlined /> },
-  { key: 'news', label: '公司报道', path: '/news', icon: <ReadOutlined /> },
+  { key: 'knowledge-base', label: '知识库', path: '/knowledge-base', icon: <ReadOutlined /> },
+  { key: 'partners', label: '客户与合作', path: '/partners', icon: <ContactsOutlined /> },
   { key: 'about', label: '关于我们', path: '/about', icon: <InfoCircleOutlined /> },
-  { key: 'contact', label: '演示咨询', path: '/contact', icon: <ContactsOutlined /> },
 ];
 
 export const partnerQuotes = [
@@ -108,7 +108,7 @@ export const contactCards = [
 ];
 
 export const footerSummary =
-  'Navlyn 航链科技以 ARC OS 为核心，面向低空经济场景提供飞行智能体系统、硬件终端与行业解决方案。';
+  'Navlyn 航链科技以 ARC ENGINE 为核心，面向低空经济场景提供飞行智能体系统、硬件终端与行业解决方案。';
 
 export const globalFootnote = '首版站点基于现有品牌资料与思维导图快速搭建，可继续扩展中英双语与内容中心。';
 
@@ -117,9 +117,9 @@ export const footerNavGroups: FooterNavGroup[] = [
     title: '产品服务',
     items: [
       { label: '产品体系', path: '/products' },
-      { label: 'ARC OS', path: '/arc-os' },
+      { label: 'ARC ENGINE', path: '/arc-os' },
       { label: '飞行模拟训练' },
-      { label: '数据案例库' },
+      { label: '知识库', path: '/knowledge-base' },
     ],
   },
   {
@@ -127,16 +127,16 @@ export const footerNavGroups: FooterNavGroup[] = [
     items: [
       { label: '公司愿景', path: '/about#about-story' },
       { label: '核心团队', path: '/about#about-team' },
-      { label: '新闻中心', path: '/news' },
+      { label: '客户与合作', path: '/partners' },
       { label: '人才招聘' },
     ],
   },
   {
     title: '合作生态',
     items: [
-      { label: '全球合作伙伴', path: '/about#about-story' },
+      { label: '全球合作伙伴', path: '/partners' },
       { label: '国际经销商' },
-      { label: '项目咨询', path: '/contact' },
+      { label: '项目咨询', path: '/partners' },
     ],
   },
   {

@@ -1,6 +1,6 @@
-import { Button, Drawer, Layout, Menu, Space, Typography } from 'antd';
+import { Button, Drawer, Dropdown, Layout, Menu, Space, Typography } from 'antd';
 import type { MenuProps } from 'antd';
-import { MenuOutlined } from '@ant-design/icons';
+import { DownOutlined, MenuOutlined } from '@ant-design/icons';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import type { PropsWithChildren, ReactNode } from 'react';
@@ -40,6 +40,13 @@ export default function SiteLayout({
     label: <Link to={item.path}>{item.label}</Link>,
   }));
 
+  const languageItems: MenuProps['items'] = [
+    { key: 'zh', label: '中文' },
+    { key: 'en', label: 'English' },
+    { key: 'fr', label: 'Français' },
+    { key: 'es', label: 'Español' },
+  ];
+
   return (
     <Layout className="site-shell">
       <Seo title={title} description={description} />
@@ -55,11 +62,21 @@ export default function SiteLayout({
           overflowedIndicator={null}
         />
         <Space size="middle" className="header-actions-desktop">
-          <Button type="default" ghost>
-            EN
+          <Dropdown menu={{ items: languageItems }} trigger={['click']} placement="bottomRight">
+            <Button type="default" ghost className="header-language-button">
+              <span className="language-flag-icon" aria-hidden="true" />
+              <span>语言</span>
+              <DownOutlined />
+            </Button>
+          </Dropdown>
+          <Button type="default" ghost className="header-account-button" onClick={() => navigate('/register')}>
+            注册
           </Button>
-          <Button type="primary" onClick={() => navigate('/contact')}>
-            预约演示
+          <Button type="default" ghost className="header-account-button" onClick={() => navigate('/login')}>
+            登录
+          </Button>
+          <Button type="primary" className="header-account-button is-primary" onClick={() => navigate('/profile')}>
+            个人中心
           </Button>
         </Space>
         <div className="header-actions-mobile">
@@ -88,18 +105,47 @@ export default function SiteLayout({
           onClick={() => setMobileNavOpen(false)}
         />
         <div className="mobile-nav-actions">
-          <Button block type="default" ghost>
-            EN
+          <Dropdown menu={{ items: languageItems }} trigger={['click']} placement="bottomRight">
+            <Button block type="default" ghost className="header-language-button mobile-language-button">
+              <span className="language-flag-icon" aria-hidden="true" />
+              <span>语言</span>
+              <DownOutlined />
+            </Button>
+          </Dropdown>
+          <Button
+            block
+            type="default"
+            ghost
+            className="header-account-button"
+            onClick={() => {
+              setMobileNavOpen(false);
+              navigate('/register');
+            }}
+          >
+            注册
+          </Button>
+          <Button
+            block
+            type="default"
+            ghost
+            className="header-account-button"
+            onClick={() => {
+              setMobileNavOpen(false);
+              navigate('/login');
+            }}
+          >
+            登录
           </Button>
           <Button
             block
             type="primary"
+            className="header-account-button is-primary"
             onClick={() => {
               setMobileNavOpen(false);
-              navigate('/contact');
+              navigate('/profile');
             }}
           >
-            预约演示
+            个人中心
           </Button>
         </div>
       </Drawer>
@@ -118,8 +164,8 @@ export default function SiteLayout({
                   <Paragraph>{footerSummary}</Paragraph>
                 </div>
               </div>
-              <Button type="primary" onClick={() => navigate('/contact')}>
-                预约演示
+              <Button type="primary" onClick={() => navigate('/partners')}>
+                客户与合作
               </Button>
             </div>
 

@@ -140,7 +140,7 @@ export default function IndustriesPage() {
           <Text className="news-page-kicker">Next Step</Text>
           <Title level={2}>让行业场景进一步走向系统化落地</Title>
           <Paragraph>
-            继续查看产品体系与 ARC OS，理解终端、系统和交付能力如何在具体场景中协同落地，或者直接预约一次行业方案沟通。
+            继续查看产品体系与 ARC ENGINE，理解终端、系统和交付能力如何在具体场景中协同落地，或者直接预约一次行业方案沟通。
           </Paragraph>
         </div>
         <div className="route-cta-actions">

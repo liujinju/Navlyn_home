@@ -188,14 +188,14 @@ export default function ContactPage() {
         <div className="route-cta-copy">
           <Text className="news-page-kicker">Next Step</Text>
           <Title level={2}>继续深入了解产品、系统或行业方案</Title>
-          <Paragraph>如果你已经明确场景方向，可以继续查看产品体系、ARC OS 或行业应用页面，再决定预约哪一类演示。</Paragraph>
+          <Paragraph>如果你已经明确场景方向，可以继续查看产品体系、ARC ENGINE 或行业应用页面，再决定预约哪一类演示。</Paragraph>
         </div>
         <div className="route-cta-actions">
           <Link className="product-entry-link" to="/products">
             查看产品体系
           </Link>
           <Link className="product-entry-link product-system-cta-secondary" to="/arc-os">
-            查看 ARC OS
+            查看 ARC ENGINE
           </Link>
         </div>
       </section>

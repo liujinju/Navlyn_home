@@ -1,7 +1,6 @@
 import { Typography } from 'antd';
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { newsItems } from '../data/news';
 import SiteLayout from '../layouts/SiteLayout';
 
 const { Title, Paragraph, Text } = Typography;
@@ -9,7 +8,7 @@ const { Title, Paragraph, Text } = Typography;
 const capabilityItems = [
   {
     eyebrow: 'System Intelligence',
-    title: 'ARC OS 低空智能操作系统',
+    title: 'ARC ENGINE 低空智能操作系统',
     description:
       '自主研发 L4 级端侧智能平台，实现任务意图理解、自动规划、全域治理，被誉为低空经济的“安卓系统”。',
     note: '任务理解 · 自动规划 · 全域治理',
@@ -77,7 +76,7 @@ const hardwareMatrixItems = [
 ];
 
 const softwareSystemItem = {
-  title: 'ARC OS',
+  title: 'ARC ENGINE',
   description: '低空智能操作系统',
   summary:
     '围绕任务理解、系统治理与多终端协同，构成航链科技低空智能体系中的软件中枢。',
@@ -137,7 +136,7 @@ export default function HomePage() {
   return (
     <SiteLayout
       title="Navlyn 航链科技 | 开启飞行智能体时代"
-      description="Navlyn 航链科技以 ARC OS 为核心，提供飞行智能体系统、硬件终端与行业解决方案，服务测绘、矿业、工程与应急救援场景。"
+      description="Navlyn 航链科技以 ARC ENGINE 为核心，提供飞行智能体系统、硬件终端与行业解决方案，服务测绘、矿业、工程与应急救援场景。"
       contentClassName="page-shell-home"
       hero={
         <section id="home" className={`hero-section${heroVideoReady ? ' is-video-ready' : ''}`}>
@@ -195,12 +194,16 @@ export default function HomePage() {
                 </div>
                 <div className="what-we-do-body">
                   <Paragraph className="section-lead-copy">
-                    航链科技（Navlyn）2025 年 8 月成立于中国浙江，承袭法国 Innotech-drone 工业无人机与精密测绘技术积淀，以低空经济 +
-                    人工智能为核心定位，通过 AI 深度赋能硬件，打造具备高度自主意识的飞行智能体。
+                    航链科技（Navlyn）2025 年 8 月成立于中国浙江，承袭法国 Innotech-drone 工业无人机与精密测绘技术积淀，
                   </Paragraph>
                   <Paragraph className="section-lead-copy">
-                    我们提供从硬件终端、ARC OS 智能操作系统到行业解决方案的全链路低空智能服务，让作业从“遥控执行”走向“意图决策”，推动全球低空经济迈入智能化
-                    3.0 时代。
+                    以低空经济 + 人工智能为核心定位，通过 AI 深度赋能硬件，打造具备高度自主意识的飞行智能体。
+                  </Paragraph>
+                  <Paragraph className="section-lead-copy">
+                    我们提供从硬件终端、ARC ENGINE 智能操作系统到行业解决方案的全链路低空智能服务，
+                  </Paragraph>
+                  <Paragraph className="section-lead-copy">
+                    让作业从“遥控执行”走向“意图决策”，推动全球低空经济迈入智能化 3.0 时代。
                   </Paragraph>
                 </div>
               </div>
@@ -281,7 +284,7 @@ export default function HomePage() {
           <Text className="product-entry-kicker">Product Gateways</Text>
           <Title level={2}>产品入口</Title>
           <Paragraph className="product-entry-lead">
-            从空海一体硬件终端到 ARC OS 智能中枢，航链科技构建完整的低空智能产品体系。
+            从空海一体硬件终端到 ARC ENGINE 智能中枢，航链科技构建完整的低空智能产品体系。
           </Paragraph>
           <Link className="product-entry-link product-entry-cta" to="/contact">
             立即预约体验
@@ -333,12 +336,12 @@ export default function HomePage() {
               <Text className="product-entry-group">Core Software System</Text>
               <Title level={3}>核心软件系统</Title>
               <Paragraph>
-                以 ARC OS 为软件中枢，贯通任务理解、系统治理与多终端协同，让低空作业从遥控执行走向意图驱动。
+                以 ARC ENGINE 为软件中枢，贯通任务理解、系统治理与多终端协同，让低空作业从遥控执行走向意图驱动。
               </Paragraph>
             </div>
             <Link className="product-software-card" to="/arc-os">
               <div className="product-software-copy">
-                <Text className="product-entry-group">ARC OS</Text>
+                <Text className="product-entry-group">ARC ENGINE</Text>
                 <Title level={3}>{softwareSystemItem.description}</Title>
                 <Paragraph className="product-software-summary">{softwareSystemItem.summary}</Paragraph>
               </div>
@@ -354,52 +357,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section-block news-section">
-        <div className="news-heading">
-          <Text className="news-kicker">Latest News</Text>
-          <Title level={2}>公司报道</Title>
-          <Paragraph>
-            聚焦技术突破、产品发布、国际合作与行业展会，实时呈现航链科技在低空智能领域的创新实践。
-          </Paragraph>
-          <Link className="product-entry-link news-link" to="/news">
-            查看更多新闻
-          </Link>
-        </div>
-
-        <div className="news-grid">
-          <Link className="news-card news-card-featured" to={`/news/${newsItems[0].slug}`}>
-            <div className="news-card-copy">
-              <Text className="news-card-tag">{newsItems[0].tag}</Text>
-              <Text className="news-card-meta">
-                {newsItems[0].date} · {newsItems[0].location}
-              </Text>
-              <Title level={3}>{newsItems[0].title}</Title>
-              <Paragraph>{newsItems[0].description}</Paragraph>
-            </div>
-            <div className="news-card-media">
-              <img src={newsItems[0].image} alt={newsItems[0].imageAlt} />
-            </div>
-          </Link>
-
-          <div className="news-grid-side">
-            {newsItems.slice(1).map((item) => (
-              <Link key={item.slug} className="news-card" to={`/news/${item.slug}`}>
-                <div className="news-card-copy">
-                  <Text className="news-card-tag">{item.tag}</Text>
-                  <Text className="news-card-meta">
-                    {item.date} · {item.location}
-                  </Text>
-                  <Title level={3}>{item.title}</Title>
-                  <Paragraph>{item.description}</Paragraph>
-                </div>
-                <div className="news-card-media">
-                  <img src={item.image} alt={item.imageAlt} />
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
     </SiteLayout>
   );
 }

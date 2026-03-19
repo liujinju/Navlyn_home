@@ -153,6 +153,10 @@ export default function SiteLayout({
         {hero}
         {children ? <div className={`page-shell${contentClassName ? ` ${contentClassName}` : ''}`}>{children}</div> : null}
       </Content>
+      <Link to="/contact" className="site-contact-float" aria-label="Contact us 联系我们">
+        <span className="site-contact-float-en">Contact Us</span>
+        <span className="site-contact-float-zh">联系我们 🤝</span>
+      </Link>
       {showFooter ? (
         <Footer className="site-footer">
           <div className="site-footer-inner">

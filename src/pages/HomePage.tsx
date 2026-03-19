@@ -98,6 +98,43 @@ const whatWeDoSlides = [
   },
 ];
 
+const companyNewsItems = [
+  {
+    title: '航链科技品牌发布与低空智能路线获主流媒体持续关注',
+    summary:
+      '围绕飞行智能体、ARC ENGINE 与低空经济创新实践，多家主流媒体持续跟进航链科技的品牌发布与技术表达。',
+    tag: 'Media Coverage',
+    meta: '2026.02 · 新华网 / 中国日报网 / 界面新闻',
+    source: '新华社系 / 财经媒体',
+    image: '/media/company-news-feature.jpg',
+    alt: '航链科技发布会现场',
+    to: 'https://www.news.cn/digital/20260205/3a11fec4d2be4756bd569b850abb8db1/c.html',
+    featured: true,
+  },
+  {
+    title: '浙江电视台聚焦发布会现场与产品体系展示',
+    summary:
+      '从发布会现场、核心讲解到硬件展示，报道集中呈现航链科技在低空智能领域的产品表达与场景落地。',
+    tag: 'Broadcast',
+    meta: '2026.02 · 浙江电视台',
+    source: '省级电视媒体',
+    image: '/media/company-news-briefing.jpg',
+    alt: '航链科技现场讲解',
+    to: 'https://www.cztv.com/video/20091537/wh/horizontal_vod?id=20091537',
+  },
+  {
+    title: '门户平台持续报道国际合作与产业交流进展',
+    summary:
+      '围绕国际合作、产业交流与低空经济实践，多家门户平台与行业媒体同步跟进航链科技最新公开动态。',
+    tag: 'Industry Update',
+    meta: '2026.02 · 中国网 / 经济观察网 / 环球时报',
+    source: '门户与行业媒体',
+    image: '/media/company-news-collab.jpg',
+    alt: '航链科技合作交流现场',
+    to: 'http://hs.china.com.cn/2026-02/02/content_43347937.html',
+  },
+];
+
 export default function HomePage() {
   const [heroVideoReady, setHeroVideoReady] = useState(false);
   const [whatWeDoSlideIndex, setWhatWeDoSlideIndex] = useState(0);
@@ -238,8 +275,10 @@ export default function HomePage() {
                 </div>
                 <div className="industry-service-body">
                   <Paragraph className="section-lead-copy">
-                    航链科技以全场景解决方案，服务测绘、建筑与能源、矿业资源、生态林业、公路铁路巡检、安防、应急救援七大领域，覆盖全球四大洲，落地
-                    200+ 实地项目，累计飞行里程超 400 万公里。
+                    航链科技以全场景解决方案，服务测绘、建筑与能源、矿业资源、生态林业、公路铁路巡检、安防、应急救援七大领域，
+                  </Paragraph>
+                  <Paragraph className="section-lead-copy">
+                    覆盖全球四大洲，落地 200+ 实地项目，累计飞行里程超 400 万公里。
                   </Paragraph>
                   <Paragraph className="section-lead-copy">已成为多国政府、世界 500 强企业的低空智能合作伙伴。</Paragraph>
                 </div>
@@ -287,7 +326,7 @@ export default function HomePage() {
             从空海一体硬件终端到 ARC ENGINE 智能中枢，航链科技构建完整的低空智能产品体系。
           </Paragraph>
           <Link className="product-entry-link product-entry-cta" to="/contact">
-            立即预约体验
+            预约体验
           </Link>
         </div>
         <div className="product-entry-grid product-entry-grid-redesigned">
@@ -354,6 +393,40 @@ export default function HomePage() {
               </div>
             </Link>
           </section>
+        </div>
+      </section>
+
+      <section className="section-block news-section">
+        <div className="news-heading">
+          <Text className="news-kicker">Company News</Text>
+          <Title level={2}>公司报道</Title>
+          <Paragraph>
+            聚焦品牌发布、技术表达与产业交流，持续呈现航链科技在低空智能领域的最新公开报道与传播内容。
+          </Paragraph>
+          <Link className="product-entry-link news-link" to="/news">
+            查看更多报道
+          </Link>
+        </div>
+        <div className="news-list">
+          {companyNewsItems.map((item) => (
+            <a key={item.title} className="news-list-item" href={item.to} target="_blank" rel="noreferrer">
+              <div className="news-list-media">
+                <img src={item.image} alt={item.alt} />
+              </div>
+              <div className="news-list-copy">
+                <div className="news-list-meta-row">
+                  <Text className="news-card-tag">{item.tag}</Text>
+                  <Text className="news-card-meta">{item.meta}</Text>
+                </div>
+                <Title level={3}>{item.title}</Title>
+                <Paragraph>{item.summary}</Paragraph>
+                <div className="news-card-footer">
+                  <Text className="news-card-source">{item.source}</Text>
+                  <span className="news-card-action">阅读原文</span>
+                </div>
+              </div>
+            </a>
+          ))}
         </div>
       </section>
 

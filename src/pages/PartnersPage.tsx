@@ -1,5 +1,4 @@
 import { Card, Col, Row, Tag, Typography } from 'antd';
-import { Link } from 'react-router-dom';
 import SiteLayout from '../layouts/SiteLayout';
 import { contactCards, globalRegions, partnerQuotes } from '../data/site';
 
@@ -87,22 +86,6 @@ export default function PartnersPage() {
             </Col>
           ))}
         </Row>
-      </section>
-
-      <section className="page-section route-cta-section">
-        <div className="route-cta-copy">
-          <Text className="news-page-kicker">Next Step</Text>
-          <Title level={2}>继续了解产品、系统与行业方案</Title>
-          <Paragraph>如果你已经有明确的合作方向，可以继续查看产品体系、ARC ENGINE 或行业应用，进一步确认协同方式。</Paragraph>
-        </div>
-        <div className="route-cta-actions">
-          <Link className="product-entry-link" to="/products">
-            查看产品体系
-          </Link>
-          <Link className="product-entry-link product-system-cta-secondary" to="/arc-os">
-            查看 ARC ENGINE
-          </Link>
-        </div>
       </section>
     </SiteLayout>
   );

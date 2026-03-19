@@ -134,24 +134,6 @@ export default function IndustriesPage() {
           ))}
         </Row>
       </section>
-
-      <section className="page-section route-cta-section industries-cta-section">
-        <div className="route-cta-copy">
-          <Text className="news-page-kicker">Next Step</Text>
-          <Title level={2}>让行业场景进一步走向系统化落地</Title>
-          <Paragraph>
-            继续查看产品体系与 ARC ENGINE，理解终端、系统和交付能力如何在具体场景中协同落地，或者直接预约一次行业方案沟通。
-          </Paragraph>
-        </div>
-        <div className="route-cta-actions">
-          <Link className="product-entry-link" to="/products">
-            查看产品体系
-          </Link>
-          <Link className="product-entry-link product-system-cta-secondary" to="/contact">
-            预约行业咨询
-          </Link>
-        </div>
-      </section>
     </SiteLayout>
   );
 }

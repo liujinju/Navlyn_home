@@ -1,5 +1,4 @@
 import { Card, Col, Row, Tag, Typography } from 'antd';
-import { Link } from 'react-router-dom';
 import SiteLayout from '../layouts/SiteLayout';
 
 const { Title, Paragraph, Text } = Typography;
@@ -54,22 +53,6 @@ export default function KnowledgeBasePage() {
             </Col>
           ))}
         </Row>
-
-        <section className="page-section route-cta-section">
-          <div className="route-cta-copy">
-            <Text className="news-page-kicker">Next Step</Text>
-            <Title level={2}>从知识理解走向系统落地</Title>
-            <Paragraph>继续查看产品体系或 ARC ENGINE 页面，理解知识库中的系统逻辑如何映射到真实终端与现场部署。</Paragraph>
-          </div>
-          <div className="route-cta-actions">
-            <Link className="product-entry-link" to="/products">
-              查看产品体系
-            </Link>
-            <Link className="product-entry-link product-system-cta-secondary" to="/arc-os">
-              查看 ARC ENGINE
-            </Link>
-          </div>
-        </section>
       </section>
     </SiteLayout>
   );

@@ -194,24 +194,6 @@ export default function ArcPage() {
           ))}
         </div>
       </section>
-
-      <section className="page-section route-cta-section arc-system-cta">
-        <div className="route-cta-copy arc-system-cta-copy">
-          <Text className="news-page-kicker">Next Step</Text>
-          <Title level={2}>想把 ARC ENGINE 放进你的业务现场？</Title>
-          <Paragraph>
-            继续查看产品体系，了解终端如何与 ARC ENGINE 协同，或者直接预约一次系统演示，现场走一遍任务编排与执行闭环。
-          </Paragraph>
-        </div>
-        <div className="route-cta-actions arc-system-cta-actions">
-          <Link className="product-entry-link" to="/products">
-            查看产品体系
-          </Link>
-          <Link className="product-entry-link product-system-cta-secondary" to="/contact">
-            预约系统演示
-          </Link>
-        </div>
-      </section>
     </SiteLayout>
   );
 }

@@ -284,24 +284,6 @@ export default function ProductsPage() {
           </article>
         ))}
       </section>
-
-      <section className="page-section route-cta-section product-system-cta">
-        <div className="route-cta-copy product-system-cta-copy">
-          <Text className="product-system-overview-kicker">Next Step</Text>
-          <Title level={2}>想把硬件终端与系统平台一起看清楚？</Title>
-          <Paragraph>
-            继续查看 ARC ENGINE 的系统能力，或直接预约一次产品演示，了解三款终端如何与软件平台协同落地。
-          </Paragraph>
-        </div>
-        <div className="route-cta-actions product-system-cta-actions">
-          <Link className="product-entry-link" to="/arc-os">
-            查看 ARC ENGINE
-          </Link>
-          <Link className="product-entry-link product-system-cta-secondary" to="/contact">
-            预约产品演示
-          </Link>
-        </div>
-      </section>
     </SiteLayout>
   );
 }

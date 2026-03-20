@@ -72,38 +72,33 @@ export default function IndustriesPage() {
       }
     >
       <section className="page-section" id="industry-stage">
-        <Card className="industry-stage route-industry-stage" bordered={false}>
+        <section className="industry-stage route-industry-stage">
           <div className="industry-stage-media">
             <img src={activeIndustry.image} alt={activeIndustry.label} />
           </div>
           <div className="industry-stage-overlay" />
-          <div className="industry-stage-content">
+          <div className="industry-stage-shell">
             <div className="industry-stage-head">
               <Text className="panel-label">{activeIndustry.eyebrow}</Text>
               <Title>{activeIndustry.label}</Title>
+              <Paragraph>{activeIndustry.solution}</Paragraph>
             </div>
-            <Row gutter={[20, 20]}>
-              <Col xs={24} lg={8}>
-                <div className="industry-stage-block">
-                  <Text className="panel-label">行业痛点</Text>
-                  <Paragraph>{activeIndustry.painPoint}</Paragraph>
-                </div>
-              </Col>
-              <Col xs={24} lg={8}>
-                <div className="industry-stage-block">
-                  <Text className="panel-label">Navlyn 方案</Text>
-                  <Paragraph>{activeIndustry.solution}</Paragraph>
-                </div>
-              </Col>
-              <Col xs={24} lg={8}>
-                <div className="industry-stage-block">
-                  <Text className="panel-label">交付结果</Text>
-                  <Paragraph>{activeIndustry.outcome}</Paragraph>
-                </div>
-              </Col>
-            </Row>
+            <div className="industry-stage-grid">
+              <div className="industry-stage-panel">
+                <Text className="panel-label">行业痛点</Text>
+                <Paragraph>{activeIndustry.painPoint}</Paragraph>
+              </div>
+              <div className="industry-stage-panel">
+                <Text className="panel-label">Navlyn 方案</Text>
+                <Paragraph>{activeIndustry.solution}</Paragraph>
+              </div>
+              <div className="industry-stage-panel">
+                <Text className="panel-label">交付结果</Text>
+                <Paragraph>{activeIndustry.outcome}</Paragraph>
+              </div>
+            </div>
           </div>
-        </Card>
+        </section>
       </section>
 
       <section className="page-section" id="industry-summary">

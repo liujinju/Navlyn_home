@@ -203,7 +203,7 @@ export default function HomePage() {
           <div className="hero-grid">
             <div className="hero-copy">
               <Title className="hero-title-en">Enabling Intelligent Airspace Capabilities</Title>
-              <Text className="hero-title-zh">开启飞行智能</Text>
+              <Text className="hero-title-zh">开启飞行智能体时代</Text>
               <Text className="hero-title-sub">去飞手化｜安全可控｜群体协同</Text>
             </div>
           </div>
@@ -409,7 +409,13 @@ export default function HomePage() {
         </div>
         <div className="news-list">
           {companyNewsItems.map((item) => (
-            <a key={item.title} className="news-list-item" href={item.to} target="_blank" rel="noreferrer">
+            <a
+              key={item.title}
+              className={`news-list-item${item.featured ? ' is-featured' : ''}`}
+              href={item.to}
+              target="_blank"
+              rel="noreferrer"
+            >
               <div className="news-list-media">
                 <img src={item.image} alt={item.alt} />
               </div>

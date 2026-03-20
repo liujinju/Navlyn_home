@@ -102,9 +102,9 @@ export default function ArcPage() {
             </div>
 
             <div className="arc-page-hero-nav">
-              <a href="#arc-architecture" className="arc-page-hero-link">
+              <a href="#arc-architecture" className="arc-page-hero-link arc-page-hero-link-featured">
                 <span>Architecture</span>
-                <strong>软硬一体 AI 平台</strong>
+                <strong>系统三层架构</strong>
               </a>
               <a href="#arc-capabilities" className="arc-page-hero-link">
                 <span>Capabilities</span>
@@ -120,12 +120,18 @@ export default function ArcPage() {
       }
     >
       <section className="page-section arc-spotlight" id="arc-architecture">
-        <div className="arc-spotlight-copy">
-          <Text className="panel-label">System Architecture</Text>
-          <Title level={2}>以 ARC 为中枢，连接终端、模型与治理逻辑</Title>
-          <Paragraph>
-            ARC Vision 承担“眼睛”，ARC ENGINE 承担“大脑”，ARC Inside 承担“身体”。从边缘感知到任务编排、模型路由和安全治理，构成一套软硬一体的 AI 平台。
-          </Paragraph>
+        <div className="arc-spotlight-media">
+          <img src="/media/arc-module-10.jpg" alt="ARC ENGINE architecture" />
+        </div>
+        <div className="arc-spotlight-overlay" />
+        <div className="arc-spotlight-shell">
+          <div className="arc-spotlight-copy">
+            <Text className="panel-label">Core Stack</Text>
+            <Title level={2}>ARC Vision、ARC ENGINE 与 ARC Inside 构成统一系统栈</Title>
+            <Paragraph>
+              用感知入口、任务中枢与终端落地三层结构，把理解、编排、执行与治理放进同一套系统闭环。
+            </Paragraph>
+          </div>
           <div className="arc-architecture-grid">
             {arcArchitecturePillars.map((item) => (
               <div key={item.name} className="arc-architecture-card">
@@ -135,9 +141,6 @@ export default function ArcPage() {
               </div>
             ))}
           </div>
-        </div>
-        <div className="arc-spotlight-media">
-          <img src="/media/arc-module-10.jpg" alt="ARC ENGINE architecture" />
         </div>
       </section>
 

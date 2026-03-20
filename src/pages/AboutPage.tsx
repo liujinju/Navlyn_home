@@ -1,4 +1,4 @@
-import { Avatar, Card, Col, Row, Space, Tag, Typography } from 'antd';
+import { Avatar, Tag, Typography } from 'antd';
 import { Link } from 'react-router-dom';
 import StaticContactPanel from '../components/StaticContactPanel';
 import { aboutNews } from '../data/routes';
@@ -60,142 +60,128 @@ export default function AboutPage() {
         </section>
       }
     >
-      <section className="page-section about-story-section" id="about-story">
-        <div className="about-story-grid">
-          <div className="about-story-copy">
+      <section className="page-section about-story-band" id="about-story">
+        <div className="about-story-band-media">
+          <img src={aboutNews[0].media} alt={aboutNews[0].title} />
+        </div>
+        <div className="about-story-band-overlay" />
+        <div className="about-story-band-shell">
+          <div className="about-story-band-copy">
             <Text className="news-page-kicker">Brand Story</Text>
             <Title level={2}>{aboutHighlight.title}</Title>
             <Paragraph>{aboutHighlight.description}</Paragraph>
-            <div className="about-milestone-list">
-              {aboutMilestones.map((item) => (
-                <div key={item} className="about-milestone-item">
-                  <span />
-                  <p>{item}</p>
+          </div>
+
+          <div className="about-story-band-milestones">
+            {aboutMilestones.map((item) => (
+              <div key={item} className="about-story-band-milestone">
+                <span />
+                <p>{item}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="about-story-band-gallery">
+            {aboutNews.slice(1).map((item) => (
+              <div key={item.title} className="about-story-band-thumb">
+                <img src={item.media} alt={item.title} />
+                <div className="about-story-band-thumb-copy">
+                  <strong>{item.title}</strong>
+                  <span>{item.description}</span>
                 </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="about-story-media">
-            <div className="about-story-video">
-              <img src={aboutNews[0].media} alt={aboutNews[0].title} />
-            </div>
-            <div className="about-story-media-grid">
-              {aboutNews.slice(1).map((item) => (
-                <div key={item.title} className="about-story-image-card">
-                  <img src={item.media} alt={item.title} />
-                  <div className="about-story-image-copy">
-                    <strong>{item.title}</strong>
-                    <span>{item.description}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="page-section about-network-section">
-        <div className="about-network-grid">
-          <Card className="about-card about-network-card" bordered={false}>
-            <Space direction="vertical" size="middle">
-              <div className="feature-icon large">{aboutHighlight.icon}</div>
-              <Tag color="blue">Global Network</Tag>
-              <Title level={2}>全球布局与合作方向</Title>
-              <div className="about-region-list">
-                {globalRegions.map((item) => (
-                  <div key={item} className="about-region-item">
-                    <strong>{item.split('：')[0]}</strong>
-                    <span>{item.split('：')[1]}</span>
-                  </div>
-                ))}
-              </div>
-            </Space>
-          </Card>
-
-          <Card className="timeline-card about-network-sidecard" bordered={false}>
-            <Tag color="blue">Partnership</Tag>
-            <Title level={3}>以国际合作支撑品牌与交付能力</Title>
-            <Paragraph>
-              从法国技术积累到海外合作伙伴网络，航链科技正逐步把低空智能能力扩展到多国家、多行业、多类型场景。
-            </Paragraph>
-            <div className="about-network-stats">
-              <div>
-                <strong>4+</strong>
-                <span>洲际覆盖</span>
-              </div>
-              <div>
-                <strong>200+</strong>
-                <span>实地项目</span>
-              </div>
-              <div>
-                <strong>500 强</strong>
-                <span>合作客户</span>
-              </div>
-            </div>
-          </Card>
-        </div>
-      </section>
-
-      <section className="page-section" id="about-team">
-        <div className="section-heading">
-          <Tag color="blue">Team</Tag>
-          <Title level={2}>中法联合团队与跨学科协作能力</Title>
-        </div>
-        <Row gutter={[20, 20]}>
-          {aboutTeam.map((person) => (
-            <Col xs={24} md={8} key={person.name}>
-              <Card className="team-card" bordered={false}>
-                <Avatar src={person.image} shape="square" size={96} />
-                <Title level={4}>{person.name}</Title>
-                <Text className="panel-label">{person.role}</Text>
-                <Paragraph>{person.bio}</Paragraph>
-              </Card>
-            </Col>
-          ))}
-        </Row>
-      </section>
-
-      <section className="page-section about-voice-section">
-        <div className="section-heading">
-          <Tag color="blue">Voice</Tag>
-          <Title level={2}>来自专家与合作方的外部背书</Title>
-        </div>
-        <Row gutter={[20, 20]} className="about-voice-grid">
-          {partnerQuotes.map((quote) => (
-            <Col xs={24} md={8} key={quote.name}>
-              <Card className="case-card" bordered={false}>
-                <Title level={4}>{quote.name}</Title>
-                <Text className="panel-label">{quote.title}</Text>
-                <Paragraph>{quote.quote}</Paragraph>
-              </Card>
-            </Col>
-          ))}
-        </Row>
-      </section>
-
-      <section id="contact" className="page-section">
-        <div className="section-heading split">
-          <div>
-            <Tag color="blue">Contact</Tag>
-            <Title level={2}>让官网从品牌展示进一步走向有效转化</Title>
-          </div>
+      <section className="page-section about-network-stage">
+        <div className="about-network-stage-copy">
+          <Text className="news-page-kicker">Global Network</Text>
+          <Title level={2}>全球布局与合作方向</Title>
           <Paragraph>
-            联系信息还可以继续补齐，当前改为静态联系区与合作说明，不接任何提交接口。
+            从法国技术积累到海外合作伙伴网络，航链科技正逐步把低空智能能力扩展到多国家、多行业、多类型场景。
           </Paragraph>
+          <div className="about-network-stage-stats">
+            <div>
+              <strong>4+</strong>
+              <span>洲际覆盖</span>
+            </div>
+            <div>
+              <strong>200+</strong>
+              <span>实地项目</span>
+            </div>
+            <div>
+              <strong>500 强</strong>
+              <span>合作客户</span>
+            </div>
+          </div>
+          <div className="about-network-stage-quote">
+            <Text className="panel-label">{partnerQuotes[2].title}</Text>
+            <Paragraph>{partnerQuotes[2].quote}</Paragraph>
+          </div>
         </div>
-        <Row gutter={[20, 20]}>
-          <Col xs={24} lg={10}>
-            <Space direction="vertical" size="middle" className="contact-grid">
+
+        <div className="about-network-stage-visual">
+          <img src={aboutNews[1].media} alt={aboutNews[1].title} />
+          <div className="about-network-stage-visual-overlay" />
+          <div className="about-network-stage-regions">
+            {globalRegions.map((item) => (
+              <div key={item} className="about-network-region-item">
+                <strong>{item.split('：')[0]}</strong>
+                <span>{item.split('：')[1]}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="page-section about-team-stage" id="about-team">
+        <div className="section-heading">
+          <Text className="news-page-kicker">Team & Contact</Text>
+          <Title level={2}>中法联合团队与跨学科协作能力</Title>
+          <Paragraph>把联合研发、品牌表达、交付支持与合作入口组织成一个更完整的品牌信任模块。</Paragraph>
+        </div>
+        <div className="about-team-stage-grid">
+          <div className="about-team-stage-main">
+            <div className="about-team-people">
+              {aboutTeam.map((person) => (
+                <article className="about-team-person" key={person.name}>
+                  <Avatar src={person.image} shape="square" size={96} />
+                  <Title level={4}>{person.name}</Title>
+                  <Text className="panel-label">{person.role}</Text>
+                  <Paragraph>{person.bio}</Paragraph>
+                </article>
+              ))}
+            </div>
+
+            <div className="about-voice-band">
+              {partnerQuotes.map((quote) => (
+                <div key={quote.name} className="about-voice-band-item">
+                  <strong>{quote.name}</strong>
+                  <Text className="panel-label">{quote.title}</Text>
+                  <Paragraph>{quote.quote}</Paragraph>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div id="contact" className="about-team-stage-side">
+            <div className="section-heading about-team-stage-contact-heading">
+              <Tag color="blue">Contact</Tag>
+              <Title level={2}>让官网从品牌展示进一步走向有效转化</Title>
+              <Paragraph>
+                联系信息后续仍可继续补齐，当前保留静态合作入口与场景说明，不接任何提交接口。
+              </Paragraph>
+            </div>
+            <div className="about-contact-card-list">
               {contactCards.map((item) => (
-                <Card className="feature-card" bordered={false} key={item.title}>
+                <article className="about-contact-item" key={item.title}>
                   <Title level={4}>{item.title}</Title>
                   <Paragraph>{item.description}</Paragraph>
-                </Card>
+                </article>
               ))}
-            </Space>
-          </Col>
-          <Col xs={24} lg={14}>
+            </div>
             <StaticContactPanel
               title="合作与演示入口"
               description="适用于产品演示、行业方案咨询、代理合作、高校实验室交流等场景。"
@@ -207,8 +193,8 @@ export default function AboutPage() {
                 },
               ]}
             />
-          </Col>
-        </Row>
+          </div>
+        </div>
       </section>
     </SiteLayout>
   );

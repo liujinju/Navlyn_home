@@ -1,4 +1,4 @@
-import { Card, Col, Row, Tag, Typography } from 'antd';
+import { Tag, Typography } from 'antd';
 import { Link } from 'react-router-dom';
 import StaticContactPanel from '../components/StaticContactPanel';
 import { contactCards } from '../data/site';
@@ -9,11 +9,11 @@ const { Title, Paragraph, Text } = Typography;
 const demoFlows = [
   {
     title: '产品演示',
-    detail: '快速理解 Commander、Scout、Seal 与 ARC OS 的协同关系，适合首次建立产品认知。',
+    detail: '适合首次建立产品认知，快速理解 Commander、Scout、Seal 与 ARC ENGINE 的协同关系。',
   },
   {
     title: '行业方案沟通',
-    detail: '围绕测绘、工程、矿业、应急等场景梳理业务目标、部署方式与交付路径。',
+    detail: '适合围绕测绘、工程、矿业、应急等场景梳理目标、部署方式与交付路径。',
   },
   {
     title: '合作与渠道洽谈',
@@ -31,25 +31,25 @@ const bookingAudiences = [
 const responseSteps = [
   {
     step: '01',
-    title: '提交需求方向',
-    detail: '明确你想看产品演示、行业方案还是合作交流，我们会据此组织最合适的沟通内容。',
+    title: '明确需求方向',
+    detail: '先确认你更关注产品演示、场景方案，还是合作洽谈，我们据此准备沟通内容。',
   },
   {
     step: '02',
-    title: '1 个工作日内响应',
-    detail: '当前页面不接表单接口，正式联系方式补齐后可替换；现阶段先以静态沟通入口进行承接。',
+    title: '快速响应与匹配',
+    detail: '根据行业、地区与合作意图，匹配合适的产品、案例和团队成员进入沟通。',
   },
   {
     step: '03',
-    title: '安排线上或现场演示',
-    detail: '根据场景复杂度提供产品演示、系统讲解、案例复盘与合作方式说明。',
+    title: '安排演示或交流',
+    detail: '可继续衔接线上讲解、现场演示、案例复盘与后续合作路径说明。',
   },
 ];
 
 export default function ContactPage() {
   return (
     <SiteLayout
-      title="演示咨询 | Navlyn 航链科技"
+      title="联系我们 | Navlyn 航链科技"
       description="预约产品演示、行业方案沟通与合作洽谈，了解 Navlyn 如何把低空智能能力落到真实业务场景。"
       hero={
         <section className="contact-page-hero">
@@ -60,26 +60,26 @@ export default function ContactPage() {
           <div className="contact-page-hero-shell">
             <div className="contact-page-hero-copy">
               <Text className="contact-page-hero-tag">Contact / Demo</Text>
-              <Title>让官网从品牌认知走向真正的演示与合作承接</Title>
-              <Paragraph>围绕产品演示、行业方案、渠道合作与国际业务对接，建立更清晰的沟通入口。</Paragraph>
+              <Title>让官网从品牌认知走向真实合作与演示承接</Title>
+              <Paragraph>围绕产品演示、行业方案、渠道合作与国际业务对接，建立更清晰、更有效的沟通入口。</Paragraph>
               <div className="route-hero-actions">
-                <a href="#demo-services" className="route-hero-action is-primary">
-                  查看演示内容
+                <a href="#contact-services" className="route-hero-action is-primary">
+                  查看服务内容
                 </a>
                 <a href="#contact-panel" className="route-hero-action">
-                  查看合作入口
+                  查看联系入口
                 </a>
               </div>
             </div>
 
             <div className="contact-page-hero-nav">
-              <a href="#demo-services" className="contact-page-hero-link">
+              <a href="#contact-services" className="contact-page-hero-link contact-page-hero-link-featured">
                 <span>Services</span>
-                <strong>我们能提供什么演示</strong>
+                <strong>我们能提供什么服务</strong>
               </a>
-              <a href="#booking-fit" className="contact-page-hero-link">
+              <a href="#contact-fit" className="contact-page-hero-link">
                 <span>Audience</span>
-                <strong>适合哪些客户预约</strong>
+                <strong>适合哪些客户沟通</strong>
               </a>
               <a href="#contact-panel" className="contact-page-hero-link">
                 <span>Contact</span>
@@ -90,80 +90,91 @@ export default function ContactPage() {
         </section>
       }
     >
-      <section className="page-section contact-page-services" id="demo-services">
-        <div className="section-heading">
-          <Text className="news-page-kicker">Demo Services</Text>
-          <Title level={2}>我们能提供什么演示</Title>
-          <Paragraph>先从产品认知、方案沟通和合作对接三条线承接需求，后续可继续扩展为多语言与真实表单流程。</Paragraph>
+      <section className="page-section contact-service-stage" id="contact-services">
+        <div className="contact-service-stage-media">
+          <img src="/media/company-news-feature.jpg" alt="Navlyn demo services" />
         </div>
-        <Row gutter={[20, 20]}>
-          {demoFlows.map((item) => (
-            <Col xs={24} md={8} key={item.title}>
-              <Card className="feature-card contact-service-card" bordered={false}>
-                <Title level={4}>{item.title}</Title>
-                <Paragraph>{item.detail}</Paragraph>
-              </Card>
-            </Col>
-          ))}
-        </Row>
-      </section>
-
-      <section className="page-section contact-page-fit" id="booking-fit">
-        <div className="contact-fit-grid">
-          <div className="contact-fit-copy">
-            <Text className="news-page-kicker">Who It's For</Text>
-            <Title level={2}>适合哪些客户预约</Title>
-            <Paragraph>把不同客户的诉求放到明确入口里，避免官网只停留在展示层，而不能有效承接商务与合作沟通。</Paragraph>
+        <div className="contact-service-stage-overlay" />
+        <div className="contact-service-stage-shell">
+          <div className="contact-service-stage-copy">
+            <Text className="panel-label">Demo Services</Text>
+            <Title level={2}>把产品演示、行业方案与合作洽谈组织成清晰入口</Title>
+            <Paragraph>先用更轻、更明确的内容模块承接需求，后续只需要补正式联系方式和真实流程，就能自然升级为完整的商务入口。</Paragraph>
           </div>
-          <div className="contact-fit-list">
-            {bookingAudiences.map((item) => (
-              <div key={item} className="contact-fit-item">
-                <span />
-                <p>{item}</p>
-              </div>
+
+          <div className="contact-service-stage-grid">
+            {demoFlows.map((item) => (
+              <article key={item.title} className="contact-service-stage-card">
+                <Title level={3}>{item.title}</Title>
+                <Paragraph>{item.detail}</Paragraph>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="page-section contact-page-process">
-        <div className="section-heading">
-          <Text className="news-page-kicker">Process</Text>
-          <Title level={2}>从咨询到演示的响应流程</Title>
+      <section className="page-section contact-audience-stage" id="contact-fit">
+        <div className="contact-audience-copy">
+          <Text className="news-page-kicker">Who It's For</Text>
+          <Title level={2}>适合哪些客户发起沟通</Title>
+          <Paragraph>把不同类型客户的目标、关注点与合作方向先放到公开入口中，官网才能从展示层真正走向承接层。</Paragraph>
         </div>
-        <Row gutter={[20, 20]}>
-          {responseSteps.map((item) => (
-            <Col xs={24} md={8} key={item.step}>
-              <Card className="timeline-card contact-process-card" bordered={false}>
-                <Text className="arc-flow-step">{item.step}</Text>
-                <Title level={4}>{item.title}</Title>
-                <Paragraph>{item.detail}</Paragraph>
-              </Card>
-            </Col>
+
+        <div className="contact-audience-list">
+          {bookingAudiences.map((item) => (
+            <div key={item} className="contact-audience-item">
+              <span />
+              <p>{item}</p>
+            </div>
           ))}
-        </Row>
+        </div>
       </section>
 
-      <section className="page-section contact-page-panel" id="contact-panel">
-        <div className="section-heading split">
-          <div>
-            <Tag color="blue">Contact</Tag>
-            <Title level={2}>静态联系入口与合作说明</Title>
-          </div>
-          <Paragraph>当前先按思维导图要求补齐独立承接页，不接接口；后续只需要把正式邮箱、电话和地址替换进来即可。</Paragraph>
+      <section className="page-section contact-process-stage">
+        <div className="section-heading">
+          <Text className="news-page-kicker">Process</Text>
+          <Title level={2}>从首次沟通到演示安排的承接流程</Title>
+          <Paragraph>当前先按静态结构展示沟通路径，不接提交接口；后续只需要替换真实联系方式和流程规则即可。</Paragraph>
         </div>
-        <Row gutter={[20, 20]}>
-          <Col xs={24} lg={10}>
-            <div className="contact-page-sidecards">
+
+        <div className="contact-process-grid">
+          {responseSteps.map((item) => (
+            <article key={item.step} className="contact-process-card">
+              <Text className="arc-flow-step">{item.step}</Text>
+              <Title level={3}>{item.title}</Title>
+              <Paragraph>{item.detail}</Paragraph>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="page-section contact-panel-stage" id="contact-panel">
+        <div className="about-team-stage-grid">
+          <div className="about-team-stage-main">
+            <div className="section-heading">
+              <Text className="news-page-kicker">Contact Paths</Text>
+              <Title level={2}>把产品、方案与合作意向映射到更清晰的沟通入口</Title>
+              <Paragraph>当前先保留静态结构，不接任何接口；等正式邮箱、电话和地址确认后，可以直接替换为可用联系页。</Paragraph>
+            </div>
+
+            <div className="about-contact-card-list">
               {contactCards.map((item) => (
-                <Card className="feature-card" bordered={false} key={item.title}>
+                <article className="about-contact-item" key={item.title}>
                   <Title level={4}>{item.title}</Title>
                   <Paragraph>{item.description}</Paragraph>
-                </Card>
+                </article>
               ))}
             </div>
-          </Col>
-          <Col xs={24} lg={14}>
+
+            <div className="contact-panel-stage-note">
+              <Tag color="blue">Static Mode</Tag>
+              <Paragraph>
+                这版页面先承担“解释沟通入口”的作用，而不是立即提交表单。这样能先把品牌和业务结构理顺，再接真实线索流。
+              </Paragraph>
+            </div>
+          </div>
+
+          <div className="about-team-stage-side">
             <StaticContactPanel
               title="合作与演示入口"
               description="适用于产品演示、行业方案咨询、代理合作、高校实验室交流等场景。"
@@ -180,8 +191,8 @@ export default function ContactPage() {
               actionLabel="了解公司背景"
               actionTo="/about"
             />
-          </Col>
-        </Row>
+          </div>
+        </div>
       </section>
     </SiteLayout>
   );

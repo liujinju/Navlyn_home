@@ -160,9 +160,9 @@ export default function ProductsPage() {
           <div className="product-page-hero-shell">
             <div className="product-page-hero-copy">
               <Text className="product-page-hero-tag">Product System</Text>
-              <Title>三款核心终端，构成完整执行体系</Title>
+              <Title>空海协同终端矩阵</Title>
               <Paragraph>
-                Commander 负责决策中枢，Scout 承担高频执行，Seal 延伸至水域协同。
+                以 Commander、Scout 与 Seal 覆盖任务决策、高频执行与水域协同，形成完整产品体系。
               </Paragraph>
               <div className="route-hero-actions">
                 <a href="#commander" className="route-hero-action is-primary">

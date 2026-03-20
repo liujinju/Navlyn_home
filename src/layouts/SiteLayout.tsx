@@ -34,7 +34,13 @@ export default function SiteLayout({
       (item) => item.path === location.pathname || (item.path !== '/' && location.pathname.startsWith(`${item.path}/`)),
     )?.path ?? location.pathname;
 
-  const menuItems: MenuProps['items'] = siteNavItems.map((item) => ({
+  const desktopMenuItems: MenuProps['items'] = siteNavItems.map((item) => ({
+    key: item.path,
+    icon: item.icon,
+    label: <Link to={item.path}>{item.label}</Link>,
+  }));
+
+  const mobileMenuItems: MenuProps['items'] = siteNavItems.map((item) => ({
     key: item.path,
     icon: item.icon,
     label: <Link to={item.path}>{item.label}</Link>,
@@ -51,35 +57,43 @@ export default function SiteLayout({
     <Layout className="site-shell">
       <Seo title={title} description={description} />
       <Header className="site-header">
-        <Link to="/" className="brand-mark">
-          <img src="/media/logo-white.png" alt="Navlyn 航链科技" />
-        </Link>
-        <Menu
-          className="desktop-menu"
-          mode="horizontal"
-          selectedKeys={[activeNavPath]}
-          items={menuItems}
-          overflowedIndicator={null}
-        />
-        <Space size="middle" className="header-actions-desktop">
-          <Dropdown menu={{ items: languageItems }} trigger={['click']} placement="bottomRight">
-            <Button type="default" ghost className="header-language-button">
-              <span className="language-flag-icon" aria-hidden="true" />
-              <span>语言</span>
-              <DownOutlined />
+        <div className="site-header-side site-header-side-left">
+          <Link to="/" className="brand-mark">
+            <img src="/media/logo-white.png" alt="Navlyn 航链科技" />
+          </Link>
+        </div>
+        <div className="site-header-center">
+          <Menu
+            className="desktop-menu"
+            mode="horizontal"
+            selectedKeys={[activeNavPath]}
+            items={desktopMenuItems}
+            disabledOverflow
+            overflowedIndicator={null}
+          />
+        </div>
+        <div className="site-header-side site-header-side-right">
+          <Space size="middle" className="header-actions-desktop">
+            <Dropdown menu={{ items: languageItems }} trigger={['click']} placement="bottomRight">
+              <Button type="default" ghost className="header-language-button">
+                <span className="language-flag-icon" aria-hidden="true" />
+                <span>语言</span>
+                <DownOutlined />
+              </Button>
+            </Dropdown>
+            <Button type="default" ghost className="header-account-button" onClick={() => navigate('/login')}>
+              登录
             </Button>
-          </Dropdown>
-          <Button type="default" ghost className="header-account-button" onClick={() => navigate('/register')}>
-            注册
-          </Button>
-          <Button type="default" ghost className="header-account-button" onClick={() => navigate('/login')}>
-            登录
-          </Button>
-          <Button type="primary" className="header-account-button is-primary" onClick={() => navigate('/profile')}>
-            个人中心
-          </Button>
-        </Space>
-        <div className="header-actions-mobile">
+            <Button
+              type="primary"
+              className="header-account-button is-primary"
+              onClick={() => navigate('/profile')}
+            >
+              个人中心
+            </Button>
+          </Space>
+        </div>
+        {/* <div className="header-actions-mobile">
           <Button
             className="mobile-menu-trigger"
             type="default"
@@ -88,7 +102,7 @@ export default function SiteLayout({
             onClick={() => setMobileNavOpen(true)}
             aria-label="打开导航菜单"
           />
-        </div>
+        </div> */}
       </Header>
       <Drawer
         title="Navlyn"
@@ -101,7 +115,7 @@ export default function SiteLayout({
         <Menu
           mode="inline"
           selectedKeys={[activeNavPath]}
-          items={menuItems}
+          items={mobileMenuItems}
           onClick={() => setMobileNavOpen(false)}
         />
         <div className="mobile-nav-actions">
@@ -112,18 +126,6 @@ export default function SiteLayout({
               <DownOutlined />
             </Button>
           </Dropdown>
-          <Button
-            block
-            type="default"
-            ghost
-            className="header-account-button"
-            onClick={() => {
-              setMobileNavOpen(false);
-              navigate('/register');
-            }}
-          >
-            注册
-          </Button>
           <Button
             block
             type="default"

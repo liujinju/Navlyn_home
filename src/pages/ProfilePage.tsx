@@ -139,9 +139,9 @@ export default function ProfilePage() {
               </Card>
 
               <Card className="feature-card" bordered={false}>
-                <Tag color="blue">Next Version</Tag>
-                <Title level={3}>后续可扩展的个人中心能力</Title>
-                <Paragraph>下一步可以继续补齐账号资料编辑、项目收藏、下载记录、合作申请进度和团队成员协作视图。</Paragraph>
+                <Tag color="blue">Capability Scope</Tag>
+                <Title level={3}>个人中心能力边界</Title>
+                <Paragraph>当前原型聚焦账号信息、最近访问和模块入口展示，后续可自然扩展到资料编辑、收藏记录与合作进度。</Paragraph>
               </Card>
             </div>
           </div>

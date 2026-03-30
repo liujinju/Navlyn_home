@@ -1,6 +1,16 @@
 import { Button, Drawer, Dropdown, Layout, Menu, Space, Typography } from 'antd';
 import type { MenuProps } from 'antd';
-import { DownOutlined, MenuOutlined } from '@ant-design/icons';
+import {
+  ClusterOutlined,
+  CompassOutlined,
+  ContactsOutlined,
+  DeploymentUnitOutlined,
+  DownOutlined,
+  HomeOutlined,
+  InfoCircleOutlined,
+  MenuOutlined,
+  ReadOutlined,
+} from '@ant-design/icons';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import type { PropsWithChildren, ReactNode } from 'react';
@@ -9,6 +19,16 @@ import { footerNavGroups, footerSummary, siteNavItems } from '../data/site';
 
 const { Header, Content, Footer } = Layout;
 const { Paragraph, Text } = Typography;
+
+const navIcons = {
+  home: <HomeOutlined />,
+  products: <DeploymentUnitOutlined />,
+  arc: <ClusterOutlined />,
+  industries: <CompassOutlined />,
+  'knowledge-base': <ReadOutlined />,
+  partners: <ContactsOutlined />,
+  about: <InfoCircleOutlined />,
+} as const;
 
 interface SiteLayoutProps extends PropsWithChildren {
   title: string;
@@ -34,17 +54,14 @@ export default function SiteLayout({
       (item) => item.path === location.pathname || (item.path !== '/' && location.pathname.startsWith(`${item.path}/`)),
     )?.path ?? location.pathname;
 
-  const desktopMenuItems: MenuProps['items'] = siteNavItems.map((item) => ({
-    key: item.path,
-    icon: item.icon,
-    label: <Link to={item.path}>{item.label}</Link>,
-  }));
+  const createMenuItems = (showIcons: boolean): MenuProps['items'] =>
+    siteNavItems.map((item) => ({
+      key: item.path,
+      icon: showIcons ? navIcons[item.iconKey] : undefined,
+      label: <Link to={item.path}>{item.label}</Link>,
+    }));
 
-  const mobileMenuItems: MenuProps['items'] = siteNavItems.map((item) => ({
-    key: item.path,
-    icon: item.icon,
-    label: <Link to={item.path}>{item.label}</Link>,
-  }));
+  const mobileMenuItems = createMenuItems(true);
 
   const languageItems: MenuProps['items'] = [
     { key: 'zh', label: '中文' },
@@ -63,14 +80,20 @@ export default function SiteLayout({
           </Link>
         </div>
         <div className="site-header-center">
-          <Menu
-            className="desktop-menu"
-            mode="horizontal"
-            selectedKeys={[activeNavPath]}
-            items={desktopMenuItems}
-            disabledOverflow
-            overflowedIndicator={null}
-          />
+          <nav className="desktop-nav" aria-label="主导航">
+            {siteNavItems.map((item) => {
+              const isActive = activeNavPath === item.path;
+
+              return (
+                <Link key={item.path} to={item.path} className={`desktop-nav-link${isActive ? ' is-active' : ''}`}>
+                  <span className="desktop-nav-icon" aria-hidden="true">
+                    {navIcons[item.iconKey]}
+                  </span>
+                  <span className="desktop-nav-text">{item.label}</span>
+                </Link>
+              );
+            })}
+          </nav>
         </div>
         <div className="site-header-side site-header-side-right">
           <Space size="middle" className="header-actions-desktop">
@@ -93,7 +116,7 @@ export default function SiteLayout({
             </Button>
           </Space>
         </div>
-        {/* <div className="header-actions-mobile">
+        <div className="header-actions-mobile">
           <Button
             className="mobile-menu-trigger"
             type="default"
@@ -102,7 +125,7 @@ export default function SiteLayout({
             onClick={() => setMobileNavOpen(true)}
             aria-label="打开导航菜单"
           />
-        </div> */}
+        </div>
       </Header>
       <Drawer
         title="Navlyn"

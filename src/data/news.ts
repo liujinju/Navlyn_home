@@ -10,12 +10,33 @@ export interface NewsItem {
   body: string[];
 }
 
+const NEWS_DATE_PATTERN = /^(\d{4})-(\d{2})-(\d{2})$/;
+
 export function formatNewsDate(date: string) {
+  const match = NEWS_DATE_PATTERN.exec(date);
+
+  if (!match) {
+    return date;
+  }
+
+  const year = Number(match[1]);
+  const month = Number(match[2]);
+  const day = Number(match[3]);
+  const parsedDate = new Date(year, month - 1, day);
+
+  if (
+    parsedDate.getFullYear() !== year ||
+    parsedDate.getMonth() !== month - 1 ||
+    parsedDate.getDate() !== day
+  ) {
+    return date;
+  }
+
   return new Intl.DateTimeFormat('zh-CN', {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
-  }).format(new Date(date));
+  }).format(parsedDate);
 }
 
 export const newsItems: NewsItem[] = [

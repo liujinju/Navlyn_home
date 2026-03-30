@@ -36,14 +36,14 @@ export default function StaticContactPanel({
           </Card>
         ))}
         <Card className="feature-card contact-info-card" bordered={false}>
-          <Title level={5}>联系信息待补充</Title>
-          <Paragraph>当前页面保留静态占位，正式邮箱、电话和地址确认后可以直接替换到这里。</Paragraph>
+          <Title level={5}>商务联系信息</Title>
+          <Paragraph>商务邮箱、电话、办公地址与展示中心等正式联系信息，将通过该区域统一呈现。</Paragraph>
           <Text type="secondary">
-            <MailOutlined /> 建议后续补齐商务邮箱
+            <MailOutlined /> 商务邮箱
           </Text>
           <br />
           <Text type="secondary">
-            <EnvironmentOutlined /> 建议后续补齐办公地址 / 展示中心
+            <EnvironmentOutlined /> 办公地址 / 展示中心
           </Text>
         </Card>
         {actionLabel && actionTo ? (

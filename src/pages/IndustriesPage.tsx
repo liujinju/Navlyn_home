@@ -1,133 +1,76 @@
-import { Card, Col, Row, Segmented, Tag, Typography } from 'antd';
-import { useMemo, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Typography } from 'antd';
+import { useState } from 'react';
 import SiteLayout from '../layouts/SiteLayout';
-import { industries } from '../data/home';
+import { industryPageHero, industryScenarioItems } from '../data/industries';
 
 const { Title, Paragraph, Text } = Typography;
 
 export default function IndustriesPage() {
-  const [industryKey, setIndustryKey] = useState(industries[0].key);
-  const activeIndustry = useMemo(
-    () => industries.find((item) => item.key === industryKey) ?? industries[0],
-    [industryKey],
-  );
+  const [activeKey, setActiveKey] = useState(industryScenarioItems[0].key);
+  const activeItem = industryScenarioItems.find((item) => item.key === activeKey) ?? industryScenarioItems[0];
 
   return (
     <SiteLayout
       title="行业应用 | Navlyn 航链科技"
-      description="查看 Navlyn 在测绘、建筑工程、矿业与应急救援场景中的低空智能应用。"
+      description="通过标签卡片切换巡检、农业、能源、矿业、建筑与海洋作业等行业场景。"
       hero={
-        <section className="industries-page-hero">
-          <div className="industries-page-hero-media">
-            <img src={activeIndustry.image} alt={activeIndustry.label} />
+        <section className="doc-industries-hero">
+          <div className="doc-industries-hero-media">
+            <img src={activeItem.image} alt={activeItem.imageAlt} style={{ objectPosition: activeItem.imagePosition }} />
           </div>
-          <div className="industries-page-hero-overlay" />
-          <div className="industries-page-hero-shell">
-            <div className="industries-page-hero-copy">
-              <Text className="industries-page-hero-tag">Industry Services</Text>
-              <Title>围绕真实业务场景组织产品，而不是单纯陈列设备</Title>
-              <Paragraph>
-                让产品、系统与交付能力回到业务现场，在具体场景里完成验证、复制与规模化落地。
-              </Paragraph>
-              <div className="route-hero-actions">
-                <a href="#industry-stage" className="route-hero-action is-primary">
-                  查看场景方案
-                </a>
-                <Link to="/contact" className="route-hero-action">
-                  预约行业咨询
-                </Link>
-              </div>
+          <div className="doc-industries-hero-overlay" />
+          <div className="doc-industries-hero-shell">
+            <div className="doc-industries-hero-copy">
+              <Text className="doc-industries-hero-tag">{industryPageHero.tag}</Text>
+              <Title>{industryPageHero.title}</Title>
+              <Paragraph>{industryPageHero.description}</Paragraph>
             </div>
-
-            <div className="industries-page-hero-nav">
-              <a href="#industry-stage" className="industries-page-hero-link">
-                <span>Scenario</span>
-                <strong>{activeIndustry.label}</strong>
-              </a>
-              <a href="#industry-stage" className="industries-page-hero-link">
-                <span>Solution</span>
-                <strong>{activeIndustry.eyebrow}</strong>
-              </a>
-              <a href="#industry-summary" className="industries-page-hero-link">
-                <span>Delivery</span>
-                <strong>行业结果摘要</strong>
-              </a>
-            </div>
-
-            <div className="industries-page-hero-tabs">
-              <Segmented
-                block
-                className="industry-tabs"
-                options={industries.map((item) => ({
-                  label: item.label,
-                  value: item.key,
-                }))}
-                value={industryKey}
-                onChange={(value) => setIndustryKey(String(value))}
-              />
+            <div className="doc-industry-card-rail">
+              {industryScenarioItems.map((item) => (
+                <button
+                  key={item.key}
+                  type="button"
+                  className={`doc-industry-card${item.key === activeKey ? ' is-active' : ''}`}
+                  onClick={() => setActiveKey(item.key)}
+                >
+                  <div className="doc-industry-card-media">
+                    <img src={item.image} alt={item.imageAlt} style={{ objectPosition: item.imagePosition }} />
+                  </div>
+                  <div className="doc-industry-card-overlay" />
+                  <div className="doc-industry-card-copy">
+                    <span>{item.label}</span>
+                    <strong>{item.metric}</strong>
+                    <em>{item.statement}</em>
+                  </div>
+                </button>
+              ))}
             </div>
           </div>
         </section>
       }
     >
-      <section className="page-section" id="industry-stage">
-        <section className="industry-stage route-industry-stage">
-          <div className="industry-stage-media">
-            <img src={activeIndustry.image} alt={activeIndustry.label} />
-          </div>
-          <div className="industry-stage-overlay" />
-          <div className="industry-stage-shell">
-            <div className="industry-stage-head">
-              <Text className="panel-label">{activeIndustry.eyebrow}</Text>
-              <Title>{activeIndustry.label}</Title>
-              <Paragraph>{activeIndustry.solution}</Paragraph>
-            </div>
-            <div className="industry-stage-grid">
-              <div className="industry-stage-panel">
-                <Text className="panel-label">行业痛点</Text>
-                <Paragraph>{activeIndustry.painPoint}</Paragraph>
-              </div>
-              <div className="industry-stage-panel">
-                <Text className="panel-label">Navlyn 方案</Text>
-                <Paragraph>{activeIndustry.solution}</Paragraph>
-              </div>
-              <div className="industry-stage-panel">
-                <Text className="panel-label">交付结果</Text>
-                <Paragraph>{activeIndustry.outcome}</Paragraph>
-              </div>
-            </div>
-          </div>
-        </section>
-      </section>
-
-      <section className="page-section" id="industry-summary">
-        <div className="section-heading">
-          <Text className="news-page-kicker">Scenario Overview</Text>
-          <Title level={2}>面向关键行业场景的交付摘要</Title>
-          <Paragraph>把业务痛点、解决方案和落地结果组织成可复制的行业模板。</Paragraph>
+      <section className="page-section doc-industry-detail-stage">
+        <div className="doc-industry-detail-media">
+          <img src={activeItem.image} alt={activeItem.imageAlt} style={{ objectPosition: activeItem.imagePosition }} />
         </div>
-        <Row gutter={[20, 20]} className="industry-summary-grid">
-          {industries.map((item) => (
-            <Col xs={24} md={12} xl={6} key={item.key}>
-              <Card className="industry-summary-card" bordered={false}>
-                <Tag color="cyan">{item.label}</Tag>
-                <Title level={4}>{item.eyebrow}</Title>
-                <Paragraph>{item.outcome}</Paragraph>
-                <div className="industry-summary-meta">
-                  <div>
-                    <span>痛点</span>
-                    <strong>{item.painPoint}</strong>
-                  </div>
-                  <div>
-                    <span>方案</span>
-                    <strong>{item.solution}</strong>
-                  </div>
-                </div>
-              </Card>
-            </Col>
-          ))}
-        </Row>
+        <div className="doc-industry-detail-copy">
+          <Text className="news-page-kicker">{activeItem.label}</Text>
+          <Title level={2}>{activeItem.statement}</Title>
+          <div className="doc-industry-detail-points">
+            <article>
+              <strong>硬核指标</strong>
+              <p>{activeItem.metric}</p>
+            </article>
+            <article>
+              <strong>结果表达</strong>
+              <p>{activeItem.metricDetail}</p>
+            </article>
+            <article>
+              <strong>技术支撑点</strong>
+              <p>{activeItem.support}</p>
+            </article>
+          </div>
+        </div>
       </section>
     </SiteLayout>
   );

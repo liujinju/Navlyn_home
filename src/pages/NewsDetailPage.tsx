@@ -8,7 +8,31 @@ const { Title, Paragraph, Text } = Typography;
 export default function NewsDetailPage() {
   const { slug } = useParams();
   const articleIndex = newsItems.findIndex((item) => item.slug === slug);
-  const article = newsItems[articleIndex] ?? newsItems[0];
+  const article = articleIndex >= 0 ? newsItems[articleIndex] : null;
+
+  if (!article) {
+    return (
+      <SiteLayout title="报道未找到 | Navlyn 航链科技" description="当前访问的报道不存在或链接已失效。">
+        <section className="page-section not-found-page">
+          <div className="section-heading not-found-copy">
+            <Text className="news-page-kicker">Story Not Found</Text>
+            <Title level={1}>未找到对应报道</Title>
+            <Paragraph>当前报道可能已下线、链接已变更，或当前内容尚未正式发布。</Paragraph>
+          </div>
+
+          <div className="not-found-actions">
+            <Link to="/news" className="ant-btn ant-btn-primary ant-btn-lg button-link">
+              返回新闻列表
+            </Link>
+            <Link to="/" className="ant-btn ant-btn-default ant-btn-lg button-link">
+              返回首页
+            </Link>
+          </div>
+        </section>
+      </SiteLayout>
+    );
+  }
+
   const relatedNews = newsItems.filter((item) => item.slug !== article.slug).slice(0, 2);
   const previousArticle = newsItems[(articleIndex - 1 + newsItems.length) % newsItems.length];
   const nextArticle = newsItems[(articleIndex + 1) % newsItems.length];

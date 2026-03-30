@@ -1,5 +1,5 @@
 import { Tag, Typography } from 'antd';
-import { Link } from 'react-router-dom';
+import ImmersivePageHero from '../components/ImmersivePageHero';
 import StaticContactPanel from '../components/StaticContactPanel';
 import { contactCards } from '../data/site';
 import SiteLayout from '../layouts/SiteLayout';
@@ -52,42 +52,22 @@ export default function ContactPage() {
       title="联系我们 | Navlyn 航链科技"
       description="预约产品演示、行业方案沟通与合作洽谈，了解 Navlyn 如何把低空智能能力落到真实业务场景。"
       hero={
-        <section className="contact-page-hero">
-          <div className="contact-page-hero-media">
-            <img src="/media/about-team-collab.jpg" alt="Navlyn contact and demo" />
-          </div>
-          <div className="contact-page-hero-overlay" />
-          <div className="contact-page-hero-shell">
-            <div className="contact-page-hero-copy">
-              <Text className="contact-page-hero-tag">Contact / Demo</Text>
-              <Title>让官网从品牌认知走向真实合作与演示承接</Title>
-              <Paragraph>围绕产品演示、行业方案、渠道合作与国际业务对接，建立更清晰、更有效的沟通入口。</Paragraph>
-              <div className="route-hero-actions">
-                <a href="#contact-services" className="route-hero-action is-primary">
-                  查看服务内容
-                </a>
-                <a href="#contact-panel" className="route-hero-action">
-                  查看联系入口
-                </a>
-              </div>
-            </div>
-
-            <div className="contact-page-hero-nav">
-              <a href="#contact-services" className="contact-page-hero-link contact-page-hero-link-featured">
-                <span>Services</span>
-                <strong>我们能提供什么服务</strong>
-              </a>
-              <a href="#contact-fit" className="contact-page-hero-link">
-                <span>Audience</span>
-                <strong>适合哪些客户沟通</strong>
-              </a>
-              <a href="#contact-panel" className="contact-page-hero-link">
-                <span>Contact</span>
-                <strong>静态联系入口</strong>
-              </a>
-            </div>
-          </div>
-        </section>
+        <ImmersivePageHero
+          prefix="contact-page-hero"
+          media={<img src="/media/about-team-collab.jpg" alt="Navlyn contact and demo" />}
+          tag="Contact / Demo"
+          title="让官网从品牌认知走向真实合作与演示承接"
+          description="围绕产品演示、行业方案、渠道合作与国际业务对接，建立清晰、高效、可信的沟通入口。"
+          actions={[
+            { label: '查看服务内容', href: '#contact-services', primary: true },
+            { label: '查看联系入口', href: '#contact-panel' },
+          ]}
+          navItems={[
+            { label: 'Services', title: '我们能提供什么服务', href: '#contact-services', featured: true },
+            { label: 'Audience', title: '适合哪些客户沟通', href: '#contact-fit' },
+            { label: 'Contact', title: '沟通入口概览', href: '#contact-panel' },
+          ]}
+        />
       }
     >
       <section className="page-section contact-service-stage" id="contact-services">
@@ -99,7 +79,7 @@ export default function ContactPage() {
           <div className="contact-service-stage-copy">
             <Text className="panel-label">Demo Services</Text>
             <Title level={2}>把产品演示、行业方案与合作洽谈组织成清晰入口</Title>
-            <Paragraph>先用更轻、更明确的内容模块承接需求，后续只需要补正式联系方式和真实流程，就能自然升级为完整的商务入口。</Paragraph>
+            <Paragraph>通过更清晰的服务分类和沟通指引，让不同客户能够快速找到合适的产品、方案与合作对接路径。</Paragraph>
           </div>
 
           <div className="contact-service-stage-grid">
@@ -134,7 +114,7 @@ export default function ContactPage() {
         <div className="section-heading">
           <Text className="news-page-kicker">Process</Text>
           <Title level={2}>从首次沟通到演示安排的承接流程</Title>
-          <Paragraph>当前先按静态结构展示沟通路径，不接提交接口；后续只需要替换真实联系方式和流程规则即可。</Paragraph>
+          <Paragraph>以清晰、可预期的沟通路径承接演示预约、行业咨询与合作洽谈，帮助双方更快进入有效交流。</Paragraph>
         </div>
 
         <div className="contact-process-grid">
@@ -154,7 +134,7 @@ export default function ContactPage() {
             <div className="section-heading">
               <Text className="news-page-kicker">Contact Paths</Text>
               <Title level={2}>把产品、方案与合作意向映射到更清晰的沟通入口</Title>
-              <Paragraph>当前先保留静态结构，不接任何接口；等正式邮箱、电话和地址确认后，可以直接替换为可用联系页。</Paragraph>
+              <Paragraph>围绕产品演示、行业咨询与合作洽谈，建立更清晰的对外沟通结构，帮助客户快速匹配合适入口。</Paragraph>
             </div>
 
             <div className="about-contact-card-list">
@@ -167,9 +147,9 @@ export default function ContactPage() {
             </div>
 
             <div className="contact-panel-stage-note">
-              <Tag color="blue">Static Mode</Tag>
+              <Tag color="blue">Contact Guide</Tag>
               <Paragraph>
-                这版页面先承担“解释沟通入口”的作用，而不是立即提交表单。这样能先把品牌和业务结构理顺，再接真实线索流。
+                当前页面以介绍沟通路径和服务范围为主，帮助客户更快找到合适的产品、方案与合作对接入口。
               </Paragraph>
             </div>
           </div>
@@ -180,8 +160,8 @@ export default function ContactPage() {
               description="适用于产品演示、行业方案咨询、代理合作、高校实验室交流等场景。"
               items={[
                 {
-                  title: '静态联系区',
-                  description: '当前页面不接提交接口，正式联系方式确认后可直接替换到这里。',
+                  title: '商务沟通入口',
+                  description: '适用于产品演示申请、行业方案咨询、渠道合作对接与联合创新交流。',
                 },
                 {
                   title: '建议沟通准备',

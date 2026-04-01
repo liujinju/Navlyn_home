@@ -365,8 +365,8 @@ export default function HomePage() {
             <div className="product-software-tech-shell">
               <div className="product-software-tech-content">
                 <div className="product-software-tech-main">
-                  <Title level={2} className="product-software-tech-heading">低空智能操作系统</Title>
-                  <Paragraph className="product-software-tech-text">围绕任务理解、系统治理与多终端协同，构成航链科技低空智能体系中的软件中枢。</Paragraph>
+                  <Title level={2} className="product-software-tech-heading">{homeHardwareMatrix.software.description} </Title>
+                  <Paragraph className="product-software-tech-text">{homeHardwareMatrix.software.summary}</Paragraph>
                 </div>
               </div>
             </div>

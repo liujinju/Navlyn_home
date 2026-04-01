@@ -2431,7 +2431,7 @@
 .product-software-tech-bg-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(4, 7, 14, 0.94) 0%, rgba(5, 8, 15, 0.78) 40%, rgba(4, 7, 14, 0.9) 100%), radial-gradient(circle at 70% 20%, rgba(70, 130, 255, 0.25), transparent 35%);
+  background: linear-gradient(135deg, rgba(4, 7, 14, 0.94) 0%, rgba(5, 8, 15, 0.78) 40%, rgba(4, 7, 14, 0.7) 100%), radial-gradient(circle at 70% 20%, rgba(70, 130, 255, 0.25), transparent 35%);
 }
 
 .product-software-tech-grid-lines {
@@ -2477,6 +2477,7 @@
   position: relative;
   z-index: 1;
   display: flex;
+  align-items: center;
   flex-direction: column;
   min-height: inherit;
   padding: 40px 48px;
@@ -2497,7 +2498,7 @@
 
 .product-software-tech-content {
   display: flex;
-  align-items: flex-end;
+  
   justify-content: space-between;
   gap: 32px;
   flex-wrap: wrap;
@@ -2518,12 +2519,13 @@
 }
 
 .product-software-tech-heading {
-  margin: 0 0 12px !important;
+  margin: 80px 0 140px !important;
   color: #fff !important;
   font-size: clamp(28px, 2.5vw, 40px) !important;
   font-weight: 700 !important;
   line-height: 1.1 !important;
   letter-spacing: -0.03em !important;
+  text-align: center;
 }
 
 .product-software-tech-text {

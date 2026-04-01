@@ -277,7 +277,7 @@ export const homeHardwareMatrix = {
       },
     ],
     chips: ['意图驱动', '多端编排', '安全治理', '系统中枢'],
-    image: '/media/product-entry-arc-os.jpg',
+    image: '/media/arc-module-11.jpg',
     imageAlt: 'ARC ENGINE software system',
     imagePosition: 'center center',
   },

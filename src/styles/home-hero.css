@@ -3,22 +3,19 @@
   overflow: hidden;
   min-height: calc(100vh - var(--site-header-height));
   padding: 0 clamp(24px, 4vw, 48px);
-  background: linear-gradient(180deg, #030612 0%, #0a1628 100%);
+  background: linear-gradient(180deg, #060910 0%, #0a0f17 100%);
 }
 
-/* Tech grid overlay */
 .hero-section::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: 
-    linear-gradient(rgba(72, 130, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(72, 130, 255, 0.03) 1px, transparent 1px);
-  background-size: 60px 60px;
+  background:
+    radial-gradient(circle at 72% 18%, rgba(255, 255, 255, 0.06), transparent 18%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0) 18%);
   pointer-events: none;
   z-index: 1;
-  opacity: 0.24;
-  animation: none;
+  opacity: 0.7;
 }
 
 .hero-section::after {
@@ -53,7 +50,7 @@
 .hero-fallback-poster {
   position: absolute;
   inset: 0;
-  filter: saturate(1.02) brightness(0.7);
+  filter: saturate(1.01) brightness(0.8);
   transform: scale(1.02);
 }
 
@@ -96,41 +93,24 @@
   height: 100%;
   object-fit: cover;
   opacity: 0;
-  filter: saturate(1.04) contrast(1.04) brightness(0.84);
+  filter: saturate(1.01) contrast(1.01) brightness(0.9);
   transition: opacity 560ms ease;
 }
 
 .hero-section.is-video-ready .hero-background-video {
-  opacity: 0.94;
+  opacity: 0.96;
 }
 
 .hero-ambient {
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 68% 12%, rgba(77, 136, 255, 0.28), transparent 18%),
-    radial-gradient(circle at 78% 22%, rgba(20, 110, 255, 0.2), transparent 20%),
-    radial-gradient(circle at 24% 40%, rgba(38, 83, 182, 0.14), transparent 26%),
-    radial-gradient(circle at 50% 80%, rgba(56, 116, 255, 0.12), transparent 30%);
-  pointer-events: none;
-  animation: ambient-glow 6s ease-in-out infinite;
-}
-
-@keyframes ambient-glow {
-  0%, 100% {
-    opacity: 0.8;
-  }
-  50% {
-    opacity: 1;
-  }
+  display: none;
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(2, 5, 14, 0.64) 0%, rgba(2, 5, 14, 0.34) 38%, rgba(2, 5, 14, 0.12) 68%, rgba(2, 5, 14, 0.24) 100%),
-    linear-gradient(180deg, rgba(2, 5, 14, 0.12) 0%, rgba(2, 5, 14, 0.14) 34%, rgba(2, 5, 14, 0.72) 100%);
+    linear-gradient(90deg, rgba(5, 8, 14, 0.56) 0%, rgba(5, 8, 14, 0.26) 36%, rgba(5, 8, 14, 0.08) 68%, rgba(5, 8, 14, 0.18) 100%),
+    linear-gradient(180deg, rgba(5, 8, 14, 0.08) 0%, rgba(5, 8, 14, 0.12) 34%, rgba(5, 8, 14, 0.54) 100%);
   pointer-events: none;
 }
 
@@ -157,7 +137,7 @@
   letter-spacing: -0.05em;
   white-space: normal;
   text-wrap: balance;
-  text-shadow: 0 10px 40px rgba(2, 7, 20, 0.28);
+  text-shadow: 0 8px 24px rgba(2, 7, 20, 0.18);
 }
 
 .hero-copy {
@@ -192,7 +172,7 @@
   font-size: clamp(28px, 2.95vw, 44px);
   line-height: 1.08;
   letter-spacing: -0.03em;
-  text-shadow: 0 8px 28px rgba(2, 7, 20, 0.24);
+  text-shadow: 0 6px 18px rgba(2, 7, 20, 0.16);
 }
 
 .hero-title-sub {
@@ -202,7 +182,7 @@
   font-size: clamp(15px, 1.24vw, 18px);
   line-height: 1.45;
   letter-spacing: 0.08em;
-  text-shadow: 0 6px 18px rgba(2, 7, 20, 0.22);
+  text-shadow: 0 4px 12px rgba(2, 7, 20, 0.14);
 }
 
 .hero-actions {
@@ -210,7 +190,7 @@
   align-items: center;
   justify-content: center;
   gap: 14px;
-  margin-top: 26px;
+  margin-top: 30px;
   flex-wrap: wrap;
 }
 
@@ -231,18 +211,14 @@
   font-weight: 600;
   text-decoration: none;
   letter-spacing: 0.02em;
-  box-shadow:
-    0 10px 26px var(--brand-blue-shadow),
-    inset 0 1px 0 rgba(255, 255, 255, 0.16);
+  box-shadow: 0 8px 20px var(--brand-blue-shadow);
   transition: all 200ms ease;
 }
 
 .hero-cta-primary:hover {
   transform: translateY(-2px);
   border-color: rgba(120, 166, 255, 0.42);
-  box-shadow:
-    0 12px 30px rgba(12, 41, 124, 0.34),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 24px rgba(12, 41, 124, 0.28);
   background: linear-gradient(135deg, var(--brand-blue-hover-start) 0%, var(--brand-blue-hover-end) 100%);
 }
 
@@ -263,20 +239,20 @@
   min-width: 132px;
   padding: 14px 22px;
   border-radius: 999px;
-  border: 1px solid rgba(148, 186, 255, 0.24);
-  background: rgba(10, 18, 34, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(12, 16, 24, 0.42);
   color: rgba(220, 231, 252, 0.9);
   font-size: 15px;
   font-weight: 500;
   text-decoration: none;
   letter-spacing: 0.02em;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px);
   transition: all 200ms ease;
 }
 
 .hero-cta-secondary:hover {
-  border-color: rgba(148, 186, 255, 0.4);
-  background: rgba(14, 24, 44, 0.6);
+  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(16, 22, 32, 0.6);
   transform: translateY(-1px);
 }
 

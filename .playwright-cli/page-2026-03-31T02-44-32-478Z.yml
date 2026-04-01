@@ -1,0 +1,265 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - link "Navlyn 航链科技" [ref=e6] [cursor=pointer]:
+      - /url: /
+      - img "Navlyn 航链科技" [ref=e7]
+    - navigation "主导航" [ref=e9]:
+      - link "首页" [ref=e10] [cursor=pointer]:
+        - /url: /
+        - img [ref=e12]:
+          - img [ref=e13]
+        - generic [ref=e15]: 首页
+      - link "产品体系" [ref=e16] [cursor=pointer]:
+        - /url: /products
+        - img [ref=e18]:
+          - img [ref=e19]
+        - generic [ref=e21]: 产品体系
+      - link "ARC ENGINE" [ref=e22] [cursor=pointer]:
+        - /url: /arc-os
+        - img [ref=e24]:
+          - img [ref=e25]
+        - generic [ref=e27]: ARC ENGINE
+      - link "行业应用" [ref=e28] [cursor=pointer]:
+        - /url: /industries
+        - img [ref=e30]:
+          - img [ref=e31]
+        - generic [ref=e33]: 行业应用
+      - link "知识库" [ref=e34] [cursor=pointer]:
+        - /url: /knowledge-base
+        - img [ref=e36]:
+          - img [ref=e37]
+        - generic [ref=e39]: 知识库
+      - link "客户与合作" [ref=e40] [cursor=pointer]:
+        - /url: /partners
+        - img [ref=e42]:
+          - img [ref=e43]
+        - generic [ref=e45]: 客户与合作
+      - link "关于我们" [ref=e46] [cursor=pointer]:
+        - /url: /about
+        - img [ref=e48]:
+          - img [ref=e49]
+        - generic [ref=e52]: 关于我们
+    - generic [ref=e54]:
+      - button "语言 down" [ref=e56] [cursor=pointer]:
+        - generic [ref=e58]: 语言
+        - img "down" [ref=e59]:
+          - img [ref=e60]
+      - button "登 录" [ref=e63] [cursor=pointer]:
+        - generic [ref=e64]: 登 录
+      - button "个人中心" [ref=e66] [cursor=pointer]:
+        - generic [ref=e67]: 个人中心
+  - main [ref=e68]:
+    - generic [ref=e73]:
+      - heading "Enabling Intelligent Airspace Capabilities" [level=1] [ref=e74]
+      - generic [ref=e75]: 开启飞行智能体时代
+      - generic [ref=e76]: 去飞手化｜安全可控｜群体协同
+      - generic [ref=e77]:
+        - link "探索产品" [ref=e78] [cursor=pointer]:
+          - /url: /products
+          - generic [ref=e79]: 探索产品
+          - img [ref=e80]
+        - link "了解更多" [ref=e82] [cursor=pointer]:
+          - /url: /about
+    - generic [ref=e83]:
+      - generic [ref=e87]:
+        - img "航链科技业务与团队展示" [ref=e89]
+        - img [ref=e91]
+        - generic [ref=e92]:
+          - generic [ref=e93]:
+            - generic [ref=e94]: What We Do
+            - heading "我们做什么" [level=2] [ref=e95]
+          - generic [ref=e96]:
+            - generic [ref=e97]: 航链科技（Navlyn）2025 年 8 月成立于中国浙江，承袭法国 Innotech-drone 工业无人机与精密测绘技术积淀，以低空经济 + 人工智能为核心定位，通过 AI 深度赋能硬件，打造具备高度自主意识的飞行智能体。
+            - generic [ref=e98]: 我们提供从硬件终端、ARC ENGINE 智能操作系统到行业解决方案的全链路低空智能服务，让作业从“遥控执行”走向“意图决策”，推动全球低空经济迈入智能化 3.0 时代。
+        - generic [ref=e99]:
+          - generic [ref=e100]: 向下滑动
+          - img [ref=e101]
+        - generic "我们做什么图片切换" [ref=e103]:
+          - button "查看第 1 张图片" [pressed] [ref=e104] [cursor=pointer]
+          - button "查看第 2 张图片" [ref=e105] [cursor=pointer]
+      - generic [ref=e109]:
+        - img "行业服务案例展示" [ref=e110]
+        - generic [ref=e111]:
+          - generic [ref=e112]:
+            - generic [ref=e113]: Industry Services
+            - heading "行业服务" [level=2] [ref=e114]
+          - generic [ref=e115]:
+            - generic [ref=e116]: 航链科技以全场景解决方案，服务测绘、建筑与能源、矿业资源、生态林业、公路铁路巡检、安防、应急救援七大领域，覆盖全球四大洲，落地 200+ 实地项目，累计飞行里程超 400 万公里。
+            - generic [ref=e117]: 已成为多国政府、世界 500 强企业的低空智能合作伙伴。
+      - generic [ref=e118]:
+        - generic [ref=e119]:
+          - generic [ref=e120]: Core Capabilities
+          - heading "王牌能力" [level=2] [ref=e121]
+          - generic [ref=e122]: 从系统中枢、软硬件协同到群体安全与工程交付，航链科技把低空能力沉淀为可复用、可规模化的系统能力。
+        - generic [ref=e123]:
+          - article [ref=e124]:
+            - img "ARC ENGINE system capability" [ref=e126]
+            - generic [ref=e128]:
+              - generic [ref=e129]: System Intelligence
+              - heading "ARC ENGINE 低空智能操作系统" [level=3] [ref=e130]
+              - generic [ref=e131]: 自主研发 L4 级端侧智能平台，实现任务意图理解、自动规划、全域治理，被誉为低空经济的“安卓系统”。
+              - generic [ref=e132]: 任务理解 · 自动规划 · 全域治理
+          - article [ref=e133]:
+            - img "Navlyn hardware and AI integration" [ref=e135]
+            - generic [ref=e137]:
+              - generic [ref=e138]: Hardware + AI
+              - heading "软硬件双核驱动" [level=3] [ref=e139]
+              - generic [ref=e140]: 自研空海一体硬件矩阵与 AI 中枢深度融合，硬件标准化、软件持续进化，达成“硬件折旧，软件增值”。
+              - generic [ref=e141]: 硬件标准化 · 软件持续进化
+          - article [ref=e142]:
+            - img "Navlyn swarm and secure collaboration" [ref=e144]
+            - generic [ref=e146]:
+              - generic [ref=e147]: Secure Swarm
+              - heading "群体智能与安全可控" [level=3] [ref=e148]
+              - generic [ref=e149]: 支持多机与空海联动，最多可调度 200 台设备协同作业；主权级权限治理与主动安全防护，满足关键行业合规要求。
+              - generic [ref=e150]: 多机协同 · 主动安全 · 权限治理
+          - article [ref=e151]:
+            - img "Navlyn engineering delivery capability" [ref=e153]
+            - generic [ref=e155]:
+              - generic [ref=e156]: Field Delivery
+              - heading "全场景工程交付能力" [level=3] [ref=e157]
+              - generic [ref=e158]: 从厘米级精密测绘到 24 小时无人巡检，从极端环境作业到应急救援，提供可落地、可复盘、可规模化的系统能力。
+              - generic [ref=e159]: 实地项目 · 全球交付 · 可规模化落地
+      - generic [ref=e160]:
+        - generic [ref=e161]:
+          - generic [ref=e162]: Product Gateways
+          - heading "产品入口" [level=2] [ref=e163]
+          - generic [ref=e164]: 从空海一体硬件终端到 ARC ENGINE 智能中枢，航链科技构建完整的低空智能产品体系。
+          - link "预约体验" [ref=e165] [cursor=pointer]:
+            - /url: /contact
+        - generic [ref=e166]:
+          - generic [ref=e167]:
+            - generic [ref=e168]:
+              - generic [ref=e169]: Core Hardware Matrix
+              - heading "核心硬件矩阵" [level=3] [ref=e170]
+              - generic [ref=e171]: 覆盖任务决策、空中执行与水面搜救三类终端，面向多场景部署形成完整的现场执行能力。
+            - generic [ref=e172]:
+              - link "旗舰终端 指挥官 Commander X1 边缘算力与任务决策中心 Commander X1" [ref=e173] [cursor=pointer]:
+                - /url: /products
+                - generic [ref=e174]:
+                  - generic [ref=e175]: 旗舰终端
+                  - heading "指挥官 Commander X1" [level=3] [ref=e176]
+                  - generic [ref=e177]: 边缘算力与任务决策中心
+                - img "Commander X1" [ref=e179]
+              - generic [ref=e180]:
+                - link "尖兵 Scout S1 高性价比多功能作业机 Scout S1" [ref=e181] [cursor=pointer]:
+                  - /url: /products
+                  - generic [ref=e182]:
+                    - heading "尖兵 Scout S1" [level=3] [ref=e183]
+                    - generic [ref=e184]: 高性价比多功能作业机
+                  - img "Scout S1" [ref=e186]
+                - link "海豹 Seal S1 自主水面无人救生艇 Seal S1" [ref=e187] [cursor=pointer]:
+                  - /url: /products
+                  - generic [ref=e188]:
+                    - heading "海豹 Seal S1" [level=3] [ref=e189]
+                    - generic [ref=e190]: 自主水面无人救生艇
+                  - img "Seal S1" [ref=e192]
+          - generic [ref=e193]:
+            - generic [ref=e194]:
+              - generic [ref=e195]: Core Software System
+              - heading "核心软件系统" [level=3] [ref=e196]
+              - generic [ref=e197]: 以 ARC ENGINE 为软件中枢，贯通任务理解、系统治理与多终端协同，让低空作业从遥控执行走向意图驱动。
+            - link "ARC ENGINE 低空智能操作系统 围绕任务理解、系统治理与多终端协同，构成航链科技低空智能体系中的软件中枢。 ARC ENGINE software system" [ref=e198] [cursor=pointer]:
+              - /url: /arc-os
+              - generic [ref=e199]:
+                - generic [ref=e200]: ARC ENGINE
+                - heading "低空智能操作系统" [level=3] [ref=e201]
+                - generic [ref=e202]: 围绕任务理解、系统治理与多终端协同，构成航链科技低空智能体系中的软件中枢。
+              - img "ARC ENGINE software system" [ref=e204]
+      - generic [ref=e205]:
+        - generic [ref=e206]:
+          - generic [ref=e207]: Company News
+          - heading "公司报道" [level=2] [ref=e208]
+          - generic [ref=e209]: 聚焦品牌发布、技术表达与产业交流，持续呈现航链科技在低空智能领域的最新公开报道与传播内容。
+          - link "查看更多报道" [ref=e210] [cursor=pointer]:
+            - /url: /about/news
+        - generic [ref=e211]:
+          - link "航链科技发布会现场 Media Coverage 2026.02 · 新华网 / 中国日报网 / 界面新闻 航链科技品牌发布与低空智能路线获主流媒体持续关注 围绕飞行智能体、ARC ENGINE 与低空经济创新实践，多家主流媒体持续跟进航链科技的品牌发布与技术表达。 新华社系 / 财经媒体 阅读原文" [ref=e212] [cursor=pointer]:
+            - /url: https://www.news.cn/digital/20260205/3a11fec4d2be4756bd569b850abb8db1/c.html
+            - img "航链科技发布会现场" [ref=e214]
+            - generic [ref=e215]:
+              - generic [ref=e216]:
+                - generic [ref=e217]: Media Coverage
+                - generic [ref=e218]: 2026.02 · 新华网 / 中国日报网 / 界面新闻
+              - heading "航链科技品牌发布与低空智能路线获主流媒体持续关注" [level=3] [ref=e219]
+              - generic [ref=e220]: 围绕飞行智能体、ARC ENGINE 与低空经济创新实践，多家主流媒体持续跟进航链科技的品牌发布与技术表达。
+              - generic [ref=e221]:
+                - generic [ref=e222]: 新华社系 / 财经媒体
+                - generic [ref=e223]: 阅读原文
+          - link "航链科技现场讲解 Broadcast 2026.02 · 浙江电视台 浙江电视台聚焦发布会现场与产品体系展示 从发布会现场、核心讲解到硬件展示，报道集中呈现航链科技在低空智能领域的产品表达与场景落地。 省级电视媒体 阅读原文" [ref=e224] [cursor=pointer]:
+            - /url: https://www.cztv.com/video/20091537/wh/horizontal_vod?id=20091537
+            - img "航链科技现场讲解" [ref=e226]
+            - generic [ref=e227]:
+              - generic [ref=e228]:
+                - generic [ref=e229]: Broadcast
+                - generic [ref=e230]: 2026.02 · 浙江电视台
+              - heading "浙江电视台聚焦发布会现场与产品体系展示" [level=3] [ref=e231]
+              - generic [ref=e232]: 从发布会现场、核心讲解到硬件展示，报道集中呈现航链科技在低空智能领域的产品表达与场景落地。
+              - generic [ref=e233]:
+                - generic [ref=e234]: 省级电视媒体
+                - generic [ref=e235]: 阅读原文
+          - link "航链科技合作交流现场 Industry Update 2026.02 · 中国网 / 经济观察网 / 环球时报 门户平台持续报道国际合作与产业交流进展 围绕国际合作、产业交流与低空经济实践，多家门户平台与行业媒体同步跟进航链科技最新公开动态。 门户与行业媒体 阅读原文" [ref=e236] [cursor=pointer]:
+            - /url: http://hs.china.com.cn/2026-02/02/content_43347937.html
+            - img "航链科技合作交流现场" [ref=e238]
+            - generic [ref=e239]:
+              - generic [ref=e240]:
+                - generic [ref=e241]: Industry Update
+                - generic [ref=e242]: 2026.02 · 中国网 / 经济观察网 / 环球时报
+              - heading "门户平台持续报道国际合作与产业交流进展" [level=3] [ref=e243]
+              - generic [ref=e244]: 围绕国际合作、产业交流与低空经济实践，多家门户平台与行业媒体同步跟进航链科技最新公开动态。
+              - generic [ref=e245]:
+                - generic [ref=e246]: 门户与行业媒体
+                - generic [ref=e247]: 阅读原文
+  - link "Contact us 联系我们" [ref=e248] [cursor=pointer]:
+    - /url: /contact
+    - generic [ref=e249]: Contact Us
+    - generic [ref=e250]: 联系我们 🤝
+  - contentinfo [ref=e251]:
+    - generic [ref=e252]:
+      - generic [ref=e253]:
+        - generic [ref=e254]:
+          - img "Navlyn 航链科技" [ref=e255]
+          - generic [ref=e256]:
+            - generic [ref=e257]: Navlyn 航链科技
+            - generic [ref=e258]: Navlyn 航链科技以 ARC ENGINE 为核心，面向低空经济场景提供飞行智能体系统、硬件终端与行业解决方案。
+        - button "客户与合作" [ref=e259] [cursor=pointer]:
+          - generic [ref=e260]: 客户与合作
+      - generic [ref=e261]:
+        - generic [ref=e262]:
+          - generic [ref=e263]: 产品服务
+          - generic [ref=e264]:
+            - link "产品体系" [ref=e265] [cursor=pointer]:
+              - /url: /products
+            - link "ARC ENGINE" [ref=e266] [cursor=pointer]:
+              - /url: /arc-os
+            - generic [ref=e267]: 飞行模拟训练
+            - link "知识库" [ref=e268] [cursor=pointer]:
+              - /url: /knowledge-base
+        - generic [ref=e269]:
+          - generic [ref=e270]: 关于我们
+          - generic [ref=e271]:
+            - link "公司愿景" [ref=e272] [cursor=pointer]:
+              - /url: /about/vision
+            - link "新闻报道" [ref=e273] [cursor=pointer]:
+              - /url: /about/news
+            - link "客户与合作" [ref=e274] [cursor=pointer]:
+              - /url: /partners
+            - link "人才招聘" [ref=e275] [cursor=pointer]:
+              - /url: /about/careers
+        - generic [ref=e276]:
+          - generic [ref=e277]: 合作生态
+          - generic [ref=e278]:
+            - link "全球合作伙伴" [ref=e279] [cursor=pointer]:
+              - /url: /partners/alliances
+            - link "国际经销商" [ref=e280] [cursor=pointer]:
+              - /url: /partners/distributors
+            - link "项目咨询" [ref=e281] [cursor=pointer]:
+              - /url: /contact
+        - generic [ref=e282]:
+          - generic [ref=e283]: 语言
+          - generic [ref=e284]:
+            - generic [ref=e285]: 中文
+            - generic [ref=e286]: English
+            - generic [ref=e287]: Français
+            - generic [ref=e288]: Español
+      - generic [ref=e289]: © 2026 Navlyn. All rights reserved.

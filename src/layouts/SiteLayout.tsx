@@ -25,7 +25,6 @@ const navIcons = {
   products: <DeploymentUnitOutlined />,
   arc: <ClusterOutlined />,
   industries: <CompassOutlined />,
-  'knowledge-base': <ReadOutlined />,
   partners: <ContactsOutlined />,
   about: <InfoCircleOutlined />,
 } as const;
@@ -104,16 +103,6 @@ export default function SiteLayout({
                 <DownOutlined />
               </Button>
             </Dropdown>
-            <Button type="default" ghost className="header-account-button" onClick={() => navigate('/login')}>
-              登录
-            </Button>
-            <Button
-              type="primary"
-              className="header-account-button is-primary"
-              onClick={() => navigate('/profile')}
-            >
-              个人中心
-            </Button>
           </Space>
         </div>
         <div className="header-actions-mobile">
@@ -149,29 +138,6 @@ export default function SiteLayout({
               <DownOutlined />
             </Button>
           </Dropdown>
-          <Button
-            block
-            type="default"
-            ghost
-            className="header-account-button"
-            onClick={() => {
-              setMobileNavOpen(false);
-              navigate('/login');
-            }}
-          >
-            登录
-          </Button>
-          <Button
-            block
-            type="primary"
-            className="header-account-button is-primary"
-            onClick={() => {
-              setMobileNavOpen(false);
-              navigate('/profile');
-            }}
-          >
-            个人中心
-          </Button>
         </div>
       </Drawer>
       <Content>

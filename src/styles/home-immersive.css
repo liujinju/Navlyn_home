@@ -12,11 +12,13 @@
   --home-immersive-top-offset: var(--home-module-title-offset);
   --home-header-gap: clamp(4px, 0.7vw, 8px);
   --home-body-gap: clamp(14px, 1.3vw, 18px);
+  width: min(100%, calc(var(--content-wide-width) + 120px));
+  margin: 0 auto;
   padding: var(--home-immersive-top-offset) clamp(24px, 4vw, 48px) var(--section-space-lg);
 }
 
-.what-we-do-section,
-.industry-service-section {
+.what-we-do-section {
+  position: relative;
   display: flex;
   flex-direction: column;
   padding-top: 0;
@@ -26,6 +28,21 @@
   max-width: none;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.what-we-do-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.what-we-do-carousel-shell {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 700px;
 }
 
 .what-we-do-copy,
@@ -49,7 +66,7 @@
   display: flex;
   flex-direction: column;
   gap: clamp(4px, 0.7vw, 8px);
-  max-width: var(--content-narrow-width);
+  max-width: min(920px, calc(100vw - 96px));
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -62,11 +79,12 @@
 .news-kicker {
   display: block;
   margin: 0;
-  color: rgba(151, 186, 255, 0.72);
+  color: rgba(168, 200, 255, 0.85);
   font-size: 12px;
   line-height: 1;
   letter-spacing: 0.18em;
   text-transform: uppercase;
+  text-shadow: 0 2px 12px rgba(1, 4, 12, 0.6);
 }
 
 .what-we-do-header h2,
@@ -75,10 +93,11 @@
 .product-entry-heading h2,
 .news-heading h2 {
   margin: 0 !important;
-  color: #f5f8ff !important;
+  color: #ffffff !important;
   font-size: clamp(30px, 2.9vw, 48px);
   line-height: 1.04;
   letter-spacing: -0.04em;
+  text-shadow: 0 8px 40px rgba(1, 4, 12, 0.8), 0 2px 8px rgba(1, 4, 12, 0.5);
 }
 
 .section-lead-copy {
@@ -102,26 +121,29 @@
 
 .what-we-do-body,
 .industry-service-body {
-  margin-top: clamp(16px, 1.7vw, 22px);
+  margin-top: 300px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: clamp(14px, 1.3vw, 18px);
 }
 
 .what-we-do-body p,
 .industry-service-body p {
   margin: 0;
-  color: rgba(242, 246, 255, 0.9);
+  color: rgba(242, 246, 255, 0.95);
+  font-size: clamp(18px, 1.2vw, 20px);
   letter-spacing: -0.02em;
-  max-width: 52ch;
+  max-width: 62ch;
   margin-inline: auto;
-  text-shadow: 0 8px 22px rgba(2, 7, 20, 0.22);
+  text-shadow: 0 6px 32px rgba(1, 4, 12, 0.72), 0 2px 8px rgba(1, 4, 12, 0.5);
+  line-height: 1.7;
 }
 
 .what-we-do-body .section-lead-copy,
 .industry-service-body .section-lead-copy {
-  color: rgba(236, 242, 255, 0.88) !important;
-  line-height: 1.5 !important;
+  color: rgba(236, 242, 255, 0.92) !important;
+  line-height: 1.6 !important;
 }
 
 .what-we-do-media,
@@ -143,7 +165,7 @@
 .what-we-do-carousel {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  height: 100%;
   overflow: hidden;
   background: linear-gradient(180deg, rgba(7, 10, 18, 0.86) 0%, rgba(6, 9, 16, 0.94) 100%);
 }
@@ -175,8 +197,7 @@
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(6, 8, 14, 0.18) 0%, rgba(6, 8, 14, 0.2) 28%, rgba(6, 8, 14, 0.72) 100%),
-    linear-gradient(90deg, rgba(6, 8, 14, 0.18) 0%, rgba(6, 8, 14, 0.02) 30%, rgba(6, 8, 14, 0.24) 100%);
+    linear-gradient(180deg, rgba(4, 6, 12, 0.72) 0%, rgba(4, 6, 12, 0.6) 25%, rgba(4, 6, 12, 0.88) 100%);
   pointer-events: none;
 }
 
@@ -222,8 +243,7 @@
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(3, 6, 14, 0.38) 0%, rgba(3, 6, 14, 0.24) 30%, rgba(3, 6, 14, 0.72) 100%),
-    radial-gradient(circle at 76% 18%, rgba(76, 137, 255, 0.16), transparent 24%);
+    linear-gradient(180deg, rgba(3, 5, 12, 0.75) 0%, rgba(3, 5, 12, 0.65) 30%, rgba(3, 5, 12, 0.9) 100%);
   pointer-events: none;
 }
 
@@ -279,17 +299,45 @@
   }
 }
 
+.industry-service-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-top: 0;
+  padding-bottom: 0;
+  align-items: stretch;
+  width: 100vw;
+  max-width: none;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.industry-service-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.industry-service-shell {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 700px;
+}
+
+.industry-service-header {
+  pointer-events: auto;
+}
+
+.industry-service-body {
+  pointer-events: auto;
+}
+
 .industry-service-media,
 .industry-service-copy {
   min-width: 0;
-}
-
-.industry-service-stage {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-  background: linear-gradient(180deg, rgba(7, 10, 18, 0.84) 0%, rgba(6, 9, 16, 0.96) 100%);
 }
 
 .industry-service-stage::after {
@@ -297,8 +345,8 @@
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(6, 8, 14, 0.16) 0%, rgba(6, 8, 14, 0.18) 30%, rgba(6, 8, 14, 0.72) 100%),
-    linear-gradient(90deg, rgba(6, 8, 14, 0.18) 0%, rgba(6, 8, 14, 0.04) 30%, rgba(6, 8, 14, 0.26) 100%);
+    linear-gradient(180deg, rgba(6, 8, 14, 0.14) 0%, rgba(6, 8, 14, 0.16) 28%, rgba(6, 8, 14, 0.68) 100%),
+    linear-gradient(90deg, rgba(6, 8, 14, 0.16) 0%, rgba(6, 8, 14, 0.05) 30%, rgba(6, 8, 14, 0.18) 100%);
   pointer-events: none;
 }
 
@@ -328,6 +376,21 @@
   .industry-service-section {
     padding-top: 0;
     padding-bottom: 0;
+    min-height: auto;
+  }
+
+  .what-we-do-carousel-shell,
+  .industry-service-shell {
+    height: auto;
+    min-height: 500px;
+  }
+
+  .what-we-do-copy,
+  .industry-service-copy {
+    position: relative;
+    min-height: auto;
+    padding: var(--home-title-top-offset) 24px 60px;
+    justify-content: flex-start;
   }
 
   .what-we-do-header h2,
@@ -337,12 +400,7 @@
   .capability-heading h2 {
     font-size: 28px;
   }
-
-  .what-we-do-body,
-  .industry-service-body {
-    margin-top: 20px;
-  }
-
+  
   .section-lead-copy {
     font-size: 17px;
     line-height: 1.5;
@@ -350,6 +408,8 @@
 
   .what-we-do-carousel {
     aspect-ratio: 16 / 9;
+    height: auto;
+    min-height: 400px;
   }
 
   .what-we-do-carousel-controls {
@@ -362,10 +422,22 @@
 }
 
 @media (max-width: 768px) {
+  .what-we-do-section,
+  .industry-service-section {
+    min-height: auto;
+  }
+
   .what-we-do-copy,
   .industry-service-copy {
+    width: 100%;
     max-width: 100%;
     padding: var(--home-title-top-offset) 18px 72px;
+    min-height: auto;
+  }
+
+  .what-we-do-carousel-shell,
+  .industry-service-shell {
+    min-height: 400px;
   }
 
   .section-lead-copy {
@@ -376,6 +448,8 @@
   .what-we-do-carousel,
   .industry-service-stage {
     aspect-ratio: 16 / 9;
+    height: auto;
+    min-height: 350px;
   }
 
   .what-we-do-carousel-controls {

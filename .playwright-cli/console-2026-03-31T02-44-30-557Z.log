@@ -1,0 +1,139 @@
+[     928ms] [WARNING] ⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition. @ http://localhost:5173/node_modules/.vite/deps/react-router-dom.js?v=dce535e1:4433
+[     929ms] [WARNING] ⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath. @ http://localhost:5173/node_modules/.vite/deps/react-router-dom.js?v=dce535e1:4433
+[  590175ms] ReferenceError: RegisterPage is not defined
+    at App (http://localhost:5173/src/App.tsx?t=1774925660553:315:92)
+    at renderWithHooks (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:11546:26)
+    at updateFunctionComponent (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:14580:28)
+    at beginWork (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:15922:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:3697:24)
+    at invokeGuardedCallback (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:3731:39)
+    at beginWork$1 (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:19763:15)
+    at performUnitOfWork (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:19196:20)
+    at workLoopSync (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:19135:13)
+[  590183ms] ReferenceError: RegisterPage is not defined
+    at App (http://localhost:5173/src/App.tsx?t=1774925660553:315:92)
+    at renderWithHooks (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:11546:26)
+    at updateFunctionComponent (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:14580:28)
+    at beginWork (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:15922:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:3697:24)
+    at invokeGuardedCallback (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:3731:39)
+    at beginWork$1 (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:19763:15)
+    at performUnitOfWork (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:19196:20)
+    at workLoopSync (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:19135:13)
+[  590170ms] [ERROR] The above error occurred in the <App> component:
+
+    at App (http://localhost:5173/src/App.tsx?t=1774925660553:315:92)
+    at Router (http://localhost:5173/node_modules/.vite/deps/react-router-dom.js?v=dce535e1:4542:15)
+    at BrowserRouter (http://localhost:5173/node_modules/.vite/deps/react-router-dom.js?v=dce535e1:5288:5)
+    at MotionWrapper (http://localhost:5173/node_modules/.vite/deps/antd.js?v=dce535e1:6533:32)
+    at ProviderChildren (http://localhost:5173/node_modules/.vite/deps/antd.js?v=dce535e1:6641:5)
+    at ConfigProvider (http://localhost:5173/node_modules/.vite/deps/antd.js?v=dce535e1:6932:27)
+    at _a (http://localhost:5173/node_modules/.vite/deps/react-helmet-async.js?v=dce535e1:622:5)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries. @ http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:14029
+[  590185ms] ReferenceError: RegisterPage is not defined
+    at App (http://localhost:5173/src/App.tsx?t=1774925660553:315:92)
+    at renderWithHooks (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:11546:26)
+    at updateFunctionComponent (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:14580:28)
+    at beginWork (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:15922:22)
+    at beginWork$1 (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:19751:22)
+    at performUnitOfWork (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:19196:20)
+    at workLoopSync (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:19135:13)
+    at renderRootSync (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:19114:15)
+    at recoverFromConcurrentError (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:18734:28)
+    at performSyncWorkOnRoot (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:18877:28)
+[  662206ms] [WARNING] ⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition. @ http://localhost:5173/node_modules/.vite/deps/react-router-dom.js?v=dce535e1:4433
+[  662206ms] [WARNING] ⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath. @ http://localhost:5173/node_modules/.vite/deps/react-router-dom.js?v=dce535e1:4433
+[ 1058928ms] ReferenceError: knowledgeSubpages is not defined
+    at App (http://localhost:5173/src/App.tsx?t=1774926129442:126:27)
+    at renderWithHooks (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:11546:26)
+    at updateFunctionComponent (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:14580:28)
+    at beginWork (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:15922:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:3697:24)
+    at invokeGuardedCallback (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:3731:39)
+    at beginWork$1 (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:19763:15)
+    at performUnitOfWork (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:19196:20)
+    at workLoopSync (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:19135:13)
+[ 1058929ms] ReferenceError: knowledgeSubpages is not defined
+    at App (http://localhost:5173/src/App.tsx?t=1774926129442:126:27)
+    at renderWithHooks (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:11546:26)
+    at updateFunctionComponent (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:14580:28)
+    at beginWork (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:15922:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:3697:24)
+    at invokeGuardedCallback (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:3731:39)
+    at beginWork$1 (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:19763:15)
+    at performUnitOfWork (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:19196:20)
+    at workLoopSync (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:19135:13)
+[ 1058929ms] [ERROR] The above error occurred in the <App> component:
+
+    at App (http://localhost:5173/src/App.tsx?t=1774926129442:126:27)
+    at Router (http://localhost:5173/node_modules/.vite/deps/react-router-dom.js?v=dce535e1:4542:15)
+    at BrowserRouter (http://localhost:5173/node_modules/.vite/deps/react-router-dom.js?v=dce535e1:5288:5)
+    at MotionWrapper (http://localhost:5173/node_modules/.vite/deps/antd.js?v=dce535e1:6533:32)
+    at ProviderChildren (http://localhost:5173/node_modules/.vite/deps/antd.js?v=dce535e1:6641:5)
+    at ConfigProvider (http://localhost:5173/node_modules/.vite/deps/antd.js?v=dce535e1:6932:27)
+    at _a (http://localhost:5173/node_modules/.vite/deps/react-helmet-async.js?v=dce535e1:622:5)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries. @ http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:14029
+[ 1058930ms] ReferenceError: knowledgeSubpages is not defined
+    at App (http://localhost:5173/src/App.tsx?t=1774926129442:126:27)
+    at renderWithHooks (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:11546:26)
+    at updateFunctionComponent (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:14580:28)
+    at beginWork (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:15922:22)
+    at beginWork$1 (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:19751:22)
+    at performUnitOfWork (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:19196:20)
+    at workLoopSync (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:19135:13)
+    at renderRootSync (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:19114:15)
+    at recoverFromConcurrentError (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:18734:28)
+    at performSyncWorkOnRoot (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:18877:28)
+[ 1063844ms] ReferenceError: KnowledgeBasePage is not defined
+    at App (http://localhost:5173/src/App.tsx?t=1774926134354:101:98)
+    at renderWithHooks (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:11546:26)
+    at mountIndeterminateComponent (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:14924:21)
+    at beginWork (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:15912:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:3697:24)
+    at invokeGuardedCallback (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:3731:39)
+    at beginWork$1 (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:19763:15)
+    at performUnitOfWork (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:19196:20)
+    at workLoopSync (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:19135:13)
+[ 1063845ms] ReferenceError: KnowledgeBasePage is not defined
+    at App (http://localhost:5173/src/App.tsx?t=1774926134354:101:98)
+    at renderWithHooks (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:11546:26)
+    at mountIndeterminateComponent (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:14924:21)
+    at beginWork (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:15912:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:3697:24)
+    at invokeGuardedCallback (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:3731:39)
+    at beginWork$1 (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:19763:15)
+    at performUnitOfWork (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:19196:20)
+    at workLoopSync (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:19135:13)
+[ 1063845ms] [ERROR] The above error occurred in the <App> component:
+
+    at App (http://localhost:5173/src/App.tsx?t=1774926134354:101:98)
+    at Router (http://localhost:5173/node_modules/.vite/deps/react-router-dom.js?v=dce535e1:4542:15)
+    at BrowserRouter (http://localhost:5173/node_modules/.vite/deps/react-router-dom.js?v=dce535e1:5288:5)
+    at MotionWrapper (http://localhost:5173/node_modules/.vite/deps/antd.js?v=dce535e1:6533:32)
+    at ProviderChildren (http://localhost:5173/node_modules/.vite/deps/antd.js?v=dce535e1:6641:5)
+    at ConfigProvider (http://localhost:5173/node_modules/.vite/deps/antd.js?v=dce535e1:6932:27)
+    at _a (http://localhost:5173/node_modules/.vite/deps/react-helmet-async.js?v=dce535e1:622:5)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries. @ http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:14029
+[ 1063846ms] ReferenceError: KnowledgeBasePage is not defined
+    at App (http://localhost:5173/src/App.tsx?t=1774926134354:101:98)
+    at renderWithHooks (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:11546:26)
+    at mountIndeterminateComponent (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:14924:21)
+    at beginWork (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:15912:22)
+    at beginWork$1 (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:19751:22)
+    at performUnitOfWork (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:19196:20)
+    at workLoopSync (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:19135:13)
+    at renderRootSync (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:19114:15)
+    at recoverFromConcurrentError (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:18734:28)
+    at performSyncWorkOnRoot (http://localhost:5173/node_modules/.vite/deps/chunk-4JV6IK6A.js?v=dce535e1:18877:28)

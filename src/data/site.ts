@@ -3,7 +3,6 @@ export type SiteNavIconKey =
   | 'products'
   | 'arc'
   | 'industries'
-  | 'knowledge-base'
   | 'partners'
   | 'about';
 
@@ -39,7 +38,6 @@ export const siteNavItems: SiteNavItem[] = [
   { key: 'products', label: '产品体系', path: '/products', iconKey: 'products' },
   { key: 'arc', label: 'ARC ENGINE', path: '/arc-os', iconKey: 'arc' },
   { key: 'industries', label: '行业应用', path: '/industries', iconKey: 'industries' },
-  { key: 'knowledge-base', label: '知识库', path: '/knowledge-base', iconKey: 'knowledge-base' },
   { key: 'partners', label: '客户与合作', path: '/partners', iconKey: 'partners' },
   { key: 'about', label: '关于我们', path: '/about', iconKey: 'about' },
 ];
@@ -164,7 +162,6 @@ export const footerNavGroups: FooterNavGroup[] = [
       { label: '产品体系', path: '/products' },
       { label: 'ARC ENGINE', path: '/arc-os' },
       { label: '飞行模拟训练' },
-      { label: '知识库', path: '/knowledge-base' },
     ],
   },
   {

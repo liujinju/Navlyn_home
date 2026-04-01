@@ -38,26 +38,29 @@ export default function ProductsPage() {
           </div>
           <div className="doc-products-hero-overlay" />
           <div className="doc-products-hero-shell">
-            <div className="doc-products-hero-copy">
-              <Text className="doc-products-hero-tag">{activeCategory === 'hardware' ? productHardwareHero.tag : productSoftwareHero.tag}</Text>
-              <Title>{activeCategory === 'hardware' ? productHardwareHero.title : productSoftwareHero.title}</Title>
-              <Paragraph>
-                {activeCategory === 'hardware' ? productHardwareHero.description : productSoftwareHero.description}
-              </Paragraph>
-            </div>
-            <div className="doc-products-switcher">
-              <Text className="panel-label">产品体系菜单</Text>
-              <Segmented
-                block
-                className="doc-products-segmented"
-                value={activeCategory}
-                options={productCategories.map((item) => ({
-                  label: item.label,
-                  value: item.key,
-                }))}
-                onChange={(value) => setActiveCategory(value as ProductCategoryKey)}
-              />
-              <Paragraph>{activeMeta.description}</Paragraph>
+            <div className="doc-products-hero-top">
+              <div className="doc-products-hero-copy">
+                <Text className="doc-products-hero-tag">{activeCategory === 'hardware' ? productHardwareHero.tag : productSoftwareHero.tag}</Text>
+                <Title>{activeCategory === 'hardware' ? productHardwareHero.title : productSoftwareHero.title}</Title>
+                <Paragraph>
+                  {activeCategory === 'hardware' ? productHardwareHero.description : productSoftwareHero.description}
+                </Paragraph>
+              </div>
+              <div className="doc-products-switcher">
+                <Text className="panel-label">产品体系菜单</Text>
+                <Segmented
+                  block
+                  className="doc-products-segmented"
+                  value={activeCategory}
+                  options={productCategories.map((item) => ({
+                    label: item.label,
+                    value: item.key,
+                  }))}
+                  onChange={(value) => setActiveCategory(value as ProductCategoryKey)}
+                />
+                <Text className="doc-products-switcher-title">{activeMeta.title}</Text>
+                <Paragraph>{activeMeta.description}</Paragraph>
+              </div>
             </div>
 
             <div className="doc-products-preview-rail">

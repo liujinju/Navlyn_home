@@ -1,3 +1,11 @@
+/*
+ * @Author: Icon oncwnuEuU001JU72QF0Wv2zwAqd0@git.weixin.qq.com
+ * @Date: 2026-03-14 22:42:03
+ * @LastEditors: Icon oncwnuEuU001JU72QF0Wv2zwAqd0@git.weixin.qq.com
+ * @LastEditTime: 2026-03-31 15:21:41
+ * @FilePath: /Navlyn_home/src/data/news.ts
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
 export interface NewsItem {
   slug: string;
   tag: string;
@@ -79,7 +87,6 @@ export const newsItems: NewsItem[] = [
     imageAlt: 'Navlyn international team collaboration',
     body: [
       '中法团队协作、海外交流与行业展会，是航链科技建立国际品牌识别与合作信任的重要组成部分。官网新闻区未来可以承接国际合作纪要、行业参展记录与跨区域项目沟通成果。',
-      '当前展示内容仍以已有图片资料为主，后续补齐真实新闻后，这里可以直接形成持续更新的公司报道栏目。',
     ],
   },
 ];

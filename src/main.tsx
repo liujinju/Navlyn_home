@@ -17,7 +17,6 @@ import './styles/document-core.css';
 import './styles/document-landing.css';
 import './styles/document-feature-pages.css';
 import './styles/news.css';
-import './styles/account.css';
 import './styles/contact.css';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(

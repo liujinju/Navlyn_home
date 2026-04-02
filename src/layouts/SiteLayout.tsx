@@ -151,7 +151,7 @@ export default function SiteLayout({
       {showFooter ? (
         <Footer className="site-footer">
           <div className="site-footer-inner">
-            <div className="site-footer-topbar">
+            <div className="site-footer-main">
               <div className="site-footer-brand">
                 <img src="/media/logo-white.png" alt="Navlyn 航链科技" />
                 <div className="site-footer-brand-copy">
@@ -159,30 +159,27 @@ export default function SiteLayout({
                   <Paragraph>{footerSummary}</Paragraph>
                 </div>
               </div>
-              <Button type="primary" onClick={() => navigate('/partners')}>
-                客户与合作
-              </Button>
-            </div>
 
-            <div className="site-footer-grid">
-              {footerNavGroups.map((group) => (
-                <div key={group.title} className="site-footer-group">
-                  <Text className="site-footer-group-title">{group.title}</Text>
-                  <div className="site-footer-links">
-                    {group.items.map((item) =>
-                      item.path ? (
-                        <Link key={item.label} className="site-footer-link" to={item.path}>
-                          {item.label}
-                        </Link>
-                      ) : (
-                        <span key={item.label} className="site-footer-link is-static">
-                          {item.label}
-                        </span>
-                      ),
-                    )}
+              <div className="site-footer-grid">
+                {footerNavGroups.map((group) => (
+                  <div key={group.title} className="site-footer-group">
+                    <Text className="site-footer-group-title">{group.title}</Text>
+                    <div className="site-footer-links">
+                      {group.items.map((item) =>
+                        item.path ? (
+                          <Link key={item.label} className="site-footer-link" to={item.path}>
+                            {item.label}
+                          </Link>
+                        ) : (
+                          <span key={item.label} className="site-footer-link is-static">
+                            {item.label}
+                          </span>
+                        ),
+                      )}
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
 
             <div className="site-footer-bottom">

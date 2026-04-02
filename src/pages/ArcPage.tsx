@@ -77,7 +77,7 @@ export default function ArcPage() {
                 跨域协同，灵活调度
               </Title>
               <Paragraph className="arc-hero-feature-desc">
-                根据现场需求动态分配任务，覆盖每一个作业角落。1：N轻松管理多台智能终端协同（待定）:一个人就能轻松掌控一整队无人机，让它们像团队一样配合工作。
+                一个人就能轻松掌控一整队无人机，让它们像团队一样配合工作。
               </Paragraph>
             </div>
           </div>
@@ -108,24 +108,14 @@ export default function ArcPage() {
             />
             <div className="arc-hero-feature-copy">
               <Text className="arc-hero-feature-label">
-                Advanced Decision Support
+                Quantify Progress Scale Success
               </Text>
               <Title level={2} className="arc-hero-feature-title">
-                智能决策大脑
+                量化进步大脑，快速迭代经验
               </Title>
               <Paragraph className="arc-hero-feature-desc">
-                根据历史作业数据，系统能帮你优化下一次的任务规划，让作业效率持续翻倍。
-                Leverage past flight data to refine your next mission plan and
-                continuously boost operational efficiency.
-              </Paragraph>
-              <Text className="arc-hero-feature-label">Quantified Growth</Text>
-              <Title level={2} className="arc-hero-feature-title">
-                量化进步，快速复制经验
-              </Title>
-              <Paragraph className="arc-hero-feature-desc">
-                用数据评价飞行好坏，不再靠感觉。成功的经验可以快速打包，复制到其他行业使用。
-                Use objective data to measure success and easily transfer proven
-                mission models to new industries.
+                根据历史作业数据，系统能帮你优化下一次的任务规划，让作业效率持续翻倍。用数据评价飞行好坏，不再靠感觉。成功的经验可以快速打包，复制到其他行业。
+                Our system optimizes mission planning based on historical data, driving a continuous cycle of efficiency. We replace intuition with deterministic analytics to evaluate flight performance. Capture elite mission protocols and replicate them across global operational sectors instantly.
               </Paragraph>
             </div>
           </div>

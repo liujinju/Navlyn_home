@@ -15,39 +15,42 @@
   margin: 0 auto;
 }
 
-.site-footer-topbar {
-  display: flex;
+.site-footer-main {
+  display: grid;
+  grid-template-columns: minmax(280px, 360px) minmax(0, 1fr);
   align-items: center;
-  justify-content: space-between;
-  gap: 28px;
-  padding-bottom: 24px;
-  margin-bottom: 24px;
+  gap: clamp(40px, 6vw, 92px);
+  padding-bottom: 28px;
+  margin-bottom: 22px;
   border-bottom: 1px solid rgba(126, 171, 255, 0.1);
 }
 
 .site-footer-brand {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 16px;
+  justify-self: center;
+  text-align: center;
+  gap: 22px;
   min-width: 0;
 }
 
 .site-footer-brand img {
-  width: 112px;
+  width: 280px;
   height: auto;
-  opacity: 0.88;
+  opacity: 0.92;
   flex-shrink: 0;
 }
 
 .site-footer-brand-copy {
-  max-width: 720px;
+  max-width: 420px;
 }
 
 .site-footer-brand-name {
   display: block;
-  margin-bottom: 6px;
+  margin-bottom: 10px;
   color: rgba(244, 247, 255, 0.96);
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.2;
   letter-spacing: -0.02em;
 }
@@ -55,19 +58,21 @@
 .site-footer-brand-copy p {
   margin: 0 !important;
   color: rgba(214, 225, 246, 0.66) !important;
-  font-size: 14px;
-  line-height: 1.7;
+  font-size: 15px;
+  line-height: 1.75;
 }
 
 .site-footer-grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-self: center;
+  align-items: start;
   gap: 26px 34px;
 }
 
 .site-footer-group {
-  flex: 1 1 220px;
   min-width: 0;
+  align-self: start;
 }
 
 .site-footer-group-title {
@@ -178,10 +183,9 @@
     width: min(1200px, calc(100vw - 40px));
   }
 
-  .site-footer-topbar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
+  .site-footer-main {
+    grid-template-columns: 1fr;
+    gap: 28px;
   }
 
   .site-footer-bottom {
@@ -221,20 +225,18 @@
     width: min(1200px, calc(100vw - 32px));
   }
 
-  .site-footer-topbar {
-    gap: 18px;
+  .site-footer-main {
+    gap: 24px;
     padding-bottom: 20px;
     margin-bottom: 20px;
   }
 
   .site-footer-brand {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+    gap: 14px;
   }
 
   .site-footer-brand img {
-    width: 104px;
+    width: 220px;
   }
 
   .site-footer-brand-name {
@@ -247,6 +249,7 @@
   }
 
   .site-footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 20px;
   }
 

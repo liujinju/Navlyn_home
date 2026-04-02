@@ -179,7 +179,7 @@ export const homeCapabilities: HomeCapabilityItem[] = [
     tags: ['意图理解', '自动规划', '全域治理'],
     icon: 'arc-engine',
     stats: { value: 'L4', label: '自主等级' },
-    image: '/media/capability-arc-os-1.jpg',
+    image: '/media/arc-engine-01.jpg',
     imageAlt: 'ARC ENGINE system capability',
     imagePosition: 'center 38%',
   },

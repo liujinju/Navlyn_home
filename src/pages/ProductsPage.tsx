@@ -12,28 +12,29 @@ export default function ProductsPage() {
       description="查看 Navlyn 航链科技三款硬件终端如何分别承担任务决策、日常执行与水域响应角色。"
       hero={
         <section className="products-cinema-hero">
-          <video
-            className="products-cinema-video"
-            src={productHero.video}
-            poster={productHero.poster}
-            autoPlay
-            muted
-            loop
-            playsInline
-          />
-          <div className="products-cinema-overlay" />
-          <div className="products-cinema-ambient" />
-          <div className="products-cinema-shell">
-            <div className="products-cinema-copy">
-              <Title className="hero-title-en">{productHero.title}</Title>
-              {/* <Text className="hero-title-zh">{productHero.description}</Text> */}
-              <Text className="hero-title-sub">{productHero.description}</Text>
-            </div>
+          <div className="products-cinema-media">
+            <video
+              className="products-cinema-video"
+              src={productHero.video}
+              poster={productHero.poster}
+              autoPlay
+              muted
+              loop
+              playsInline
+            />
+            <div className="products-cinema-overlay" />
+            <div className="products-cinema-ambient" />
+          </div>
+          <div className="products-cinema-copy">
+            <Title className="products-cinema-title">{productHero.title}</Title>
+            <Text className="products-cinema-subtitle">
+              {productHero.description}
+            </Text>
           </div>
         </section>
       }
     >
-      <section className="page-section products-detail-stage">
+      <section className="page-section">
         <div className="products-detail-grid">
           {productDetails.map((item) => (
             <article
@@ -48,10 +49,7 @@ export default function ProductsPage() {
                   } as CSSProperties
                 }
               >
-                <img
-                  src={item.image}
-                  alt={item.imageAlt}
-                />
+                <img src={item.image} alt={item.imageAlt} />
                 <div className="products-detail-media-overlay" />
               </div>
 

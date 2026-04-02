@@ -1,11 +1,15 @@
 import IndustryShowcaseSection from "../components/IndustryShowcaseSection";
+import { useI18n } from "../i18n/I18nProvider";
 import SiteLayout from "../layouts/SiteLayout";
 
 export default function IndustriesPage() {
+  const { page } = useI18n();
+  const copy = page.home.industries;
+
   return (
     <SiteLayout
-      title="行业应用 | Navlyn 航链科技"
-      description="查看 Navlyn 航链科技围绕农业、矿业、能源、建筑、海岸救援与巡检六大方向构建的低空智能行业服务体系。"
+      title={`${copy.title} | Navlyn`}
+      description={copy.description}
     >
       <IndustryShowcaseSection className="industry-showcase-section-page" />
     </SiteLayout>

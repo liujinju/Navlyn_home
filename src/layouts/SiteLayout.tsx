@@ -9,13 +9,14 @@ import {
   HomeOutlined,
   InfoCircleOutlined,
   MenuOutlined,
-  ReadOutlined,
 } from '@ant-design/icons';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import type { PropsWithChildren, ReactNode } from 'react';
 import Seo from '../components/Seo';
-import { footerNavGroups, footerSummary, siteNavItems } from '../data/site';
+import { footerNavGroups, siteNavItems } from '../data/site';
+import { localeOptions } from '../i18n/messages';
+import { useI18n } from '../i18n/I18nProvider';
 
 const { Header, Content, Footer } = Layout;
 const { Paragraph, Text } = Typography;
@@ -46,7 +47,7 @@ export default function SiteLayout({
   contentClassName,
 }: SiteLayoutProps) {
   const location = useLocation();
-  const navigate = useNavigate();
+  const { locale, setLocale, shell } = useI18n();
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const activeNavPath =
     siteNavItems.find(
@@ -57,17 +58,15 @@ export default function SiteLayout({
     siteNavItems.map((item) => ({
       key: item.path,
       icon: showIcons ? navIcons[item.iconKey] : undefined,
-      label: <Link to={item.path}>{item.label}</Link>,
+      label: <Link to={item.path}>{shell.nav[item.key]}</Link>,
     }));
 
   const mobileMenuItems = createMenuItems(true);
 
-  const languageItems: MenuProps['items'] = [
-    { key: 'zh', label: '中文' },
-    { key: 'en', label: 'English' },
-    { key: 'fr', label: 'Français' },
-    { key: 'es', label: 'Español' },
-  ];
+  const languageItems: MenuProps['items'] = localeOptions.map((item) => ({
+    key: item.key,
+    label: item.label,
+  }));
 
   return (
     <Layout className="site-shell">
@@ -88,7 +87,7 @@ export default function SiteLayout({
                   <span className="desktop-nav-icon" aria-hidden="true">
                     {navIcons[item.iconKey]}
                   </span>
-                  <span className="desktop-nav-text">{item.label}</span>
+                  <span className="desktop-nav-text">{shell.nav[item.key]}</span>
                 </Link>
               );
             })}
@@ -96,10 +95,19 @@ export default function SiteLayout({
         </div>
         <div className="site-header-side site-header-side-right">
           <Space size="middle" className="header-actions-desktop">
-            <Dropdown menu={{ items: languageItems }} trigger={['click']} placement="bottomRight">
+            <Dropdown
+              menu={{
+                items: languageItems,
+                selectable: true,
+                selectedKeys: [locale],
+                onClick: ({ key }) => setLocale(key as typeof locale),
+              }}
+              trigger={['click']}
+              placement="bottomRight"
+            >
               <Button type="default" ghost className="header-language-button">
                 <span className="language-flag-icon" aria-hidden="true" />
-                <span>语言</span>
+                <span>{shell.languageLabel}</span>
                 <DownOutlined />
               </Button>
             </Dropdown>
@@ -131,10 +139,19 @@ export default function SiteLayout({
           onClick={() => setMobileNavOpen(false)}
         />
         <div className="mobile-nav-actions">
-          <Dropdown menu={{ items: languageItems }} trigger={['click']} placement="bottomRight">
+          <Dropdown
+            menu={{
+              items: languageItems,
+              selectable: true,
+              selectedKeys: [locale],
+              onClick: ({ key }) => setLocale(key as typeof locale),
+            }}
+            trigger={['click']}
+            placement="bottomRight"
+          >
             <Button block type="default" ghost className="header-language-button mobile-language-button">
               <span className="language-flag-icon" aria-hidden="true" />
-              <span>语言</span>
+              <span>{shell.languageLabel}</span>
               <DownOutlined />
             </Button>
           </Dropdown>
@@ -145,8 +162,8 @@ export default function SiteLayout({
         {children ? <div className={`page-shell${contentClassName ? ` ${contentClassName}` : ''}`}>{children}</div> : null}
       </Content>
       <Link to="/contact" className="site-contact-float" aria-label="Contact us 联系我们">
-        <span className="site-contact-float-en">Contact Us</span>
-        <span className="site-contact-float-zh">联系我们 🤝</span>
+        <span className="site-contact-float-en">{shell.contactFloat.title}</span>
+        <span className="site-contact-float-zh">{shell.contactFloat.subtitle}</span>
       </Link>
       {showFooter ? (
         <Footer className="site-footer">
@@ -156,23 +173,23 @@ export default function SiteLayout({
                 <img src="/media/logo-white.png" alt="Navlyn 航链科技" />
                 <div className="site-footer-brand-copy">
                   <Text className="site-footer-brand-name">Navlyn 航链科技</Text>
-                  <Paragraph>{footerSummary}</Paragraph>
+                  <Paragraph>{shell.footer.summary}</Paragraph>
                 </div>
               </div>
 
               <div className="site-footer-grid">
                 {footerNavGroups.map((group) => (
-                  <div key={group.title} className="site-footer-group">
-                    <Text className="site-footer-group-title">{group.title}</Text>
+                  <div key={group.key} className="site-footer-group">
+                    <Text className="site-footer-group-title">{shell.footer.groups[group.key]}</Text>
                     <div className="site-footer-links">
                       {group.items.map((item) =>
                         item.path ? (
-                          <Link key={item.label} className="site-footer-link" to={item.path}>
-                            {item.label}
+                          <Link key={item.key} className="site-footer-link" to={item.path}>
+                            {shell.footer.items[item.key]}
                           </Link>
                         ) : (
-                          <span key={item.label} className="site-footer-link is-static">
-                            {item.label}
+                          <span key={item.key} className="site-footer-link is-static">
+                            {shell.footer.items[item.key]}
                           </span>
                         ),
                       )}

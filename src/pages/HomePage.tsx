@@ -10,11 +10,14 @@ import {
   homeNews,
   homeWhatWeDo,
 } from '../data/home';
+import { useI18n } from '../i18n/I18nProvider';
 import SiteLayout from '../layouts/SiteLayout';
 
 const { Title, Paragraph, Text } = Typography;
 
 export default function HomePage() {
+  const { page } = useI18n();
+  const copy = page.home;
   const [heroVideoReady, setHeroVideoReady] = useState(false);
   const [whatWeDoSlideIndex, setWhatWeDoSlideIndex] = useState(0);
   const [newsSlideIndex, setNewsSlideIndex] = useState(0);
@@ -62,8 +65,8 @@ export default function HomePage() {
 
   return (
     <SiteLayout
-      title="Navlyn 航链科技 | 开启飞行智能体时代"
-      description="Navlyn 航链科技以 ARC ENGINE 为核心，提供飞行智能体系统、硬件终端与行业解决方案，服务测绘、矿业、工程与应急救援场景。"
+      title={copy.seoTitle}
+      description={copy.seoDescription}
       contentClassName="page-shell-home"
       hero={
         <section id="home" className={`hero-section${heroVideoReady ? ' is-video-ready' : ''}`}>
@@ -93,17 +96,17 @@ export default function HomePage() {
           <div className="hero-grid">
               <div className="hero-copy">
               <Title className="hero-title-en">{homeHero.titleEn}</Title>
-              <Text className="hero-title-zh">{homeHero.titleZh}</Text>
-              <Text className="hero-title-sub">{homeHero.subtitle}</Text>
+              <Text className="hero-title-zh">{copy.heroSecondary}</Text>
+              <Text className="hero-title-sub">{copy.heroSubtitle}</Text>
               <div className="hero-actions">
                 <Link className="hero-cta-primary" to="/products">
-                  <span>探索产品</span>
+                  <span>{copy.heroPrimaryCta}</span>
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </Link>
                 <Link className="hero-cta-secondary" to="/about">
-                  了解更多
+                  {copy.heroSecondaryCta}
                 </Link>
               </div>
             </div>
@@ -127,11 +130,11 @@ export default function HomePage() {
               <div className="what-we-do-carousel-overlay" />
               <div className="what-we-do-copy">
                 <div className="what-we-do-header">
-                  <Text className="what-we-do-kicker">{homeWhatWeDo.kicker}</Text>
-                  <Title level={2}>{homeWhatWeDo.title}</Title>
+                  <Text className="what-we-do-kicker">{copy.whatWeDo.kicker}</Text>
+                  <Title level={2}>{copy.whatWeDo.title}</Title>
                 </div>
                 <div className="what-we-do-body">
-                  {homeWhatWeDo.paragraphs.map((paragraph) => (
+                  {copy.whatWeDo.paragraphs.map((paragraph) => (
                     <Paragraph key={paragraph} className="section-lead-copy">
                       {paragraph}
                     </Paragraph>
@@ -161,9 +164,9 @@ export default function HomePage() {
 
       <section className="section-block capability-section">
         <div className="capability-heading">
-          <Text className="capability-kicker">Core Capabilities</Text>
-          <Title level={2}>王牌能力</Title>
-          <Paragraph className="capability-lead section-lead-copy">{homeCapabilityIntro}</Paragraph>
+          <Text className="capability-kicker">{copy.capabilities.kicker}</Text>
+          <Title level={2}>{copy.capabilities.title}</Title>
+          <Paragraph className="capability-lead section-lead-copy">{copy.capabilities.intro}</Paragraph>
         </div>
         <div className="capability-grid capability-grid-tech">
 {homeCapabilities.map((item, index) => (
@@ -238,22 +241,22 @@ export default function HomePage() {
 
       <section className="section-block product-entry-section">
         <div className="product-entry-heading">
-          <Text className="product-entry-kicker">{homeHardwareMatrix.kicker}</Text>
-          <Title level={2}>{homeHardwareMatrix.title}</Title>
-          <Paragraph className="product-entry-lead">{homeHardwareMatrix.lead}</Paragraph>
+          <Text className="product-entry-kicker">{copy.productGateway.kicker}</Text>
+          <Title level={2}>{copy.productGateway.title}</Title>
+          <Paragraph className="product-entry-lead">{copy.productGateway.lead}</Paragraph>
         </div>
         <div className="product-entry-cta-wrapper">
           <Link className="product-entry-link product-entry-cta" to={homeHardwareMatrix.ctaTo}>
-            {homeHardwareMatrix.ctaLabel}
+            {copy.productGateway.cta}
           </Link>
         </div>
         
         {/* Hardware Matrix - Tech Style */}
         <div className="product-hardware-tech-section">
           <div className="product-hardware-tech-sidebar">
-            <Text className="product-hardware-tech-kicker">{homeHardwareMatrix.hardwareKicker}</Text>
-            <Title level={3} className="product-hardware-tech-title">{homeHardwareMatrix.hardwareHeading}</Title>
-            <Paragraph className="product-hardware-tech-desc">{homeHardwareMatrix.hardwareDescription}</Paragraph>
+            <Text className="product-hardware-tech-kicker">{copy.productGateway.hardwareKicker}</Text>
+            <Title level={3} className="product-hardware-tech-title">{copy.productGateway.hardwareTitle}</Title>
+            <Paragraph className="product-hardware-tech-desc">{copy.productGateway.hardwareDescription}</Paragraph>
           </div>
           <div className="product-hardware-tech-grid">
             {homeHardwareMatrix.items.map((item, index) => (
@@ -286,7 +289,7 @@ export default function HomePage() {
                   </div>
                   <div className="product-hardware-tech-action">
                     <span className="product-hardware-tech-cta">
-                      查看详情
+                      {copy.labels.detail}
                       <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                         <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
@@ -301,8 +304,8 @@ export default function HomePage() {
         {/* Software Section - ARC ENGINE (简洁版) */}
         <div className="product-software-tech-section">
           <div className="product-software-tech-sidebar">
-            <Text className="product-software-tech-kicker">{homeHardwareMatrix.software.kicker}</Text>
-            <Title level={3} className="product-software-tech-title">{homeHardwareMatrix.software.title}</Title>
+            <Text className="product-software-tech-kicker">{copy.productGateway.softwareKicker}</Text>
+            <Title level={3} className="product-software-tech-title">{copy.productGateway.softwareTitle}</Title>
           </div>
           <Link className="product-software-tech-card" to="/arc-os">
             <div className="product-software-tech-bg" aria-hidden="true">
@@ -319,7 +322,7 @@ export default function HomePage() {
             <div className="product-software-tech-shell">
               <div className="product-software-tech-content">
                 <div className="product-software-tech-main">
-                  <Title level={2} className="product-software-tech-heading">{homeHardwareMatrix.software.description} </Title>
+                  <Title level={2} className="product-software-tech-heading">{copy.productGateway.softwareDescription} </Title>
                   <Paragraph className="product-software-tech-text">{homeHardwareMatrix.software.summary}</Paragraph>
                 </div>
               </div>
@@ -332,11 +335,11 @@ export default function HomePage() {
 
       <section className="section-block news-section">
         <div className="news-heading">
-          <Text className="news-kicker">{homeNews.kicker}</Text>
-          <Title level={2}>{homeNews.title}</Title>
-          <Paragraph className="section-lead-copy">{homeNews.description}</Paragraph>
+          <Text className="news-kicker">{copy.news.kicker}</Text>
+          <Title level={2}>{copy.news.title}</Title>
+          <Paragraph className="section-lead-copy">{copy.news.description}</Paragraph>
           <Link className="product-entry-link news-link" to={homeNews.ctaTo}>
-            {homeNews.ctaLabel}
+            {copy.news.cta}
           </Link>
         </div>
         <div className="news-carousel">

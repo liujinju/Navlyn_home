@@ -1,5 +1,6 @@
 import { Typography } from "antd";
 import { homeIndustryService } from "../data/home";
+import { useI18n } from "../i18n/I18nProvider";
 
 const { Title, Paragraph, Text } = Typography;
 
@@ -10,6 +11,8 @@ interface IndustryShowcaseSectionProps {
 export default function IndustryShowcaseSection({
   className,
 }: IndustryShowcaseSectionProps) {
+  const { page } = useI18n();
+  const copy = page.home.industries;
   const sectionClassName = [
     "section-block",
     "industry-showcase-section",
@@ -22,14 +25,14 @@ export default function IndustryShowcaseSection({
     <section className={sectionClassName}>
       <div className="industry-showcase-heading">
         <Text className="industry-showcase-kicker">
-          {homeIndustryService.kicker}
+          {copy.kicker}
         </Text>
-        <Title level={2}>{homeIndustryService.title}</Title>
+        <Title level={2}>{copy.title}</Title>
         <Paragraph className="industry-showcase-lead section-lead-copy">
-          {homeIndustryService.description}
+          {copy.description}
         </Paragraph>
         <div className="industry-showcase-stats" aria-label="行业服务关键数据">
-          {homeIndustryService.stats.map((stat) => (
+          {copy.stats.map((stat) => (
             <span key={stat} className="industry-showcase-stat">
               {stat}
             </span>
@@ -78,8 +81,10 @@ export default function IndustryShowcaseSection({
                 <Text className="industry-showcase-card-kicker">
                   {card.titleEn}
                 </Text>
-                <Title level={3}>{card.title}</Title>
-                <Paragraph>{card.summary}</Paragraph>
+                <Title level={3}>{copy.cards[card.key as keyof typeof copy.cards].title}</Title>
+                <Paragraph>
+                  {copy.cards[card.key as keyof typeof copy.cards].summary}
+                </Paragraph>
               </div>
             </article>
           ))}

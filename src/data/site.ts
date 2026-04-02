@@ -7,16 +7,30 @@ export type SiteNavIconKey =
   | 'about';
 
 export interface SiteNavItem {
-  key: string;
+  key: 'home' | 'products' | 'arc' | 'industries' | 'partners' | 'about';
   label: string;
   path: string;
   iconKey: SiteNavIconKey;
 }
 
 export interface FooterNavGroup {
-  title: string;
+  key: 'productServices' | 'about' | 'ecosystem' | 'language';
   items: Array<{
-    label: string;
+    key:
+      | 'products'
+      | 'arc'
+      | 'flightTraining'
+      | 'vision'
+      | 'news'
+      | 'partners'
+      | 'careers'
+      | 'alliances'
+      | 'distributors'
+      | 'contact'
+      | 'zh'
+      | 'en'
+      | 'fr'
+      | 'es';
     path?: string;
   }>;
 }
@@ -152,38 +166,35 @@ export const contactCards = [
   },
 ];
 
-export const footerSummary =
-  'Navlyn 航链科技以 ARC ENGINE 为核心，面向低空经济场景提供飞行智能体系统、硬件终端与行业解决方案。';
-
 export const footerNavGroups: FooterNavGroup[] = [
   {
-    title: '产品服务',
+    key: 'productServices',
     items: [
-      { label: '产品体系', path: '/products' },
-      { label: 'ARC ENGINE', path: '/arc-os' },
-      { label: '飞行模拟训练' },
+      { key: 'products', path: '/products' },
+      { key: 'arc', path: '/arc-os' },
+      { key: 'flightTraining' },
     ],
   },
   {
-    title: '关于我们',
+    key: 'about',
     items: [
-      { label: '公司愿景', path: '/about/vision' },
-      { label: '新闻报道', path: '/about/news' },
-      { label: '客户与合作', path: '/partners' },
-      { label: '人才招聘', path: '/about/careers' },
+      { key: 'vision', path: '/about/vision' },
+      { key: 'news', path: '/about/news' },
+      { key: 'partners', path: '/partners' },
+      { key: 'careers', path: '/about/careers' },
     ],
   },
   {
-    title: '合作生态',
+    key: 'ecosystem',
     items: [
-      { label: '全球合作伙伴', path: '/partners/alliances' },
-      { label: '国际经销商', path: '/partners/distributors' },
-      { label: '项目咨询', path: '/contact' },
+      { key: 'alliances', path: '/partners/alliances' },
+      { key: 'distributors', path: '/partners/distributors' },
+      { key: 'contact', path: '/contact' },
     ],
   },
   {
-    title: '语言',
-    items: [{ label: '中文' }, { label: 'English' }, { label: 'Français' }, { label: 'Español' }],
+    key: 'language',
+    items: [{ key: 'zh' }, { key: 'en' }, { key: 'fr' }, { key: 'es' }],
   },
 ];
 

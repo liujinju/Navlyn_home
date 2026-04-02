@@ -1,112 +1,102 @@
-export type ProductCategoryKey = 'hardware' | 'software';
-
-export interface ProductCategory {
-  key: ProductCategoryKey;
+export interface ProductSpecItem {
   label: string;
-  title: string;
-  description: string;
+  value: string;
 }
 
-export interface ProductHardwareItem {
-  key: string;
+export interface ProductDetailItem {
+  key: 'commander' | 'scout' | 'seal';
+  tag: string;
   name: string;
   role: string;
-  positioning: string;
-  value: string;
-  shortLabel: string;
+  summary: string;
   image: string;
   imageAlt: string;
-  imagePosition?: string;
+  imagePosition: string;
+  specs: ProductSpecItem[];
+  aiCapabilities: string[];
+  applications: string[];
 }
 
-export const productCategories: ProductCategory[] = [
-  {
-    key: 'hardware',
-    label: '硬件',
-    title: '硬件端口',
-    description: '查看三款终端如何分别承担任务决策、复杂执行与空海协同救援角色。',
-  },
-  {
-    key: 'software',
-    label: '软件',
-    title: '软件端口',
-    description: '聚焦 ARC ENGINE 与 ARC Inside 之间的系统关系，理解软件中枢如何驱动整套低空智能能力。',
-  },
-];
-
-export const productHardwareHero = {
-  tag: 'Hardware Gateway',
-  title: '精密，且强悍。为极限作业而生的三款硬核先驱。',
+export const productHero = {
+  title: '精密，且强悍。为极限作业而生的三款硬核先驱',
   description:
     '基于 ARC Inside 底层内核驱动，实现从边缘算力中心到全自主执行终端的闭环链路，让低空作业不再受限于环境。',
   video: '/media/product-hardware-rescue.mp4',
-  fallbackImage: '/media/company-news-feature.jpg',
+  poster: '/media/commander-x1-product.jpg',
 };
 
-export const productSoftwareHero = {
-  tag: 'Software Gateway',
-  title: '让 ARC ENGINE 成为整套低空能力的系统中枢',
-  description:
-    '从任务理解、策略编排到终端协同，把软件能力沉到现场执行链路中，让终端不再只是独立设备，而是统一系统的一部分。',
-  image: '/media/arc-module-10.jpg',
-};
-
-export const productHardwareItems: ProductHardwareItem[] = [
+export const productDetails: ProductDetailItem[] = [
   {
     key: 'commander',
+    tag: 'Commander X1',
     name: '指挥官 Commander X1',
-    role: '边缘算力中枢',
-    positioning: '低空大脑：任务决策与边缘算力的终极形态。',
-    value:
-      '内置高算力 AI 模块，支持多模态数据实时处理，是集群协同的核心指挥中心。',
-    shortLabel: 'Mission Brain',
-    image: '/media/commander-x1-product.jpg',
+    role: '边缘算力中枢 / 任务决策中心',
+    summary:
+      '面向低空决策网络构建与大范围任务调度，作为任务理解、算力汇聚与现场指挥的中枢节点。',
+    image: '/media/navlyn-x1.png',
     imageAlt: 'Commander X1',
-    imagePosition: 'center 52%',
+    imagePosition: 'center 54%',
+    specs: [
+      { label: '翼展', value: '3米' },
+      { label: '最大起飞重量', value: '19KG' },
+      { label: '载荷', value: '3.5KG' },
+      { label: '航行速度', value: '65-85公里/小时' },
+      { label: '飞行时间', value: '3小时' },
+      { label: '快速拆装', value: '3分钟' },
+    ],
+    aiCapabilities: [
+      '任务解构：理解模糊指令，自动拆解并分配给巡逻机。',
+      '实时建图：汇总所有从机的地图数据，生成全局态势图。',
+      '自主安全：抗干扰、无 GPS 导航。',
+    ],
+    applications: ['大范围测绘', '巡检调度', '物流网络', '救援协同'],
   },
   {
     key: 'scout',
+    tag: 'Scout S1',
     name: '尖兵 Scout S1',
-    role: '高性能多功能任务执行终端',
-    positioning: '全能利刃：在高危与复杂环境下精准降临。',
-    value:
-      '具备卓越的抗干扰能力与避障精度，支持快速更换挂载，适配测绘、巡检等多种高频实战场景。',
-    shortLabel: 'Agile Executor',
-    image: '/media/scout-s1-field.jpg',
+    role: '高性价比，多功能任务执行',
+    summary:
+      '聚焦高频巡逻、基础设施检查与矿区巡检，在部署效率和复杂环境适配之间取得平衡。',
+    image: '/media/scout-s1-front.png',
     imageAlt: 'Scout S1',
-    imagePosition: 'center 38%',
+    imagePosition: 'center 50%',
+    specs: [
+      { label: '翼展', value: '1.7米' },
+      { label: '最大起飞重量', value: '4.5KG' },
+      { label: '载荷', value: '800G' },
+      { label: '航行速度', value: '57-80公里/小时' },
+      { label: '飞行时间', value: '2小时' },
+      { label: '快速拆装', value: '1分钟' },
+    ],
+    aiCapabilities: [
+      '目标识别、智能跟随、自动避障。',
+      '多机协同、群体智能。',
+    ],
+    applications: ['日常安防巡逻', '公路巡检', '智慧矿区', '精细化设施检查'],
   },
   {
     key: 'seal',
+    tag: 'Seal S1',
     name: '海豹 Seal S1',
-    role: '自主水面无人救生艇',
-    positioning: '水域先锋：跨域协同，开启空海一体救援新篇章。',
-    value:
-      '与无人机实现算法级深度耦合，在极端海况下亦能执行快速定位与精准救生任务。',
-    shortLabel: 'Marine Rescue',
-    image: '/media/seal-usv.jpg',
+    role: '救生艇 / 水域响应节点',
+    summary:
+      '服务江河湖泊海滩巡逻与救生，把低空系统能力延伸到水域现场，形成空海一体的执行闭环。',
+    image: '/media/navlyn-s1.png',
     imageAlt: 'Seal S1',
-    imagePosition: 'center 48%',
-  },
-];
-
-export const productSoftwareItems = [
-  {
-    title: 'ARC ENGINE',
-    label: '任务中枢',
-    description: '负责理解任务目标、组织终端协同并把执行过程纳入统一治理框架。',
-    shortLabel: 'Task Brain',
-  },
-  {
-    title: 'ARC Vision',
-    label: '感知入口',
-    description: '把视觉识别、环境感知与现场反馈整合成系统理解任务的第一层能力。',
-    shortLabel: 'Perception',
-  },
-  {
-    title: 'ARC Inside',
-    label: '终端内核',
-    description: '把软件能力沉到硬件内部，让终端真正具备自主执行、安全控制与协同响应能力。',
-    shortLabel: 'Embedded Core',
+    imagePosition: 'center 46%',
+    specs: [
+      { label: '尺寸', value: '长1000mm × 宽700mm × 高248mm' },
+      { label: '重量', value: '15.9kg' },
+      { label: '航速', value: '7m/s' },
+      { label: '拖曳能力', value: '1000kg' },
+      { label: '遥控距离', value: '1403m' },
+      { label: '机器人防水等级', value: 'IP67' },
+    ],
+    aiCapabilities: [
+      '落水人员识别，自动避障。',
+      '空海联动，群体智能。',
+    ],
+    applications: ['江河巡逻', '湖泊搜救', '海滩响应', '近岸救生'],
   },
 ];

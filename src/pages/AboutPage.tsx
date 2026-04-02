@@ -1,135 +1,68 @@
-import { Typography } from 'antd';
-import { Link } from 'react-router-dom';
-import ImmersivePageHero from '../components/ImmersivePageHero';
-import SubpageTabNav from '../components/SubpageTabNav';
-import { aboutFeatureCards, aboutLandingMetrics } from '../data/documentLanding';
-import { homeNews } from '../data/home';
-import SiteLayout from '../layouts/SiteLayout';
-import { aboutSubpages } from '../data/subpages';
-import { aboutHighlight, aboutMilestones, aboutTeam } from '../data/site';
+/*
+ * @Author: Icon oncwnuEuU001JU72QF0Wv2zwAqd0@git.weixin.qq.com
+ * @Date: 2026-03-27 20:42:48
+ * @LastEditors: Icon oncwnuEuU001JU72QF0Wv2zwAqd0@git.weixin.qq.com
+ * @LastEditTime: 2026-04-02 10:58:34
+ * @FilePath: /Navlyn_home/src/pages/AboutPage.tsx
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
+import { useEffect, useRef, useState } from "react";
+import { Typography } from "antd";
+import { Link } from "react-router-dom";
+import SiteLayout from "../layouts/SiteLayout";
 
-const { Title, Paragraph, Text } = Typography;
+const { Paragraph } = Typography;
 
 export default function AboutPage() {
+  const [videoReady, setVideoReady] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    if (video.readyState >= 2) setVideoReady(true);
+    const handleLoaded = () => setVideoReady(true);
+    video.addEventListener("loadeddata", handleLoaded);
+    return () => video.removeEventListener("loadeddata", handleLoaded);
+  }, []);
+
   return (
     <SiteLayout
       title="关于我们 | Navlyn 航链科技"
       description="查看 Navlyn 航链科技关于公司愿景、新闻报道与职业招聘的二级入口。"
       hero={
-        <ImmersivePageHero
-          prefix="about-page-hero"
-          media={<img src="/media/about-team-collab.jpg" alt="Navlyn about overview" />}
-          tag="About Navlyn"
-          title="关于我们"
-          description="围绕公司愿景、新闻报道与职业招聘三条内容线，逐步建立 Navlyn 对外表达与品牌认知结构。"
-          navItems={aboutSubpages.map((item, index) => ({
-            label: `0${index + 1}`,
-            title: item.title,
-            href: item.path,
-            featured: index === 0,
-          }))}
-        />
+        <section className="about-hero">
+          <div className="about-hero-media">
+            <video
+              ref={videoRef}
+              className="about-hero-video"
+              autoPlay
+              muted
+              loop
+              playsInline
+              poster="/media/about-team-collab.jpg"
+              onLoadedData={() => setVideoReady(true)}
+            >
+              <source src="/media/about.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </section>
       }
     >
-      <section className="page-section doc-overview-stage">
-        <SubpageTabNav items={aboutSubpages} />
-        <div className="doc-metric-grid">
-          {aboutLandingMetrics.map((item) => (
-            <article key={item.label} className="doc-metric-card">
-              <Text className="panel-label">{item.label}</Text>
-              <strong>{item.value}</strong>
-              <Paragraph>{item.detail}</Paragraph>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="page-section doc-story-stage">
-        <div className="section-heading">
-          <Text className="news-page-kicker">Brand Overview</Text>
-          <Title level={2}>{aboutHighlight.title}</Title>
-          <Paragraph>{aboutHighlight.description}</Paragraph>
-        </div>
-        <div className="doc-about-overview">
-          <article className="doc-about-manifesto">
-            <Text className="panel-label">About Navlyn</Text>
-            <Title level={3}>围绕品牌愿景、公开报道与人才吸引建立完整叙事</Title>
-            <Paragraph>
-              关于我们不仅要回答“我们是谁”，还要同时承接品牌愿景、外部传播和人才吸引三条内容线，让 Navlyn 的对外认知能够持续扩展。
-            </Paragraph>
-            <div className="doc-story-grid">
-              {aboutMilestones.map((item) => (
-                <article key={item} className="doc-story-card">
-                  <span />
-                  <p>{item}</p>
-                </article>
-              ))}
-            </div>
-          </article>
-        </div>
-        <div className="doc-about-spotlight-grid">
-          <Link className="doc-about-spotlight-card" to="/about/news">
-            <div className="doc-about-spotlight-media">
-              <img src={homeNews.items[0]?.image} alt={homeNews.items[0]?.alt} />
-            </div>
-            <div className="doc-about-spotlight-copy">
-              <Text className="panel-label">Latest Coverage</Text>
-              <Title level={3}>{homeNews.items[0]?.title}</Title>
-              <Paragraph>{homeNews.items[0]?.summary}</Paragraph>
-              <span>查看新闻报道</span>
-            </div>
-          </Link>
-          <article className="doc-about-person-card">
-            <div className="doc-about-person-media">
-              <img src={aboutTeam[0]?.image} alt={aboutTeam[0]?.name} />
-            </div>
-            <div className="doc-about-person-copy">
-              <Text className="panel-label">Team Highlight</Text>
-              <Title level={3}>{aboutTeam[0]?.name}</Title>
-              <strong>{aboutTeam[0]?.role}</strong>
-              <Paragraph>{aboutTeam[0]?.bio}</Paragraph>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section className="page-section doc-subpage-stage">
-        <div className="section-heading">
-          <Text className="news-page-kicker">Subpages</Text>
-          <Title level={2}>关于我们的内容入口</Title>
-          <Paragraph>公司愿景、新闻报道与职业招聘分别承担品牌、传播和人才三条主线，父页先把这三条线的入口和关系讲清楚。</Paragraph>
-        </div>
-        <div className="doc-about-feature-grid">
-          {aboutFeatureCards.map((item) => (
-            <Link key={item.path} className="doc-about-feature-card" to={item.path}>
-              <div className="doc-about-feature-media">
-                {item.image ? (
-                  <img
-                    src={item.image}
-                    alt={item.imageAlt ?? item.title}
-                    style={{ objectPosition: item.imagePosition ?? 'center center' }}
-                  />
-                ) : null}
-              </div>
-              <div className="doc-about-feature-overlay" />
-              <div className="doc-about-feature-copy">
-                <Text className="panel-label">{item.eyebrow}</Text>
-                <Title level={3}>{item.title}</Title>
-                <Paragraph>{item.description}</Paragraph>
-                <span>进入栏目</span>
-              </div>
-            </Link>
-          ))}
-        </div>
-        <div className="doc-subpage-grid">
-          {aboutSubpages.map((item) => (
-            <Link key={item.path} className="doc-subpage-card" to={item.path}>
-              <Text className="panel-label">About</Text>
-              <Title level={3}>{item.title}</Title>
-              <Paragraph>{item.description}</Paragraph>
-              <span>查看页面</span>
-            </Link>
-          ))}
+      <section className="page-section about-content">
+        <div className="about-content-wrapper">
+          <Paragraph className="about-content-text">
+            浙江航链科技有限公司是一家聚焦低空智能装备与行业解决方案的科技企业。公司源自法国
+            Innotech
+            的技术与国际化基础，相关产品与方案已在海外多个国家和地区建立分销网络，并在巡检、测绘、安防、应急等多个场景形成落地案例，部分项目已成为国际行业中具有代表性的经典应用。
+          </Paragraph>
+          <Paragraph className="about-content-text">
+            在此基础上，航链科技依托中国成熟的制造与供应链体系，进一步推动低空装备的本地化研发、快速迭代与规模化交付。公司不仅聚焦复合翼无人机、无人船等核心装备，也积极推动低空智能操作系统开发，形成"智能硬件
+            + 操作系统 + 场景方案"的整体能力。
+          </Paragraph>
+          <Paragraph className="about-content-text">
+            未来，航链科技将以产业链主的角色，持续整合更多无人机、低空基础设施及相关智能制造企业，在人工智能与机器人智能能力的赋能下，推动低空应用从单一设备走向系统化、协同化和规模化升级，目前正处于全面拓展与加速落地阶段。
+          </Paragraph>
         </div>
       </section>
     </SiteLayout>

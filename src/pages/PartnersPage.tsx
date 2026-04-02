@@ -1,13 +1,16 @@
+/*
+ * @Author: Icon oncwnuEuU001JU72QF0Wv2zwAqd0@git.weixin.qq.com
+ * @Date: 2026-03-27 20:44:53
+ * @LastEditors: Icon oncwnuEuU001JU72QF0Wv2zwAqd0@git.weixin.qq.com
+ * @LastEditTime: 2026-04-02 10:42:44
+ * @FilePath: /Navlyn_home/src/pages/PartnersPage.tsx
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
 import { Typography } from 'antd';
 import { Link } from 'react-router-dom';
-import ImmersivePageHero from '../components/ImmersivePageHero';
-import SubpageTabNav from '../components/SubpageTabNav';
-import { partnerLandingMetrics, partnerModeCards, partnerPreviewCards } from '../data/documentLanding';
 import SiteLayout from '../layouts/SiteLayout';
-import { partnerSubpages } from '../data/subpages';
-import { globalRegions, partnerBrandWall, partnerQuotes } from '../data/site';
 
-const { Title, Paragraph, Text } = Typography;
+const { Paragraph } = Typography;
 
 export default function PartnersPage() {
   return (
@@ -15,107 +18,31 @@ export default function PartnersPage() {
       title="客户与合作 | Navlyn 航链科技"
       description="查看 Navlyn 客户与合作页面下的合作伙伴与全球经销商入口。"
       hero={
-        <ImmersivePageHero
-          prefix="partners-page-hero"
-          media={<img src="/media/about-team-collab.jpg" alt="Navlyn partners" />}
-          tag="Customers & Partners"
-          title="客户与合作"
-          description="聚焦合作伙伴与全球经销商两类内容，先把页面结构搭稳，再继续补合作品牌、地图与联系人信息。"
-        />
+        <section className="partners-hero">
+          <div className="partners-hero-media">
+            <img src="/media/partners-01.jpg" alt="Partners" />
+          </div>
+          <div className="partners-hero-overlay" />
+          <div className="partners-hero-copy">
+            <h1 className="partners-hero-title">链接世界，航向未来</h1>
+            <p className="partners-hero-subtitle">每一处航迹，都有我们的伙伴。</p>
+          </div>
+        </section>
       }
     >
-      <section className="page-section doc-overview-stage">
-        <SubpageTabNav items={partnerSubpages} />
-        <div className="doc-metric-grid">
-          {partnerLandingMetrics.map((item) => (
-            <article key={item.label} className="doc-metric-card">
-              <Text className="panel-label">{item.label}</Text>
-              <strong>{item.value}</strong>
-              <Paragraph>{item.detail}</Paragraph>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="page-section doc-partner-stage">
-        <div className="section-heading">
-          <Text className="news-page-kicker">Partner Overview</Text>
-          <Title level={2}>从品牌合作到本地经销，先把合作网络框架搭稳</Title>
-          <Paragraph>
-            父页先承担总览作用：上承品牌表达与合作价值，下接合作伙伴和全球经销商两条子栏目，方便后续继续补 Logo、城市、联系方式和联合项目内容。
+      <section className="page-section partners-content">
+        <div className="partners-content-wrapper">
+          <Paragraph className="partners-content-text">
+            "航链"不仅是技术的链接，更是全球信任的链接。我们在多哥感受非洲的生机，在马来西亚见证东盟的速度，在德国、比利时严谨的工业氛围中砥砺前行。
           </Paragraph>
-        </div>
-        <div className="doc-partner-overview-grid">
-          <article className="doc-partner-surface">
-            <Text className="panel-label">Alliance Snapshot</Text>
-            <Title level={3}>合作生态总览</Title>
-            <Paragraph>
-              当前先用品牌墙和覆盖区域表达合作网络轮廓，后续再逐步替换成真实合作伙伴 Logo、项目案例与经销商联系人信息。
-            </Paragraph>
-            <div className="doc-logo-wall doc-logo-wall-compact">
-              {partnerBrandWall.slice(0, 6).map((item) => (
-                <div key={item} className="doc-logo-chip">
-                  {item}
-                </div>
-              ))}
-            </div>
-          </article>
-          <div className="doc-partner-aside">
-            <article className="doc-partner-quote-card">
-              <Text className="panel-label">Partner Voice</Text>
-              <Paragraph>“{partnerQuotes[0]?.quote}”</Paragraph>
-              <strong>{partnerQuotes[0]?.name}</strong>
-              <span>{partnerQuotes[0]?.title}</span>
-            </article>
-            <article className="doc-region-card">
-              <Text className="panel-label">Coverage</Text>
-              <Title level={3}>当前覆盖区域</Title>
-              <div className="doc-region-list">
-                {globalRegions.map((region) => (
-                  <div key={region.name} className="doc-region-item">
-                    <strong>{region.name}</strong>
-                    <span>{region.locations}</span>
-                  </div>
-                ))}
-              </div>
-            </article>
+          <Paragraph className="partners-content-text">
+            无论您身处澳大利亚的广袤海岸，还是沙特阿拉伯的能源基地，Navlyn 官方授权代理商均可为您提供最及时的专业咨询与技术支撑。
+          </Paragraph>
+          <div className="partners-content-cta">
+            <Link to="/contact" className="partners-cta-button">
+              联系我们
+            </Link>
           </div>
-        </div>
-      </section>
-
-      <section className="page-section doc-subpage-stage">
-        <div className="section-heading">
-          <Text className="news-page-kicker">Collaboration Modes</Text>
-          <Title level={2}>合作网络会沿着这三条路径继续展开</Title>
-          <Paragraph>品牌合作、区域经销和项目共创分别对应不同合作关系。当前先把结构搭清楚，后续再接真实品牌、国家和项目内容。</Paragraph>
-        </div>
-        <div className="doc-editorial-grid">
-          {partnerModeCards.map((item) => (
-            <Link key={item.path} className="doc-editorial-card" to={item.path}>
-              <Text className="panel-label">{item.eyebrow}</Text>
-              <Title level={3}>{item.title}</Title>
-              <Paragraph>{item.description}</Paragraph>
-              <span>{item.accent}</span>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      <section className="page-section doc-subpage-stage">
-        <div className="section-heading">
-          <Text className="news-page-kicker">Subpages</Text>
-          <Title level={2}>客户与合作子菜单</Title>
-          <Paragraph>合作伙伴与全球经销商分别承接品牌合作和区域经销两条主线，父页先完成总览，子页再逐项补齐细节资料。</Paragraph>
-        </div>
-        <div className="doc-partner-preview-grid">
-          {partnerPreviewCards.map((item) => (
-            <Link key={item.path} className="doc-partner-preview-card" to={item.path}>
-              <Text className="panel-label">{item.eyebrow}</Text>
-              <Title level={3}>{item.title}</Title>
-              <Paragraph>{item.description}</Paragraph>
-              <span>{item.accent}</span>
-            </Link>
-          ))}
         </div>
       </section>
     </SiteLayout>

@@ -276,7 +276,7 @@ export const pageMessages = {
             statLabel: "自主等级",
           },
           {
-            title: "软硬双核",
+            title: "软硬一体",
             description:
               "空海一体硬件矩阵与 AI 中枢深度融合。硬件标准化、软件持续进化，达成「硬件折旧，软件增值」的持续演进能力。",
             tags: ["硬件标准化", "AI 融合", "持续进化"],

@@ -1,20 +1,10 @@
-export interface IndustryItem {
-  key: string;
-  label: string;
-  painPoint: string;
-  solution: string;
-  outcome: string;
-  image: string;
-  eyebrow: string;
-}
-
-export interface HomeMediaSlide {
+interface HomeMediaSlide {
   image: string;
   alt: string;
   imagePosition: string;
 }
 
-export interface HomeCapabilityItem {
+interface HomeCapabilityItem {
   eyebrow: string;
   title: string;
   description: string;
@@ -26,7 +16,7 @@ export interface HomeCapabilityItem {
   imagePosition: string;
 }
 
-export interface HomeHardwareItem {
+interface HomeHardwareItem {
   key: string;
   title: string;
   description: string;
@@ -35,7 +25,7 @@ export interface HomeHardwareItem {
   imagePosition: string;
 }
 
-export interface HomeNewsItem {
+interface HomeNewsItem {
   title: string;
   summary: string;
   tag: string;
@@ -47,7 +37,7 @@ export interface HomeNewsItem {
   featured?: boolean;
 }
 
-export interface HomeIndustryShowcaseCard {
+interface HomeIndustryShowcaseCard {
   key: string;
   title: string;
   titleEn: string;
@@ -167,9 +157,6 @@ export const homeIndustryService = {
   footnote:
     '对应场景图片后续可逐张替换，当前先以科技化沉浸式卡片结构承接行业表达。',
 };
-
-export const homeCapabilityIntro =
-  '从系统中枢、软硬件协同到群体安全与工程交付，航链科技把低空能力沉淀为可复用、可规模化的系统能力。';
 
 export const homeCapabilities: HomeCapabilityItem[] = [
   {
@@ -346,42 +333,3 @@ export const homeNews = {
     },
   ] satisfies HomeNewsItem[],
 };
-
-export const industries: IndustryItem[] = [
-  {
-    key: 'surveying',
-    label: '测绘',
-    painPoint: '大范围作业效率低、数据更新周期长，复杂地形下人工测绘成本高。',
-    solution: '通过 ARC ENGINE 进行任务规划、航线执行与实时建模，结合指挥机和巡查终端完成高效数据采集。',
-    outcome: '形成高精度三维建模成果，缩短作业周期并提升多区域并行能力。',
-    image: '/media/commander-x1.jpg',
-    eyebrow: 'Surveying & Mapping',
-  },
-  {
-    key: 'construction',
-    label: '建筑与工程',
-    painPoint: '项目现场变化频繁，传统巡检难以及时发现风险与进度偏差。',
-    solution: '将无人机巡查、图像识别和任务日志结合，用统一平台管理工程现场状态与任务记录。',
-    outcome: '帮助项目团队更快完成巡检闭环和现场可视化管理。',
-    image: '/media/scout-s1.png',
-    eyebrow: 'Construction & Engineering',
-  },
-  {
-    key: 'mining',
-    label: '矿业与资源',
-    painPoint: '矿区范围广、道路条件复杂，应急与生产监管需要并行推进。',
-    solution: '通过广域测绘、空中巡检和事件协同调度，建立低空运行与矿区治理的一体化方案。',
-    outcome: '降低人力巡检压力，提升矿区生产监管和应急处置效率。',
-    image: '/media/commander-x1.jpg',
-    eyebrow: 'Mining & Resources',
-  },
-  {
-    key: 'emergency',
-    label: '应急救援',
-    painPoint: '通信中断，道路受阻和现场环境复杂时，传统救援调度效率受限。',
-    solution: '使用语音意图下达、空海协同执行和任务编排能力，快速完成搜索、定位与救援支援。',
-    outcome: '提升复杂灾害场景中的任务响应速度与跨设备协同能力。',
-    image: '/media/seal-usv.jpg',
-    eyebrow: 'Emergency Response',
-  },
-];

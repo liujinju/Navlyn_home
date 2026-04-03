@@ -1,48 +1,7 @@
-.doc-products-hero-copy,
-.doc-arc-hero-copy,
-.doc-industries-hero-copy {
-  max-width: var(--content-narrow-width);
-}
-
-.doc-products-hero-tag,
-.doc-arc-hero-tag,
-.doc-industries-hero-tag {
-  color: rgba(171, 201, 255, 0.76);
-  font-size: 11px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-}
-
-.doc-products-hero-copy h1,
-.doc-arc-hero-copy h1,
-.doc-industries-hero-copy h1 {
-  margin: 16px 0 0;
-  color: #f7f9ff !important;
-  font-size: clamp(36px, 4.4vw, 72px);
-  line-height: 1;
-  letter-spacing: -0.06em;
-}
-
-.doc-products-hero-copy p,
-.doc-arc-hero-copy p,
-.doc-industries-hero-copy p {
-  margin: 18px 0 0 !important;
-  max-width: var(--content-reading-width);
-  color: rgba(227, 234, 247, 0.8) !important;
-  font-size: clamp(17px, 1.22vw, 19px);
-  line-height: 1.6;
-}
-
-.doc-subpage-stage,
 .doc-story-stage,
 .doc-news-stage,
 .doc-jobs-stage,
 .doc-placeholder-stage,
-.doc-products-stage,
-.doc-learning-stage,
-.doc-industry-detail-stage,
-.doc-overview-stage,
-.doc-knowledge-stage,
 .doc-partner-stage,
 .doc-distributor-stage {
   padding-top: var(--section-space-xl);
@@ -80,112 +39,38 @@
   color: #f7f9ff;
 }
 
-.doc-subpage-grid,
 .doc-jobs-grid {
   display: flex;
   flex-wrap: wrap;
   gap: var(--content-cluster-gap);
 }
 
-.doc-subpage-card,
 .doc-jobs-card,
 .doc-story-card,
-.doc-software-card,
-.doc-arc-tag-card,
 .doc-update-state,
-.doc-industry-card,
-.doc-industry-detail-points article,
-.doc-metric-card,
-.doc-knowledge-intro,
-.doc-knowledge-track,
-.doc-partner-surface,
-.doc-partner-quote-card,
-.doc-region-card,
-.doc-partner-preview-card,
-.doc-about-manifesto,
-.doc-about-feature-card {
+.doc-update-state {
   border: 1px solid rgba(126, 168, 255, 0.12);
   background: linear-gradient(180deg, rgba(8, 13, 26, 0.82) 0%, rgba(8, 13, 26, 0.62) 100%);
   border-radius: 28px;
   box-shadow: 0 20px 70px rgba(1, 4, 14, 0.18);
 }
 
-.doc-subpage-card {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  min-height: 300px;
-  padding: var(--card-padding-lg);
-  text-decoration: none;
-  color: inherit;
-  transition:
-    transform 180ms ease,
-    border-color 180ms ease,
-    background 180ms ease;
-}
-
-.doc-subpage-card:hover,
-.doc-industry-card:hover {
-  transform: translateY(-2px);
-  border-color: rgba(126, 168, 255, 0.22);
-}
-
-.doc-subpage-card h3,
 .doc-jobs-card h3,
-.doc-story-card p,
-.doc-software-card h3,
-.doc-industry-card strong {
+.doc-story-card p {
   margin: 0 !important;
 }
 
-.doc-subpage-card p,
 .doc-jobs-card p,
-.doc-software-card p,
 .doc-news-item-copy p,
 .doc-update-state p,
 .doc-story-card p,
-.doc-product-row-point p,
-.doc-industry-detail-points p,
-.doc-learning-band-point p {
+.doc-story-card p {
   color: rgba(220, 228, 242, 0.78) !important;
   line-height: 1.5;
 }
 
-.doc-subpage-card span:last-child {
-  margin-top: auto;
-  color: #7fb3ff;
-  font-size: 14px;
-}
-
-.doc-metric-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--content-cluster-gap);
-}
-
-.doc-metric-card {
-  flex: 1 1 260px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: var(--card-padding-lg);
-  min-height: 188px;
-}
-
-.doc-subpage-grid > *,
 .doc-jobs-grid > * {
   flex: 1 1 260px;
-}
-
-.doc-metric-card strong {
-  color: #f7f9ff;
-  font-size: clamp(30px, 3vw, 46px);
-  line-height: 1;
-  letter-spacing: -0.05em;
-}
-
-.doc-metric-card p {
-  margin: 0 !important;
 }
 
 .doc-update-state {
@@ -206,23 +91,18 @@
 }
 
 @media (max-width: 1200px) {
-  .doc-subpage-grid > *,
-  .doc-jobs-grid > *,
-  .doc-metric-grid > * {
+  .doc-jobs-grid > * {
     flex-basis: calc(50% - 12px);
   }
 }
 
 @media (max-width: 960px) {
-  .doc-subpage-grid > *,
-  .doc-jobs-grid > *,
-  .doc-metric-grid > * {
+  .doc-jobs-grid > * {
     flex-basis: 100%;
   }
 }
 
 @media (max-width: 640px) {
-  .doc-subpage-card,
   .doc-jobs-card,
   .doc-update-state {
     padding: var(--card-padding-md);

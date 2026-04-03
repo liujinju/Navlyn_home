@@ -1,7 +1,7 @@
 export type Locale = "zh" | "en" | "fr" | "es";
 export type ContentLocale = "zh" | "en";
 
-export interface LocaleOption {
+interface LocaleOption {
   key: Locale;
   label: string;
 }

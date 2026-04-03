@@ -64,9 +64,7 @@ body {
 .hero-title-en.ant-typography,
 .hero-title-zh,
 .hero-title-sub,
-.arc-page-hero-copy h1,
-.about-page-hero-copy h1,
-.industries-page-hero-copy h1 {
+.about-page-hero-copy h1 {
   white-space: nowrap;
   text-wrap: nowrap;
   overflow: visible !important;

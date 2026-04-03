@@ -6,7 +6,6 @@
  * @FilePath: /Navlyn_home/src/pages/AboutPage.tsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
-import { useEffect, useRef, useState } from "react";
 import { Typography } from "antd";
 import { useI18n } from "../i18n/I18nProvider";
 import SiteLayout from "../layouts/SiteLayout";
@@ -16,17 +15,6 @@ const { Paragraph } = Typography;
 export default function AboutPage() {
   const { page } = useI18n();
   const copy = page.about;
-  const [videoReady, setVideoReady] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-    if (video.readyState >= 2) setVideoReady(true);
-    const handleLoaded = () => setVideoReady(true);
-    video.addEventListener("loadeddata", handleLoaded);
-    return () => video.removeEventListener("loadeddata", handleLoaded);
-  }, []);
 
   return (
     <SiteLayout
@@ -36,14 +24,12 @@ export default function AboutPage() {
         <section className="about-hero">
           <div className="about-hero-media">
             <video
-              ref={videoRef}
               className="about-hero-video"
               autoPlay
               muted
               loop
               playsInline
               poster="/media/about-team-collab.jpg"
-              onLoadedData={() => setVideoReady(true)}
             >
               <source src="/media/about.mp4" type="video/mp4" />
             </video>

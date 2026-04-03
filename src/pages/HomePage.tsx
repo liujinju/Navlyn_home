@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import IndustryShowcaseSection from '../components/IndustryShowcaseSection';
 import {
   homeCapabilities,
-  homeCapabilityIntro,
   homeHardwareMatrix,
   homeHero,
   homeNews,

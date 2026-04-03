@@ -1,9 +1,9 @@
-export interface ProductSpecItem {
+interface ProductSpecItem {
   label: string;
   value: string;
 }
 
-export interface ProductDetailItem {
+interface ProductDetailItem {
   key: 'commander' | 'scout' | 'seal';
   tag: string;
   name: string;

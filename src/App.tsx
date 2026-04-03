@@ -8,7 +8,6 @@ const IndustriesPage = lazy(() => import('./pages/IndustriesPage'));
 const PartnersPage = lazy(() => import('./pages/PartnersPage'));
 const PartnersAlliancesPage = lazy(() => import('./pages/PartnersAlliancesPage'));
 const PartnersDistributorsPage = lazy(() => import('./pages/PartnersDistributorsPage'));
-const SectionPlaceholderPage = lazy(() => import('./pages/SectionPlaceholderPage'));
 const AboutPage = lazy(() => import('./pages/AboutPage'));
 const AboutVisionPage = lazy(() => import('./pages/AboutVisionPage'));
 const AboutNewsPage = lazy(() => import('./pages/AboutNewsPage'));

@@ -17,7 +17,7 @@ export default function AboutVisionPage() {
       hero={
         <ImmersivePageHero
           prefix="about-page-hero"
-          media={<img src="/media/about-team-collab.jpg" alt="Navlyn company vision" />}
+          media={<img src="/media/about-team-collab.jpg" alt="Navlyn company vision" decoding="async" />}
           tag="Company Vision"
           title={copy.heroTitle}
           description={copy.heroDescription}

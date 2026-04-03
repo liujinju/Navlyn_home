@@ -18,7 +18,7 @@ export default function AboutCareersPage() {
       hero={
         <ImmersivePageHero
           prefix="about-page-hero"
-          media={<img src="/media/company-news-briefing.jpg" alt="Navlyn careers" />}
+          media={<img src="/media/company-news-briefing.jpg" alt="Navlyn careers" decoding="async" />}
           tag="Careers"
           title={copy.heroTitle}
           description={copy.heroDescription}

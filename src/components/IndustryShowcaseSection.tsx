@@ -53,6 +53,8 @@ export default function IndustryShowcaseSection({
                   src={card.image}
                   alt={card.imageAlt}
                   style={{ objectPosition: card.imagePosition }}
+                  loading="lazy"
+                  decoding="async"
                 />
                 <span className="industry-showcase-card-scene">
                   {card.scene}

@@ -25,6 +25,7 @@ export default function ProductsPage() {
               muted
               loop
               playsInline
+              preload="metadata"
             />
             <div className="products-cinema-overlay" />
             <div className="products-cinema-ambient" />
@@ -56,7 +57,7 @@ export default function ProductsPage() {
                   } as CSSProperties
                 }
               >
-                <img src={item.image} alt={item.imageAlt} />
+                <img src={item.image} alt={item.imageAlt} loading="lazy" decoding="async" />
                 <div className="products-detail-media-overlay" />
               </div>
 

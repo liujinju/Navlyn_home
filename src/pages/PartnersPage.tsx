@@ -24,7 +24,7 @@ export default function PartnersPage() {
       hero={
         <section className="partners-hero">
           <div className="partners-hero-media">
-            <img src="/media/partners-01.jpg" alt="Partners" />
+            <img src="/media/partners-01.jpg" alt="Partners" decoding="async" />
           </div>
           <div className="partners-hero-overlay" />
           <div className="partners-hero-copy">

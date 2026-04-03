@@ -20,7 +20,7 @@ export default function AboutNewsPage() {
       hero={
         <ImmersivePageHero
           prefix="about-page-hero"
-          media={<img src="/media/company-news-feature.jpg" alt="Navlyn media coverage" />}
+          media={<img src="/media/company-news-feature.jpg" alt="Navlyn media coverage" decoding="async" />}
           tag="Media Coverage"
           title={copy.heroTitle}
           description={copy.heroDescription}
@@ -42,7 +42,7 @@ export default function AboutNewsPage() {
               to={`/news/${item.slug}`}
             >
               <div className="doc-news-item-media">
-                <img src={item.image} alt={item.imageAlt} />
+                <img src={item.image} alt={item.imageAlt} loading="lazy" decoding="async" />
               </div>
               <div className="doc-news-item-copy">
                 <Text className="panel-label">{item.tag}</Text>

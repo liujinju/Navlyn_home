@@ -57,7 +57,7 @@ export default function NewsDetailPage() {
         </div>
 
         <div className="news-detail-cover">
-          <img src={article.image} alt={article.imageAlt} />
+          <img src={article.image} alt={article.imageAlt} decoding="async" />
         </div>
 
         <div className="news-detail-body">
@@ -94,7 +94,7 @@ export default function NewsDetailPage() {
                   <Paragraph>{item.description}</Paragraph>
                 </div>
                 <div className="news-card-media">
-                  <img src={item.image} alt={item.imageAlt} />
+                  <img src={item.image} alt={item.imageAlt} loading="lazy" decoding="async" />
                 </div>
               </Link>
             ))}

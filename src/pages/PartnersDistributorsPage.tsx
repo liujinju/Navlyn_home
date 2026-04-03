@@ -18,7 +18,7 @@ export default function PartnersDistributorsPage() {
       hero={
         <ImmersivePageHero
           prefix="partners-page-hero"
-          media={<img src="/media/company-news-briefing.jpg" alt="Navlyn distributors" />}
+          media={<img src="/media/company-news-briefing.jpg" alt="Navlyn distributors" decoding="async" />}
           tag="Customers & Partners"
           title={copy.heroTitle}
           description={copy.heroDescription}

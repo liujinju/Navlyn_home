@@ -31,6 +31,8 @@ export default function ArcPage() {
               src="/media/arc-engine-02.jpg"
               alt="Voice Control"
               className="arc-hero-feature-image"
+              loading="lazy"
+              decoding="async"
             />
             <div className="arc-hero-feature-copy">
               <Text className="arc-hero-feature-label">
@@ -49,6 +51,8 @@ export default function ArcPage() {
               src="/media/arc-engine-03.jpg"
               alt="Voice Control"
               className="arc-hero-feature-image"
+              loading="lazy"
+              decoding="async"
             />
             <div className="arc-hero-feature-copy">
               <Text className="arc-hero-feature-label">
@@ -67,6 +71,8 @@ export default function ArcPage() {
               src="/media/arc-engine-04.jpg"
               alt="Voice Control"
               className="arc-hero-feature-image"
+              loading="lazy"
+              decoding="async"
             />
             <div className="arc-hero-feature-copy">
               <Text className="arc-hero-feature-label">
@@ -85,6 +91,8 @@ export default function ArcPage() {
               src="/media/arc-engine-05.jpg"
               alt="Voice Control"
               className="arc-hero-feature-image"
+              loading="lazy"
+              decoding="async"
             />
             <div className="arc-hero-feature-copy">
               <Text className="arc-hero-feature-label">

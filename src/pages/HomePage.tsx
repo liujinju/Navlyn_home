@@ -85,6 +85,7 @@ export default function HomePage() {
             muted
             loop
             playsInline
+            preload="metadata"
             poster="/media/commander-x1.jpg"
             onLoadedData={() => setHeroVideoReady(true)}
           >
@@ -123,7 +124,13 @@ export default function HomePage() {
                   className={`what-we-do-slide${index === whatWeDoSlideIndex ? ' is-active' : ''}`}
                   aria-hidden={index === whatWeDoSlideIndex ? 'false' : 'true'}
                 >
-                  <img src={slide.image} alt={slide.alt} style={{ objectPosition: slide.imagePosition }} />
+                  <img
+                    src={slide.image}
+                    alt={slide.alt}
+                    style={{ objectPosition: slide.imagePosition }}
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
               ))}
               <div className="what-we-do-carousel-overlay" />
@@ -178,6 +185,8 @@ export default function HomePage() {
                   src={item.image}
                   alt={item.imageAlt}
                   style={{ objectPosition: item.imagePosition }}
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="capability-card-tech-overlay" />
                 <div className="capability-card-tech-glow" aria-hidden="true" />
@@ -276,6 +285,8 @@ export default function HomePage() {
                     src={item.image} 
                     alt={item.imageAlt} 
                     style={{ objectPosition: item.imagePosition }} 
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="product-hardware-tech-overlay" />
                   <div className="product-hardware-tech-glow" aria-hidden="true" />
@@ -318,6 +329,8 @@ export default function HomePage() {
                 src={homeHardwareMatrix.software.image} 
                 alt="" 
                 style={{ objectPosition: homeHardwareMatrix.software.imagePosition }} 
+                loading="lazy"
+                decoding="async"
               />
               <div className="product-software-tech-bg-overlay" />
               <div className="product-software-tech-grid-lines" />
@@ -362,7 +375,7 @@ export default function HomePage() {
                 aria-hidden={index === newsSlideIndex ? 'false' : 'true'}
               >
                 <div className="news-carousel-media">
-                  <img src={item.image} alt={item.alt} />
+                  <img src={item.image} alt={item.alt} loading="lazy" decoding="async" />
                   <div className="news-carousel-overlay" />
                   <div className="news-carousel-glow" />
                 </div>

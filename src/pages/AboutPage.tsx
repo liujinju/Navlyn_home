@@ -29,6 +29,7 @@ export default function AboutPage() {
               muted
               loop
               playsInline
+              preload="metadata"
               poster="/media/about-team-collab.jpg"
             >
               <source src="/media/about.mp4" type="video/mp4" />

@@ -24,14 +24,15 @@ export default function IndustryShowcaseSection({
   return (
     <section className={sectionClassName}>
       <div className="industry-showcase-heading">
-        <Text className="industry-showcase-kicker">
-          {copy.kicker}
-        </Text>
+        <Text className="industry-showcase-kicker">{copy.kicker}</Text>
         <Title level={2}>{copy.title}</Title>
         <Paragraph className="industry-showcase-lead section-lead-copy">
           {copy.description}
         </Paragraph>
-        <div className="industry-showcase-stats" aria-label={`${copy.title} stats`}>
+        <div
+          className="industry-showcase-stats"
+          aria-label={`${copy.title} stats`}
+        >
           {copy.stats.map((stat) => (
             <span key={stat} className="industry-showcase-stat">
               {stat}
@@ -40,21 +41,6 @@ export default function IndustryShowcaseSection({
         </div>
       </div>
       <div className="industry-showcase-stage">
-        <div
-          className="industry-showcase-shape industry-showcase-shape-left"
-          aria-hidden="true"
-        />
-        <div
-          className="industry-showcase-shape industry-showcase-shape-center"
-          aria-hidden="true"
-        />
-        <div
-          className="industry-showcase-shape industry-showcase-shape-right"
-          aria-hidden="true"
-        />
-        <div className="industry-showcase-watermark" aria-hidden="true">
-          INDUSTRY MATRIX
-        </div>
         <div className="industry-showcase-grid">
           {homeIndustryService.cards.map((card) => (
             <article
@@ -68,7 +54,6 @@ export default function IndustryShowcaseSection({
                   alt={card.imageAlt}
                   style={{ objectPosition: card.imagePosition }}
                 />
-                <span className="industry-showcase-card-code">{card.code}</span>
                 <span className="industry-showcase-card-scene">
                   {card.scene}
                 </span>
@@ -81,7 +66,9 @@ export default function IndustryShowcaseSection({
                 <Text className="industry-showcase-card-kicker">
                   {card.titleEn}
                 </Text>
-                <Title level={3}>{copy.cards[card.key as keyof typeof copy.cards].title}</Title>
+                <Title level={3}>
+                  {copy.cards[card.key as keyof typeof copy.cards].title}
+                </Title>
                 <Paragraph>
                   {copy.cards[card.key as keyof typeof copy.cards].summary}
                 </Paragraph>

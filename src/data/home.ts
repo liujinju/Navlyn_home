@@ -43,7 +43,6 @@ interface HomeIndustryShowcaseCard {
   titleEn: string;
   summary: string;
   scene: string;
-  code: string;
   image: string;
   imageAlt: string;
   imagePosition: string;
@@ -93,7 +92,6 @@ export const homeIndustryService = {
       titleEn: 'Agriculture',
       summary: '面向农田巡查、作物监测与农事协同，提供低空智能化的感知与调度能力。',
       scene: 'Precision Agriculture',
-      code: 'AG',
       image: '/media/industry-showcase/agriculture.jpg',
       imageAlt: '农业场景航拍图',
       imagePosition: 'center center',
@@ -104,7 +102,6 @@ export const homeIndustryService = {
       titleEn: 'Mining',
       summary: '覆盖矿区建模、体积测算与风险巡检，适配复杂地形与高频作业场景。',
       scene: 'Mine Intelligence',
-      code: 'MN',
       image: '/media/industry-showcase/mining.jpg',
       imageAlt: '矿业作业场景图',
       imagePosition: 'center center',
@@ -115,7 +112,6 @@ export const homeIndustryService = {
       titleEn: 'Energy',
       summary: '服务油气、电力与能源基础设施，强化远距离巡查与关键节点感知效率。',
       scene: 'Energy Infrastructure',
-      code: 'EN',
       image: '/media/industry-showcase/energy.jpg',
       imageAlt: '能源基础设施场景图',
       imagePosition: 'center 28%',
@@ -126,7 +122,6 @@ export const homeIndustryService = {
       titleEn: 'Construction',
       summary: '聚焦工地巡查、进度比对与现场治理，帮助工程现场建立持续更新的空中视角。',
       scene: 'Construction Progress',
-      code: 'BD',
       image: '/media/industry-showcase/construction.jpg',
       imageAlt: '建筑工地场景图',
       imagePosition: 'center center',
@@ -137,7 +132,6 @@ export const homeIndustryService = {
       titleEn: 'Coastal Rescue',
       summary: '通过空海联动、快速搜寻与任务编排，提升海岸线与近海区域的救援响应能力。',
       scene: 'Maritime Response',
-      code: 'CR',
       image: '/media/industry-showcase/coastal.jpg',
       imageAlt: '海岸救援场景图',
       imagePosition: 'center center',
@@ -148,7 +142,6 @@ export const homeIndustryService = {
       titleEn: 'Inspection',
       summary: '适配园区、交通与基础设施场景，让高频巡检任务从人工执行走向系统协同。',
       scene: 'Autonomous Inspection',
-      code: 'IN',
       image: '/media/industry-showcase/inspection.jpg',
       imageAlt: '巡检场景图',
       imagePosition: 'center center',

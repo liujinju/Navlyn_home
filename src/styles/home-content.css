@@ -80,57 +80,6 @@
     0 28px 70px rgba(2, 8, 24, 0.26);
 }
 
-.industry-showcase-watermark {
-  position: absolute;
-  top: -12px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: clamp(72px, 11vw, 168px);
-  font-weight: 700;
-  line-height: 0.84;
-  letter-spacing: -0.08em;
-  color: rgba(241, 246, 255, 0.05);
-  white-space: nowrap;
-  pointer-events: none;
-  user-select: none;
-}
-
-.industry-showcase-shape {
-  position: absolute;
-  background: rgba(255, 255, 255, 0.08);
-  filter: blur(0.2px);
-  pointer-events: none;
-}
-
-.industry-showcase-shape-left {
-  width: 180px;
-  height: 220px;
-  left: 22%;
-  top: 92px;
-  border-radius: 88px 88px 40px 40px;
-  opacity: 0.18;
-}
-
-.industry-showcase-shape-center {
-  width: 320px;
-  height: 180px;
-  left: 50%;
-  top: 210px;
-  transform: translateX(-50%) rotate(-24deg);
-  border-radius: 58px;
-  opacity: 0.12;
-}
-
-.industry-showcase-shape-right {
-  width: 220px;
-  height: 220px;
-  right: 13%;
-  bottom: 64px;
-  border-radius: 44px;
-  transform: rotate(38deg);
-  opacity: 0.1;
-}
-
 .industry-showcase-grid {
   position: relative;
   z-index: 1;
@@ -219,18 +168,6 @@
     linear-gradient(180deg, rgba(4, 7, 14, 0) 34%, rgba(4, 7, 14, 0.34) 70%, rgba(4, 7, 14, 0.76) 100%),
     radial-gradient(circle at 50% 18%, rgba(255, 255, 255, 0.08), transparent 26%);
   z-index: 2;
-}
-
-.industry-showcase-card-code {
-  position: absolute;
-  right: 16px;
-  bottom: 10px;
-  z-index: 4;
-  color: rgba(245, 249, 255, 0.1);
-  font-size: clamp(54px, 5vw, 82px);
-  font-weight: 700;
-  line-height: 0.9;
-  letter-spacing: -0.08em;
 }
 
 .industry-showcase-card-scene {
@@ -1184,11 +1121,6 @@
     border-radius: 30px;
   }
 
-  .industry-showcase-watermark {
-    top: 12px;
-    font-size: clamp(64px, 12vw, 120px);
-  }
-
   .industry-showcase-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 18px;
@@ -1373,15 +1305,6 @@
     border-radius: 24px;
   }
 
-  .industry-showcase-watermark {
-    top: 18px;
-    font-size: clamp(54px, 18vw, 88px);
-  }
-
-  .industry-showcase-shape {
-    display: none;
-  }
-
   .industry-showcase-grid {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -1389,12 +1312,6 @@
 
   .industry-showcase-card-visual {
     border-radius: 20px;
-  }
-
-  .industry-showcase-card-code {
-    right: 14px;
-    bottom: 10px;
-    font-size: 62px;
   }
 
   .industry-showcase-card-copy h3 {

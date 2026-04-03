@@ -78,7 +78,7 @@ export default function SiteLayout({
           </Link>
         </div>
         <div className="site-header-center">
-          <nav className="desktop-nav" aria-label="主导航">
+          <nav className="desktop-nav" aria-label={shell.accessibility.mainNav}>
             {siteNavItems.map((item) => {
               const isActive = activeNavPath === item.path;
 
@@ -106,7 +106,7 @@ export default function SiteLayout({
               placement="bottomRight"
             >
               <Button type="default" ghost className="header-language-button">
-                <span className="language-flag-icon" aria-hidden="true" />
+                <span className="language-flag-icon" data-locale={locale} aria-hidden="true" />
                 <span>{shell.languageLabel}</span>
                 <DownOutlined />
               </Button>
@@ -120,7 +120,7 @@ export default function SiteLayout({
             ghost
             icon={<MenuOutlined />}
             onClick={() => setMobileNavOpen(true)}
-            aria-label="打开导航菜单"
+            aria-label={shell.accessibility.openMenu}
           />
         </div>
       </Header>
@@ -150,7 +150,7 @@ export default function SiteLayout({
             placement="bottomRight"
           >
             <Button block type="default" ghost className="header-language-button mobile-language-button">
-              <span className="language-flag-icon" aria-hidden="true" />
+              <span className="language-flag-icon" data-locale={locale} aria-hidden="true" />
               <span>{shell.languageLabel}</span>
               <DownOutlined />
             </Button>
@@ -161,7 +161,7 @@ export default function SiteLayout({
         {hero}
         {children ? <div className={`page-shell${contentClassName ? ` ${contentClassName}` : ''}`}>{children}</div> : null}
       </Content>
-      <Link to="/contact" className="site-contact-float" aria-label="Contact us 联系我们">
+      <Link to="/contact" className="site-contact-float" aria-label={shell.accessibility.contactLink}>
         <span className="site-contact-float-en">{shell.contactFloat.title}</span>
         <span className="site-contact-float-zh">{shell.contactFloat.subtitle}</span>
       </Link>

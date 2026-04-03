@@ -143,14 +143,14 @@ export default function HomePage() {
               </div>
               <div className="what-we-do-carousel-orb what-we-do-carousel-orb-left" aria-hidden="true" />
               <div className="what-we-do-carousel-orb what-we-do-carousel-orb-right" aria-hidden="true" />
-              <div className="what-we-do-carousel-controls" aria-label="我们做什么图片切换">
+              <div className="what-we-do-carousel-controls" aria-label={page.common.whatWeDoCarousel}>
                 {homeWhatWeDo.slides.map((slide, index) => (
                   <button
                     key={slide.image}
                     type="button"
                     className={`what-we-do-carousel-dot${index === whatWeDoSlideIndex ? ' is-active' : ''}`}
                     onClick={() => setWhatWeDoSlideIndex(index)}
-                    aria-label={`查看第 ${index + 1} 张图片`}
+                    aria-label={`${page.common.whatWeDoCarousel} ${index + 1}`}
                     aria-pressed={index === whatWeDoSlideIndex}
                   />
                 ))}
@@ -169,7 +169,10 @@ export default function HomePage() {
           <Paragraph className="capability-lead section-lead-copy">{copy.capabilities.intro}</Paragraph>
         </div>
         <div className="capability-grid capability-grid-tech">
-{homeCapabilities.map((item, index) => (
+{homeCapabilities.map((item, index) => {
+            const capabilityCopy = copy.capabilities.cards[index];
+
+            return (
             <article key={item.title} className={`capability-card capability-card-tech capability-card-tech-${index + 1}`}>
               <div className="capability-card-tech-visual">
                 <img
@@ -220,22 +223,23 @@ export default function HomePage() {
                   </div>
                   <div className="capability-card-tech-meta">
                     <Text className="capability-card-tech-eyebrow">{item.eyebrow}</Text>
-                    <Title level={3} className="capability-card-tech-title">{item.title}</Title>
+                    <Title level={3} className="capability-card-tech-title">{capabilityCopy.title}</Title>
                   </div>
                   <div className="capability-card-tech-stats">
                     <span className="capability-card-tech-stats-value">{item.stats.value}</span>
-                    <span className="capability-card-tech-stats-label">{item.stats.label}</span>
+                    <span className="capability-card-tech-stats-label">{capabilityCopy.statLabel}</span>
                   </div>
                 </div>
-                <Paragraph className="capability-card-tech-desc">{item.description}</Paragraph>
+                <Paragraph className="capability-card-tech-desc">{capabilityCopy.description}</Paragraph>
                 <div className="capability-card-tech-tags">
-                  {item.tags.map((tag) => (
+                  {capabilityCopy.tags.map((tag) => (
                     <span key={tag} className="capability-card-tech-tag">{tag}</span>
                   ))}
                 </div>
               </div>
             </article>
-          ))}
+            );
+          })}
         </div>
       </section>
 
@@ -259,7 +263,10 @@ export default function HomePage() {
             <Paragraph className="product-hardware-tech-desc">{copy.productGateway.hardwareDescription}</Paragraph>
           </div>
           <div className="product-hardware-tech-grid">
-            {homeHardwareMatrix.items.map((item, index) => (
+            {homeHardwareMatrix.items.map((item, index) => {
+              const productCopy = copy.productGateway.hardwareItems[item.key as keyof typeof copy.productGateway.hardwareItems];
+
+              return (
               <Link 
                 key={item.key} 
                 className={`product-hardware-tech-card product-hardware-tech-card-${index + 1}`} 
@@ -278,14 +285,12 @@ export default function HomePage() {
                 </div>
                 <div className="product-hardware-tech-content">
                   <div className="product-hardware-tech-badge">
-                    {index === 0 ? '旗舰' : index === 1 ? '作业' : '水面'}
+                    {productCopy.badge}
                   </div>
                   <div className="product-hardware-tech-info">
-                    <Text className="product-hardware-tech-label">
-                      {index === 0 ? 'Commander Series' : index === 1 ? 'Scout Series' : 'Seal Series'}
-                    </Text>
-                    <Title level={3} className="product-hardware-tech-name">{item.title}</Title>
-                    <Paragraph className="product-hardware-tech-spec">{item.description}</Paragraph>
+                    <Text className="product-hardware-tech-label">{productCopy.label}</Text>
+                    <Title level={3} className="product-hardware-tech-name">{productCopy.title}</Title>
+                    <Paragraph className="product-hardware-tech-spec">{productCopy.description}</Paragraph>
                   </div>
                   <div className="product-hardware-tech-action">
                     <span className="product-hardware-tech-cta">
@@ -297,7 +302,8 @@ export default function HomePage() {
                   </div>
                 </div>
               </Link>
-            ))}
+              );
+            })}
           </div>
         </div>
 
@@ -323,7 +329,7 @@ export default function HomePage() {
               <div className="product-software-tech-content">
                 <div className="product-software-tech-main">
                   <Title level={2} className="product-software-tech-heading">{copy.productGateway.softwareDescription} </Title>
-                  <Paragraph className="product-software-tech-text">{homeHardwareMatrix.software.summary}</Paragraph>
+                  <Paragraph className="product-software-tech-text">{copy.productGateway.softwareSummary}</Paragraph>
                 </div>
               </div>
             </div>
@@ -344,7 +350,10 @@ export default function HomePage() {
         </div>
         <div className="news-carousel">
           <div className="news-carousel-track">
-            {homeNews.items.map((item, index) => (
+            {homeNews.items.map((item, index) => {
+              const newsCopy = copy.news.items[index];
+
+              return (
               <a
                 key={item.title}
                 className={`news-carousel-slide${index === newsSlideIndex ? ' is-active' : ''}`}
@@ -360,21 +369,21 @@ export default function HomePage() {
                 </div>
                 <div className="news-carousel-content">
                   <div className="news-carousel-meta">
-                    <span className="news-carousel-tag">{item.tag}</span>
-                    <span className="news-carousel-date">{item.meta.split('·')[0].trim()}</span>
+                    <span className="news-carousel-tag">{newsCopy.tag}</span>
+                    <span className="news-carousel-date">{newsCopy.meta.split('·')[0].trim()}</span>
                   </div>
-                  <Title level={3} className="news-carousel-title">{item.title}</Title>
-                  <Paragraph className="news-carousel-summary">{item.summary}</Paragraph>
+                  <Title level={3} className="news-carousel-title">{newsCopy.title}</Title>
+                  <Paragraph className="news-carousel-summary">{newsCopy.summary}</Paragraph>
                   <div className="news-carousel-footer">
                     <div className="news-carousel-source">
                       <svg className="news-carousel-icon" viewBox="0 0 16 16" fill="none">
                         <circle cx="8" cy="8" r="6" stroke="currentColor" strokeWidth="1.2"/>
                         <circle cx="8" cy="8" r="2" fill="currentColor"/>
                       </svg>
-                      <span>{item.source}</span>
+                    <span>{newsCopy.source}</span>
                     </div>
                     <span className="news-carousel-cta">
-                      查看详情
+                      {copy.news.detailCta}
                       <svg viewBox="0 0 16 16" fill="none">
                         <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
                       </svg>
@@ -382,7 +391,8 @@ export default function HomePage() {
                   </div>
                 </div>
               </a>
-            ))}
+              );
+            })}
           </div>
           <div className="news-carousel-controls">
             {homeNews.items.map((item, index) => (
@@ -391,7 +401,7 @@ export default function HomePage() {
                 type="button"
                 className={`news-carousel-dot${index === newsSlideIndex ? ' is-active' : ''}`}
                 onClick={() => setNewsSlideIndex(index)}
-                aria-label={`查看第 ${index + 1} 条报道`}
+                aria-label={`${page.common.newsCarouselItem} ${index + 1}`}
                 aria-pressed={index === newsSlideIndex}
               />
             ))}

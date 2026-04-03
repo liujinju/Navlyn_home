@@ -2,6 +2,7 @@ import ImmersivePageHero from '../components/ImmersivePageHero';
 import SubpageTabNav from '../components/SubpageTabNav';
 import UpdatePageState from '../components/UpdatePageState';
 import type { SubpageLinkItem } from '../data/subpages';
+import { useI18n } from '../i18n/I18nProvider';
 import SiteLayout from '../layouts/SiteLayout';
 
 interface SectionPlaceholderPageProps {
@@ -25,6 +26,8 @@ export default function SectionPlaceholderPage({
   media = '/media/about-team-collab.jpg',
   subpages,
 }: SectionPlaceholderPageProps) {
+  const { page } = useI18n();
+
   return (
     <SiteLayout
       title={seoTitle}
@@ -44,7 +47,7 @@ export default function SectionPlaceholderPage({
         <UpdatePageState
           kicker={heroTag}
           title={pageTitle}
-          description="当前页面框架已建立，具体资料、图文内容与交互信息将根据后续素材继续补充。"
+          description={page.common.placeholderDescription}
         />
       </section>
     </SiteLayout>

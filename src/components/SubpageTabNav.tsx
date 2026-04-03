@@ -1,15 +1,17 @@
 import { Link, useLocation } from 'react-router-dom';
 import type { SubpageLinkItem } from '../data/subpages';
+import { useI18n } from '../i18n/I18nProvider';
 
 interface SubpageTabNavProps {
-  items: SubpageLinkItem[];
+  items: readonly SubpageLinkItem[];
 }
 
 export default function SubpageTabNav({ items }: SubpageTabNavProps) {
   const location = useLocation();
+  const { shell } = useI18n();
 
   return (
-    <nav className="doc-subpage-tabs" aria-label="子页面导航">
+    <nav className="doc-subpage-tabs" aria-label={shell.accessibility.subpageNav}>
       {items.map((item) => {
         const isActive = location.pathname === item.path;
 

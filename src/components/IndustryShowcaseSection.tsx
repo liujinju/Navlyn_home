@@ -31,7 +31,7 @@ export default function IndustryShowcaseSection({
         <Paragraph className="industry-showcase-lead section-lead-copy">
           {copy.description}
         </Paragraph>
-        <div className="industry-showcase-stats" aria-label="行业服务关键数据">
+        <div className="industry-showcase-stats" aria-label={`${copy.title} stats`}>
           {copy.stats.map((stat) => (
             <span key={stat} className="industry-showcase-stat">
               {stat}

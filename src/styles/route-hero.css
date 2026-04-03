@@ -1,12 +1,10 @@
-.about-page-hero-nav,
-.contact-page-hero-nav {
+.about-page-hero-nav {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
 }
 
-.about-page-hero-link,
-.contact-page-hero-link {
+.about-page-hero-link {
   display: flex;
   flex: 1 1 220px;
   flex-direction: column;
@@ -24,61 +22,30 @@
     box-shadow 180ms ease;
 }
 
-.about-page-hero-link:hover,
-.contact-page-hero-link:hover {
+.about-page-hero-link:hover {
   transform: translateY(-2px);
   border-color: rgba(255, 255, 255, 0.14);
   background: rgba(12, 17, 26, 0.68);
   box-shadow: 0 14px 30px rgba(2, 7, 20, 0.14);
 }
 
-.about-page-hero-link span,
-.contact-page-hero-link span {
+.about-page-hero-link span {
   color: rgba(167, 198, 255, 0.68);
   font-size: 11px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
 }
 
-.about-page-hero-link strong,
-.contact-page-hero-link strong {
+.about-page-hero-link strong {
   color: #f5f8ff;
   font-size: clamp(20px, 1.55vw, 25px);
   line-height: 1.18;
   letter-spacing: -0.03em;
 }
 
-.contact-page-hero-link-featured {
-  position: relative;
-  overflow: hidden;
-  justify-content: flex-end;
-  min-height: 148px;
-  border-color: rgba(146, 184, 255, 0.18);
-  background:
-    linear-gradient(180deg, rgba(10, 16, 29, 0.26) 0%, rgba(5, 9, 17, 0.74) 100%),
-    url('/media/company-news-collab.jpg') center center / cover no-repeat;
-}
-
-.contact-page-hero-link-featured::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 80% 20%, rgba(76, 141, 255, 0.16), transparent 24%),
-    linear-gradient(180deg, rgba(3, 7, 18, 0.1) 0%, rgba(3, 7, 18, 0.42) 54%, rgba(3, 7, 18, 0.82) 100%);
-  pointer-events: none;
-}
-
-.contact-page-hero-link-featured span,
-.contact-page-hero-link-featured strong {
-  position: relative;
-  z-index: 1;
-}
-
 .arc-page-hero,
 .about-page-hero,
 .industries-page-hero,
-.contact-page-hero,
 .knowledge-page-hero {
   position: relative;
   width: 100vw;
@@ -98,8 +65,6 @@
 .arc-page-hero-overlay,
 .about-page-hero-media,
 .about-page-hero-overlay,
-.contact-page-hero-media,
-.contact-page-hero-overlay,
 .industries-page-hero-media,
 .industries-page-hero-overlay,
 .knowledge-page-hero-media,
@@ -111,7 +76,6 @@
 .arc-page-hero-media video,
 .arc-page-hero-media img,
 .about-page-hero-media img,
-.contact-page-hero-media img,
 .industries-page-hero-media img,
 .knowledge-page-hero-media img {
   width: 100%;
@@ -137,12 +101,6 @@
     linear-gradient(180deg, rgba(4, 7, 14, 0.08) 0%, rgba(4, 7, 14, 0.16) 36%, rgba(4, 7, 14, 0.86) 100%);
 }
 
-.contact-page-hero-overlay {
-  background:
-    linear-gradient(90deg, rgba(4, 7, 14, 0.82) 0%, rgba(4, 7, 14, 0.56) 36%, rgba(4, 7, 14, 0.2) 68%, rgba(4, 7, 14, 0.42) 100%),
-    linear-gradient(180deg, rgba(4, 7, 14, 0.08) 0%, rgba(4, 7, 14, 0.16) 36%, rgba(4, 7, 14, 0.88) 100%);
-}
-
 .industries-page-hero-overlay {
   background:
     linear-gradient(90deg, rgba(4, 7, 14, 0.82) 0%, rgba(4, 7, 14, 0.56) 34%, rgba(4, 7, 14, 0.18) 68%, rgba(4, 7, 14, 0.4) 100%),
@@ -158,7 +116,6 @@
 .arc-page-hero-shell,
 .about-page-hero-shell,
 .industries-page-hero-shell,
-.contact-page-hero-shell,
 .knowledge-page-hero-shell {
   position: relative;
   z-index: 1;
@@ -185,7 +142,6 @@
 }
 
 .about-page-hero-shell,
-.contact-page-hero-shell,
 .knowledge-page-hero-shell {
   width: min(var(--content-max-width), calc(100vw - 64px));
 }
@@ -193,7 +149,6 @@
 .arc-page-hero-copy,
 .about-page-hero-copy,
 .industries-page-hero-copy,
-.contact-page-hero-copy,
 .knowledge-page-hero-copy {
   max-width: var(--content-narrow-width);
   padding-top: clamp(12px, 2vw, 36px);
@@ -202,7 +157,6 @@
 .arc-page-hero-tag,
 .about-page-hero-tag,
 .industries-page-hero-tag,
-.contact-page-hero-tag,
 .knowledge-page-hero-tag {
   color: rgba(171, 201, 255, 0.72);
   font-size: 11px;
@@ -213,7 +167,6 @@
 .arc-page-hero-copy h1,
 .about-page-hero-copy h1,
 .industries-page-hero-copy h1,
-.contact-page-hero-copy h1,
 .knowledge-page-hero-copy h1 {
   margin: 16px 0 0;
   color: #f7f9ff !important;
@@ -230,7 +183,6 @@
 .arc-page-hero-copy p,
 .about-page-hero-copy p,
 .industries-page-hero-copy p,
-.contact-page-hero-copy p,
 .knowledge-page-hero-copy p {
   margin: 18px 0 0 !important;
   max-width: var(--content-reading-width);
@@ -325,7 +277,6 @@
   .arc-page-hero,
   .about-page-hero,
   .industries-page-hero,
-  .contact-page-hero,
   .knowledge-page-hero {
     min-height: 0;
   }
@@ -346,8 +297,7 @@
     border-radius: 0;
   }
 
-  .about-page-hero,
-  .contact-page-hero {
+  .about-page-hero {
     width: 100vw;
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
@@ -376,7 +326,6 @@
     gap: 18px;
   }
 
-  .contact-page-hero-shell,
   .knowledge-page-hero-shell {
     width: min(1200px, calc(100vw - 32px));
     min-height: 0;
@@ -387,7 +336,6 @@
   .arc-page-hero-copy,
   .about-page-hero-copy,
   .industries-page-hero-copy,
-  .contact-page-hero-copy,
   .knowledge-page-hero-copy {
     padding-top: 8px;
   }
@@ -395,7 +343,6 @@
   .arc-page-hero-copy h1,
   .about-page-hero-copy h1,
   .industries-page-hero-copy h1,
-  .contact-page-hero-copy h1,
   .knowledge-page-hero-copy h1 {
     max-width: none;
     font-size: clamp(28px, 7vw, 42px);
@@ -404,14 +351,12 @@
   .arc-page-hero-copy p,
   .about-page-hero-copy p,
   .industries-page-hero-copy p,
-  .contact-page-hero-copy p,
   .knowledge-page-hero-copy p {
     max-width: 26ch;
     font-size: 16px;
   }
 
-  .knowledge-page-hero-link-featured,
-  .contact-page-hero-link-featured {
+  .knowledge-page-hero-link-featured {
     flex-basis: 100%;
     min-height: 200px;
   }
@@ -424,30 +369,25 @@
     padding-bottom: 18px;
   }
 
-  .knowledge-page-hero-copy,
-  .contact-page-hero-copy {
+  .knowledge-page-hero-copy {
     padding-top: 8px;
   }
 
-  .knowledge-page-hero-copy h1,
-  .contact-page-hero-copy h1 {
+  .knowledge-page-hero-copy h1 {
     font-size: 26px;
   }
 
-  .knowledge-page-hero-copy p,
-  .contact-page-hero-copy p {
+  .knowledge-page-hero-copy p {
     font-size: 15px;
     line-height: 1.6;
   }
 
-  .knowledge-page-hero-link,
-  .contact-page-hero-link {
+  .knowledge-page-hero-link {
     padding: 16px 16px 18px;
     border-radius: 20px;
   }
 
-  .knowledge-page-hero-link strong,
-  .contact-page-hero-link strong {
+  .knowledge-page-hero-link strong {
     font-size: 20px;
   }
 }

@@ -1,31 +1,35 @@
 import { Button, Typography } from 'antd';
 import { Link, useParams } from 'react-router-dom';
-import { formatNewsDate, newsItems } from '../data/news';
+import { formatNewsDate, getNewsItems } from '../data/news';
+import { useI18n } from '../i18n/I18nProvider';
 import SiteLayout from '../layouts/SiteLayout';
 
 const { Title, Paragraph, Text } = Typography;
 
 export default function NewsDetailPage() {
+  const { contentLocale, locale, page } = useI18n();
+  const copy = page.newsDetail;
+  const newsItems = getNewsItems(contentLocale);
   const { slug } = useParams();
   const articleIndex = newsItems.findIndex((item) => item.slug === slug);
   const article = articleIndex >= 0 ? newsItems[articleIndex] : null;
 
   if (!article) {
     return (
-      <SiteLayout title="报道未找到 | Navlyn 航链科技" description="当前访问的报道不存在或链接已失效。">
+      <SiteLayout title={copy.notFoundTitle} description={copy.notFoundDescription}>
         <section className="page-section not-found-page">
           <div className="section-heading not-found-copy">
             <Text className="news-page-kicker">Story Not Found</Text>
-            <Title level={1}>未找到对应报道</Title>
-            <Paragraph>当前报道可能已下线、链接已变更，或当前内容尚未正式发布。</Paragraph>
+            <Title level={1}>{copy.notFoundTitle}</Title>
+            <Paragraph>{copy.notFoundDescription}</Paragraph>
           </div>
 
           <div className="not-found-actions">
-            <Link to="/news" className="ant-btn ant-btn-primary ant-btn-lg button-link">
-              返回新闻列表
+            <Link to="/about/news" className="ant-btn ant-btn-primary ant-btn-lg button-link">
+              {page.common.backNews}
             </Link>
             <Link to="/" className="ant-btn ant-btn-default ant-btn-lg button-link">
-              返回首页
+              {page.common.backHome}
             </Link>
           </div>
         </section>
@@ -38,17 +42,17 @@ export default function NewsDetailPage() {
   const nextArticle = newsItems[(articleIndex + 1) % newsItems.length];
 
   return (
-    <SiteLayout title={`${article.title} | Navlyn 航链科技`} description={article.description}>
+    <SiteLayout title={`${article.title} | Navlyn`} description={article.description}>
       <section className="page-section news-detail-page">
         <div className="news-detail-hero">
           <Text className="news-page-kicker">{article.tag}</Text>
           <Title>{article.title}</Title>
           <Text className="news-card-meta">
-            {formatNewsDate(article.date)} · {article.location}
+            {formatNewsDate(article.date, locale)} · {article.location}
           </Text>
           <Paragraph>{article.description}</Paragraph>
           <Button type="default" ghost>
-            <Link to="/news">返回新闻列表</Link>
+            <Link to="/about/news">{page.common.backNews}</Link>
           </Button>
         </div>
 
@@ -64,11 +68,11 @@ export default function NewsDetailPage() {
 
         <div className="news-detail-nav">
           <Link className="news-detail-nav-link" to={`/news/${previousArticle.slug}`}>
-            <Text className="news-card-tag">上一篇</Text>
+            <Text className="news-card-tag">{page.common.previousStory}</Text>
             <strong>{previousArticle.title}</strong>
           </Link>
           <Link className="news-detail-nav-link" to={`/news/${nextArticle.slug}`}>
-            <Text className="news-card-tag">下一篇</Text>
+            <Text className="news-card-tag">{page.common.nextStory}</Text>
             <strong>{nextArticle.title}</strong>
           </Link>
         </div>
@@ -76,7 +80,7 @@ export default function NewsDetailPage() {
         <div className="news-detail-related">
           <div className="section-heading">
             <Text className="news-page-kicker">More Stories</Text>
-            <Title level={2}>更多报道</Title>
+            <Title level={2}>{copy.moreStories}</Title>
           </div>
           <div className="news-grid-side news-detail-related-grid">
             {relatedNews.map((item) => (
@@ -84,7 +88,7 @@ export default function NewsDetailPage() {
                 <div className="news-card-copy">
                   <Text className="news-card-tag">{item.tag}</Text>
                   <Text className="news-card-meta">
-                    {formatNewsDate(item.date)} · {item.location}
+                    {formatNewsDate(item.date, locale)} · {item.location}
                   </Text>
                   <Title level={3}>{item.title}</Title>
                   <Paragraph>{item.description}</Paragraph>

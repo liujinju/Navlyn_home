@@ -1,0 +1,9 @@
+[     636ms] [LOG] %c %s color: yellow; background-color: black; [instance: default] appid: 20003954, userInfo:{"user_unique_id":"7624155051681942286","web_id":"7624155051681942286"} @ https://lf3-data.volccdn.com/obj/data-static/log-sdk/collect/5.0/collect-rangers-v5.1.12.js:0
+[     636ms] [LOG] %c %s color: yellow; background-color: black; [instance: default] appid: 20003954, sdk is ready, version is 5.1.12_tob, you can report now !!! @ https://lf3-data.volccdn.com/obj/data-static/log-sdk/collect/5.0/collect-rangers-v5.1.12.js:0
+[     887ms] [LOG] https://www.cztv.com/video/20091537/wh/horizontal_vod?id=20091537 /video/20091537/wh/horizontal_vod hash @ https://www.cztv.com/assets/index-Cxl59-Gn.js:0
+[     889ms] [LOG] watch false undefined @ https://www.cztv.com/assets/login-BXjNqYKd.js:0
+[     901ms] [LOG] watch false undefined @ https://www.cztv.com/assets/login-BXjNqYKd.js:0
+[     904ms] [LOG] watch555555 /video/20091537/wh/horizontal_vod onDemandShow @ https://www.cztv.com/assets/bottomView-CGtoJ-Y2.js:0
+[    1968ms] [LOG] 0 0 0 @ https://www.cztv.com/assets/onDemandShow-B5cMvd7M.js:0
+[    1969ms] [LOG] 0 0 0 @ https://www.cztv.com/assets/onDemandShow-B5cMvd7M.js:0
+[    2192ms] [LOG] Proxy(Array) array.valuearray.valuearray.value @ https://www.cztv.com/assets/onDemandShow-B5cMvd7M.js:0

@@ -40,7 +40,10 @@ export default function ProductsPage() {
     >
       <section className="page-section">
         <div className="products-detail-grid">
-          {productDetails.map((item) => (
+          {productDetails.map((item, index) => {
+            const card = copy.cards[index];
+
+            return (
             <article
               key={item.key}
               className={`products-detail-card products-detail-card-${item.key}`}
@@ -59,20 +62,20 @@ export default function ProductsPage() {
 
               <div className="products-detail-content">
                 <div className="products-detail-card-top">
-                  <Text className="products-detail-tag">{item.tag}</Text>
-                  <Title level={3}>{item.name}</Title>
+                  <Text className="products-detail-tag">{card.tag}</Text>
+                  <Title level={3}>{card.name}</Title>
                   <Paragraph className="products-detail-role">
-                    {item.role}
+                    {card.role}
                   </Paragraph>
                   <Paragraph className="products-detail-summary">
-                    {item.summary}
+                    {card.summary}
                   </Paragraph>
                 </div>
 
                 <div className="products-detail-block">
                   <Text className="products-detail-label">{copy.hardwareSpecs}</Text>
                   <div className="products-detail-spec-grid">
-                    {item.specs.map((spec) => (
+                    {card.specs.map((spec) => (
                       <div key={spec.label} className="products-detail-spec">
                         <span>{spec.label}</span>
                         <strong>{spec.value}</strong>
@@ -85,7 +88,7 @@ export default function ProductsPage() {
                   <div className="products-detail-panel">
                     <Text className="products-detail-label">{copy.aiCapabilities}</Text>
                     <ul>
-                      {item.aiCapabilities.map((capability) => (
+                      {card.aiCapabilities.map((capability) => (
                         <li key={capability}>{capability}</li>
                       ))}
                     </ul>
@@ -93,7 +96,7 @@ export default function ProductsPage() {
                   <div className="products-detail-panel">
                     <Text className="products-detail-label">{copy.scenarios}</Text>
                     <div className="products-detail-scene-list">
-                      {item.applications.map((scene) => (
+                      {card.applications.map((scene) => (
                         <span key={scene}>{scene}</span>
                       ))}
                     </div>
@@ -101,7 +104,8 @@ export default function ProductsPage() {
                 </div>
               </div>
             </article>
-          ))}
+            );
+          })}
         </div>
       </section>
     </SiteLayout>
